@@ -12,7 +12,7 @@ export default function RootLayout ({ children }) {
   return (
   <html lang='en' suppressHydrationWarning>
             <head>
-                <title>Marina Market App</title>
+                <title>Dental Las Higueras</title>
             </head>
             <body className={inter.className + ' h-screen flex'}>
             <Providers>
