@@ -14,7 +14,7 @@ export default function RootLayout ({ children }) {
             <head>
                 <title>Dental Las Higueras</title>
             </head>
-            <body className={inter.className + ' h-screen flex'}>
+            <body className={inter.className + ''}>
                 <Providers>
                     {children}
                 </Providers>

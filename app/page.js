@@ -1,7 +1,12 @@
+import Header from './components/header/header'
+import Body from './components/body/body'
+import Footer from './components/footer/footer'
 export default function Home () {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between">
-            <h1> Hola </h1>
-        </main>
+        <div className='min-h-screen flex flex-col'>
+            <Header/>
+            <Body/>
+            <Footer/>
+        </div>
     )
 }
