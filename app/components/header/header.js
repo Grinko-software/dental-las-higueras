@@ -23,7 +23,7 @@ export default function Header () {
         setUseView(vw)
     }, [vw])
     return (
-        <header className="sticky top-0 h-auto bg-primary-100 text-black p-4">
+        <header className="sticky top-0 h-auto bg-primary-100 text-black p-4 z-10">
             <Navbar className='bg-primary-100 pt-10' maxWidth={'xl'} onMenuOpenChange={setIsMenuOpen}>
                 <NavbarContent>
                     <NavbarMenuToggle
