@@ -17,5 +17,7 @@
   
   /* trunk-ignore(git-diff-check/error) */
   body { 
-    @apply bg-primary-100
+    background-color: '#f0f0f0';
+    font-family: 'OpenSans';
+    font-style: normal;
   }

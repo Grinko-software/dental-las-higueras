@@ -15,7 +15,9 @@
     "next": "latest",
     "next-themes": "^0.2.1",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-viewport-hooks": "^1.5.0",
+    "zustand": "^4.4.1"
   },
   "devDependencies": {
     "autoprefixer": "latest",
