@@ -10,7 +10,7 @@ export default function Home () {
         <section id='Inicio' className='mt-[2rem] h-full lg:mt-[6rem]'>
             <div className="w-full h-auto px-5 lg:px-0 max-w-screen-1xl mx-auto grid grid-cols-1 lg:grid-cols-2 ">
                 <div className='h-auto flex flex-col items-center lg:items-stretch '>
-                    <div className="py-6 px-12 sm:py-12 sm:px-0  fade-in">
+                    <div className="py-6 px-12 sm:py-12 sm:px-0 fade-in-left">
                         <div className="relative py-3 sm:max-w-xl sm:mx-auto">
                             <div className="flex flex-col items-center justify-center py-2">
                                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-200 to-primary-600 shadow-lg hover:shadow-2xl transform rotate-6 rounded-3xl"></div>
@@ -28,7 +28,7 @@ export default function Home () {
                         </div>
                     </div>
                 </div>
-                <div className="h-auto pr-0  flex flex-col items-center lg:items-stretch  lg:grid lg:grid-rows-1 lg:pr-10">
+                <div className=" fade-in-up h-auto pr-0  flex flex-col items-center lg:items-stretch  lg:grid lg:grid-rows-1 lg:pr-10">
                     <div className="row-span-1">
                         <div className="w-full grid gap-y-[1rem] text-center lg:text-left lg:justify-left">
                             <h1 className="w-full   text-bold  text-3xl lg:text-7xl font-[600]">
