@@ -7,34 +7,28 @@ import useGlobalStore from '@/store/globalStore'
 export default function Home () {
     const { section, setSection } = useGlobalStore(({ section, setSection }) => ({ section, setSection }))
     return (
-        <section className='mt-[2rem] h-full lg:mt-[6rem]'>
+        <section id='Inicio' className='mt-[2rem] h-full lg:mt-[6rem]'>
             <div className="w-full h-auto px-5 lg:px-0 max-w-screen-1xl mx-auto grid grid-cols-1 lg:grid-cols-2 ">
-                <div className='h-auto flex flex-col items-center lg:items-stretch'>
-                    <Card
-                        isFooterBlurred
-                        radius="lg"
-                        className="border-none bg-primary-200 flex flex-col hover:shadow-2xl shadow-xl items-center h-[100%] lg:h-[65%] w-[90%] lg:rounded-l-none lg:rounded-tr-[10%]"
-                    >
-                        <Card
-                            isFooterBlurred
-                            radius="lg"
-                            className="border-none w-[100%] bg-cover  hover:shadow-2xl shadow-xl lg:relative  lg:right-10 lg:top-[50px] lg:rounded-l-none  lg:rounded-tr-[10%]"
+                <div className='h-auto flex flex-col items-center lg:items-stretch '>
+                    <div className="py-6 px-12 sm:py-12 sm:px-0  fade-in">
+                        <div className="relative py-3 sm:max-w-xl sm:mx-auto">
+                            <div className="flex flex-col items-center justify-center py-2">
+                                <div className="absolute inset-0 bg-gradient-to-r from-indigo-200 to-primary-600 shadow-lg hover:shadow-2xl transform rotate-6 rounded-3xl"></div>
+                                <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-5">
+                                    <Image
+                                        src={image1}
+                                        width={'100%'}
+                                        height={'100%'}
+                                        alt="Logo Dental Las Higueras"
+                                        className='  rounded-3xl'
 
-                        >
-                            <Image
-                                src={image1}
-                                width={'100%'}
-                                height={'150%'}
-                                alt="Logo Dental Las Higueras"
-                                className=''
-
-                            />
-
-                        </Card>
-
-                    </Card>
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="h-auto pr-0  flex flex-col items-center lg:items-stretch  lg:grid lg:grid-rows-2 lg:gap-y-[5rem] lg:pr-10">
+                <div className="h-auto pr-0  flex flex-col items-center lg:items-stretch  lg:grid lg:grid-rows-1 lg:pr-10">
                     <div className="row-span-1">
                         <div className="w-full grid gap-y-[1rem] text-center lg:text-left lg:justify-left">
                             <h1 className="w-full   text-bold  text-3xl lg:text-7xl font-[600]">
@@ -51,8 +45,10 @@ export default function Home () {
                     <div className='flex flex-row-reverse items-stretch'>
                         <Button title={'AGENDA TU EVALUACIÓN GRATUITA'}
                             onClick={() => { setSection('Agendar') }}
-                            className='h-[4rem] w-[26rem] bg-primary-600 rounded-[100px] hover:bg-primary-500 text-primary-100  px-5 py-5 text-center
-                                         text-lg font-[600]  transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:border-primary-50
+                            className='h-[4rem] w-auto
+
+                             bg-primary-600 rounded-[100px] break-all hover:bg-primary-500 text-primary-100  px-5 py-5
+                                           text-base font-[600]  transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:border-primary-50
                                        focus:ring-primary-300 dark:bg-primary-800 dark:text-primary-50  dark:placeholder-primary-50  dark:hover:border-primary-50
                                          dark:hover:bg-primary-700  dark:hover:text-primary-50 dark:hover:ring-primary-300 dark:hover:focus:fill-white'>
 
@@ -65,6 +61,50 @@ export default function Home () {
 
     )
 }
+/*
+<div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+                <div className="relative py-3 sm:max-w-xl sm:mx-auto">
+                    <div className="flex flex-col items-center justify-center py-2">
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-200 to-purple-600 shadow-lg transform -rotate-45 rotate-6 rounded-3xl"></div>
+                        <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+                            <h1 className="text-6xl font-bold">
+                Stylish Glassmorphic Header Animation Made with Tailwind CSS &
+                Next.js
+                            </h1>
+                            <h2 className="text-3xl font-bold">
+                Fork and modify this sandbox
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+*/
+/*
+<Card
+                        isFooterBlurred
+                        radius="lg"
+                        className="border-none bg-primary-200 flex flex-col hover:shadow-2xl shadow-xl items-center h-[100%] w-[90%] lg:rounded-l-none lg:rounded-tr-[10%]"
+                    >
+                        <Card
+                            isFooterBlurred
+                            radius="lg"
+                            className="border-none w-[100%] bg-cover  hover:shadow-2xl shadow-xl lg:relative  lg:right-10 lg:top-[50px] lg:rounded-l-none  lg:rounded-tr-[10%]"
+
+                        >
+                            <Image
+                                src={image1}
+                                width={'100%'}
+                                height={'100%'}
+                                alt="Logo Dental Las Higueras"
+
+                            />
+
+                        </Card>
+
+                    </Card>
+
+*/
 /*
 
    <div className='h-auto pr-0 lg:pr-10 '>

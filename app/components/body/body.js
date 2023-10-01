@@ -2,8 +2,9 @@
 import Home from './sections/home'
 export default function Body () {
     return (
-        <main className='flex h-full flex-col'>
+        <main className='flex h-full flex-col  !scroll-smooth'>
             <Home/>
+            {/* Agregar secciones acá */}
         </main>
 
     )

@@ -36,6 +36,7 @@ export default function Header () {
                             width={200}
                             height={200}
                             alt="Logo Dental Las Higueras"
+                            className='pb-9'
                         />
                     </NavbarBrand>
                 </NavbarContent>
