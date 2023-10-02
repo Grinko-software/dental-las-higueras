@@ -34,9 +34,9 @@ export default function About () {
                         <div className='fade-in flex flex-row'>
                             <h1 className="text-bold fade-in text-xl items-start lg:text-6xl font-[600]" >
                                 Atendiendo a nuestros pacientes con
-                                <text className='font-bold  text-xl lg:text-7xl fade-in text-primary-600'>
+                                <span className='font-bold fade-in text-xl lg:text-5xl text-primary-600'>
                                     {' ' + currentName.toUpperCase()}
-                                </text>
+                                </span>
                             </h1>
                         </div>
                         <text className="w-full text-bold text-2xl text-center lg:text-left lg:justify-lef  font-[350]">
@@ -64,9 +64,7 @@ export default function About () {
                     </div>
                 </div>
             </div>
-
             <YouTube videoId="dQw4w9WgXcQ"/>
-
         </section>
 
     )
