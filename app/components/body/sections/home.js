@@ -21,7 +21,6 @@ export default function Home () {
                                         height={'100%'}
                                         alt="Logo Dental Las Higueras"
                                         className='  rounded-3xl'
-
                                     />
                                 </div>
                             </div>
