@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Card, CardFooter } from '@nextui-org/react'
+import ScrollAnimation from 'react-animate-on-scroll'
 import Button from '@/ui/button'
 import Image from 'next/image'
 import ShuffleText from '@/ui/text'
@@ -39,9 +40,20 @@ export default function About () {
                                 </span>
                             </h1>
                         </div>
-                        <text className="w-full text-bold text-2xl text-center lg:text-left lg:justify-lef  font-[350]">
-                            Somos una clínica dental comprometida con la salud bucal y la satisfacción de nuestros pacientes. Nuestro equipo altamente calificado de dentistas y especialistas está dedicado a brindar atención dental de alta calidad en un ambiente cálido y acogedor. En nuestra clínica, combinamos la última tecnología con un enfoque personalizado para garantizar que cada paciente reciba el mejor cuidado posible.
-                        </text>
+                        <div className='flex flex-row'>
+                            <text className=" text-bold text-2xl text-center lg:text-left lg:justify-lef w-8/12 font-[350]">
+                                Somos una clínica dental comprometida con la salud bucal y la satisfacción de nuestros pacientes. Nuestro equipo altamente calificado de dentistas y especialistas está dedicado a brindar atención dental de alta calidad en un ambiente cálido y acogedor. En nuestra clínica, combinamos la última tecnología con un enfoque personalizado para garantizar que cada paciente reciba el mejor cuidado posible.
+                            </text>
+                            <div className="list-disc text-bold text-2xl lg:text-left lg:justify-lef text-center w-4/12 font-[350]">
+                                <text>Especialidades</text>
+                                <li>Odontolgía General</li>
+                                <li>Ortodoncia</li>
+                                <li>Periodoncia</li>
+                                <li>Endodoncia</li>
+                                <li>Cirugías Implantes</li>
+                                <li>Estetica Integral</li>
+                            </div>
+                        </div>
                     </div>
                     <div className='h-auto flex flex-col items-center lg:items-stretch lg:grid lg:grid-col-2 '>
                         <div className="py-6 px-12 sm:py-12 sm:px-0 fade-in-rigth">
