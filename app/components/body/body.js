@@ -8,8 +8,9 @@ export default function Body () {
         <main className='flex h-full flex-col mx-10 !scroll-smooth'>
             <Home/>
             <About/>
-            <Shedule/>
             <Contact/>
+            <Shedule/>
+
             {/* Agregar secciones acá */}
         </main>
     )

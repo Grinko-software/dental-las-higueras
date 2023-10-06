@@ -25,7 +25,7 @@ export default function Header () {
     useEffect(() => {
         if (section) {
             const focusKey = document.getElementById(section)
-         /*    focusKey?.scrollTo({
+            /*    focusKey?.scrollTo({
                 top: 100,
                 left: 100,
                 behavior: 'smooth'
