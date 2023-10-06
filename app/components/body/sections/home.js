@@ -13,7 +13,7 @@ export default function Home () {
                     <div className="py-6 px-12 sm:py-12 sm:px-0 fade-in-left">
                         <div className="relative py-3 sm:max-w-xl sm:mx-auto">
                             <div className="flex flex-col items-center justify-center py-2">
-                                <div className="absolute inset-0 bg-gradient-to-r from-indigo-200 to-primary-600 shadow-lg hover:shadow-2xl transform rotate-6 rounded-3xl"></div>
+                                <div className="absolute inset-0 bg-gradient-to-r from-indigo-200 to-primary-600 shadow-2xl transform rotate-6 rounded-3xl"></div>
                                 <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-5">
                                     <Image
                                         src={image1}
@@ -21,7 +21,6 @@ export default function Home () {
                                         height={'100%'}
                                         alt="Logo Dental Las Higueras"
                                         className='  rounded-3xl'
-
                                     />
                                 </div>
                             </div>

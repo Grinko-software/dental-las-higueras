@@ -5,13 +5,12 @@ import Home from './sections/home'
 import Shedule from './sections/shedule'
 export default function Body () {
     return (
-        <main className='flex flex-1 flex-col !scroll-smooth'>
+        <main className='flex h-full flex-col mx-10 !scroll-smooth'>
             <Home/>
             <About/>
             <Shedule/>
             <Contact/>
             {/* Agregar secciones acá */}
         </main>
-
     )
 }

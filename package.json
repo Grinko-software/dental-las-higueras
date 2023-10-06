@@ -17,7 +17,6 @@
     "react": "latest",
     "react-dom": "latest",
     "react-viewport-hooks": "^1.5.0",
-    "react-youtube": "^10.1.0",
     "zustand": "^4.4.1"
   },
   "devDependencies": {
