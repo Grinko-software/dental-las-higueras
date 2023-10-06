@@ -3,13 +3,15 @@ import About from './sections/about'
 import Contact from './sections/contact'
 import Home from './sections/home'
 import Shedule from './sections/shedule'
+import Profesionals from './sections/professionals'
 export default function Body () {
     return (
         <main className='flex h-full flex-col !scroll-smooth'>
             <Home/>
             <About/>
-            <Shedule/>
+            <Profesionals/>
             <Contact/>
+            <Shedule/>
             {/* Agregar secciones acá */}
         </main>
     )
