@@ -23,7 +23,7 @@ export default function Profesionals () {
         }, 4000)
     }, [currentName])
     return (
-        <section id='About' className='mt-[2rem] w-full h-full lg:mt-[6rem] flex flex-col items items-center'>
+        <section id='Profesionales' className='mt-[2rem] w-full h-full lg:mt-[6rem] flex flex-col items items-center'>
             <Divider className='w-11/12 h-0.5 rounded-xl'></Divider>
             <div className='fade-in-up flex flex-col items items-center py-8'>
                 <h1 className="text-bold fade-in text-8xl   font-[600]" >
