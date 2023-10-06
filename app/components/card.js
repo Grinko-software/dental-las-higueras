@@ -1,100 +1,53 @@
 import React from 'react'
+import { Card, CardBody, Divider } from '@nextui-org/react'
+import Image from 'next/image'
+import image1 from '@/assets/images/juanito.png'
 
-import { Card, CardBody, Image, Button, Progress } from '@nextui-org/react'
-
-export default function App () {
+export default function ProfesionalsCard (props) {
     return (
         <Card
             isBlurred
-            className="border-none bg-background/60 dark:bg-default-100/50 max-w-[610px]"
+            className="border-sm hover:shadow-2xl bg-primary-600/5 shadow-xl max-w-[610px]  ring-primary-600/10 border-[0.1rem] "
             shadow="sm"
         >
+
             <CardBody>
-                <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center">
-                    <div className="relative col-span-6 md:col-span-4">
-                        <Image
-                            alt="Album cover"
-                            className="object-cover"
-                            height={200}
-                            shadow="md"
-                            src="/images/album-cover.png"
-                            width="100%"
-                        />
-                    </div>
-
-                    <div className="flex flex-col col-span-6 md:col-span-8">
-                        <div className="flex justify-between items-start">
-                            <div className="flex flex-col gap-0">
-                                <h3 className="font-semibold text-foreground/90">Daily Mix</h3>
-                                <p className="text-small text-foreground/80">12 Tracks</p>
-                                <h1 className="text-large font-medium mt-2">Frontend Radio</h1>
-                            </div>
-                            <Button
-                                isIconOnly
-                                className="text-default-900/60 data-[hover]:bg-foreground/10 -translate-y-2 translate-x-2"
-                                radius="full"
-                                variant="light"
-                            >
-                            </Button>
-                        </div>
-
-                        <div className="flex flex-col mt-3 gap-1">
-                            <Progress
-                                aria-label="Music progress"
-                                classNames={{
-                                    indicator: 'bg-default-800 dark:bg-white',
-                                    track: 'bg-default-500/30'
-                                }}
-                                color="default"
-                                size="sm"
-                                value={33}
+                <div className='flex flex-col gap-4 mx-10 my-5  '>
+                    <div className='flex flex-row gap-8'>
+                        <div className=''>
+                            <Image
+                                imgRef={image1}
+                                src={image1}
+                                alt="Logo Dental Las Higueras"
+                                className='rounded-xl w-[80%] h-[80%]  ring-primary-600/60 ring-[0.1rem] ring-offset-4 '
                             />
-                            <div className="flex justify-between">
-                                <p className="text-small">1:23</p>
-                                <p className="text-small text-foreground/50">4:32</p>
+                        </div>
+                        <div className='h-auto flex flex-col items-center lg:items-stretch justify-center '>
+                            <div className="flex justify-between items-start">
+                                <div className="flex flex-col gap-2">
+                                    <h3 className="font-bold text-foreground/90 text-2xl">Dr. Juan Carlos Benavides Solarte</h3>
+                                    <Divider className='bg-primary-600 h-1 rounded-sm'></Divider>
+                                    <p className="text-xl font-bold text-foreground/80">Cirujano Dentista</p>
+                                    <p className="text-sm font-light ">Universidad Antonio Narino, Colombia Reconocido por Minist. Relaciones Exteriores el 22 de Octubre de 2009</p>
+                                    <p className="text-sm font-bold text-foreground/80">Especialidad: Ortodoncia y Ortopedia Bucomaxilofacial</p>
+                                </div>
                             </div>
                         </div>
-
-                        <div className="flex w-full items-center justify-center">
-                            <Button
-                                isIconOnly
-                                className="data-[hover]:bg-foreground/10"
-                                radius="full"
-                                variant="light"
-                            >
-                            </Button>
-                            <Button
-                                isIconOnly
-                                className="data-[hover]:bg-foreground/10"
-                                radius="full"
-                                variant="light"
-                            >
-                            </Button>
-                            <Button
-                                isIconOnly
-                                className="w-auto h-auto data-[hover]:bg-foreground/10"
-                                radius="full"
-                                variant="light"
-                            >
-                            </Button>
-                            <Button
-                                isIconOnly
-                                className="data-[hover]:bg-foreground/10"
-                                radius="full"
-                                variant="light"
-                            >
-                            </Button>
-                            <Button
-                                isIconOnly
-                                className="data-[hover]:bg-foreground/10"
-                                radius="full"
-                                variant="light"
-                            >
-                            </Button>
+                    </div>
+                    <div className="flex flex-col mt-2 gap-1">
+                        <p className="text-xl font-bold text-foreground/80">Experiencia Laboral</p>
+                        <div className="flex flex-col justify-between list-disc">
+                            <li className="text-small font-light">Cirujano Dentista en el área privada con más de 12 años de experiencia</li>
+                            <li className="text-small font-light">Especialidad de Ortodoncia y O.M.B, Universidad Católica de Uruguay</li>
+                            <li className="text-small font-light">Maestría en Anclaje Esqueletal Instituto Mondelli de Ortodoncia, Brasil</li>
+                            <li className="text-small font-light">Residencia en Microtornillos Extraalveolares</li>
+                            <li className="text-small font-light">Certificación en Invisaling</li>
+                            <li className="text-small font-light">actualización en ortodoncia y vías aéreas Universidad de New York</li>
                         </div>
                     </div>
                 </div>
             </CardBody>
+
         </Card>
     )
 }

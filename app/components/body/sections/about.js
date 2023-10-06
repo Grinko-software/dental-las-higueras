@@ -43,7 +43,7 @@ export default function About () {
                             </h1>
                             <text className='text-sm lg:text-xl'>
                                 Un equipo que cuenta con los mejores profesionales, preocupados por brindar la mejor atención, para atender las necesidades de nuestros pacientes,
-                                <span className='font-bold'>cuidando de ti y te tu sonrisa. </span>
+                                <span className='font-bold'> cuidando de ti y te tu sonrisa. </span>
                                 Nace de la necesidad de reunir en un sólo lugar las complejas especialidades que comprende la odontología.
                                 Caracterizándonos por la calidad en nuestros tratamientos y en brindar una buena atención.
                             </text>
