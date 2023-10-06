@@ -1,12 +1,45 @@
 /* eslint-disable no-unused-vars */
-import { Card, CardHeader, CardBody, Divider } from '@nextui-org/react'
+import { Card, CardHeader, CardBody, Divider, Image as ImageReact } from '@nextui-org/react'
 import Image from 'next/image'
 import Img2 from '@/assets/images/image2.jpeg'
 import useGlobalStore from '@/store/globalStore'
 import { useState, useEffect } from 'react'
 
+const CardItem = ({ title, imageSrc }) => {
+    const texts = title.split(' ')
+    return <section className='h-full'>
+        <Card className="col-span-12 sm:col-span-4 h-[200px] max-w-[30rem]">
+            <CardHeader className="absolute z-10 top-1 flex-col !items-start">
+                {/*              <p className="text-tiny text-white/60 uppercase font-bold">What to watch</p>
+                <h4 className="text-white font-medium text-large">Stream the Acme event</h4> */}
+                <div className='rounded-2xl'>
+                    {texts?.map((t) => {
+                        return <h4 key={t} className='text-3xl font-sans font-bold text-gray-500 w-fit shadow-sm opacity-60 bg-white px-2'>{t}</h4>
+                    })}
+                </div>
+            </CardHeader>
+            <ImageReact
+                removeWrapper
+                alt="Card background"
+                className="z-0 w-full h-full object-cover"
+                width={20}
+                height={20}
+                src={imageSrc || 'https://www.clinicatrei.com/wp-content/uploads/2022/10/dientes-desgastados.jpg'}
+            />
+        </Card>
+    </section>
+}
+
 const names = [
     'Empatia', 'Inovacion', 'Calidad'
+]
+const especialidades = [
+    { name: 'Odontolgía General', image: 'https://bfesteticadental.com/wp-content/uploads/2020/01/Odontopediatria-Caracas-Venezuela-BF-Estetica-Dental-1024x683.jpg' },
+    { name: 'Ortodoncia', image: 'https://www.clinicadelvalle.es/wp-content/uploads/2018/09/Verdades-sobre-los-brackets-1080x627.jpg' },
+    { name: 'Periodoncia', image: 'https://doctoraminerva.es/wp-content/uploads/en-que-consiste-la-periodoncia-y-que-alcance-tiene-portada.jpg' },
+    { name: 'Endodoncia', image: 'https://clinicajuliansaiz.com/wp-content/uploads/2021/03/que-es-una-endodoncia-clinica-dental-julian-saiz-ppal.jpg' },
+    { name: 'Cirugías Implantes', image: 'https://glidewelldental.com/content/glidewell/en/education/chairside-magazine/volume-14-issue-1/anterior-implant-placement/_jcr_content/root/container/container_467654658/container_1170571169/image.coreimg.jpeg/1668758888080/hd-cm1401-anterior-implant-placement.jpeg' },
+    { name: 'Estetica Integral', image: 'https://www.clinicatrei.com/wp-content/uploads/2022/10/dientes-desgastados.jpg' }
 ]
 export default function About () {
     const { section, setSection } = useGlobalStore(({ section, setSection }) => ({ section, setSection }))
@@ -61,27 +94,6 @@ export default function About () {
                             </text>
                         </div>
                         <Divider className='w-full lg:w-8/12'/>
-                        <div className='flex'>
-                            <Card className=" w-full lg:w-8/12 inset-0 bg-gradient-to-r from-primary-500 to-primary-600">
-                                <CardHeader className="flex gap-3 lg:items-start items-center justify-center lg:justify-normal">
-                                    <div className="flex flex-col">
-                                        <p className="text-xl lg:text-5xl text-white font-extrabold ">Especialidades</p>
-                                    </div>
-                                </CardHeader>
-                                <Divider/>
-                                <CardBody>
-                                    <div className="w-full list-disc text-bold text-m lg:text-2xl lg:text-left justify-center text-center space-y-2 font-[350] pressed">
-                                        <li className=' text-white '>Odontolgía General</li>
-                                        <li className=' text-white '>Ortodoncia</li>
-                                        <li className=' text-white '>Periodoncia</li>
-                                        <li className=' text-white '>Endodoncia</li>
-                                        <li className=' text-white '>Cirugías Implantes</li>
-                                        <li className=' text-white '>Estetica Integral</li>
-                                    </div>
-                                </CardBody>
-                                <Divider/>
-                            </Card>
-                        </div>
                     </div>
                     <div className='h-full flex flex-col items-center lg:items-stretch lg:grid lg:grid-col-2 '>
                         <div className="py-6 px-12 sm:py-12 sm:px-0 fade-in-rigth">
@@ -102,6 +114,13 @@ export default function About () {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className='grid grid-cols-1 p-2 xs:md:grid-cols-2 md:grid-cols-2 md:p-10 md:w-fit xl:grid-cols-3 gap-5 items-center justify-center'>
+                {
+                    especialidades?.map((item) => {
+                        return <CardItem key={item.name} title={item.name} imageSrc={item.image} />
+                    })
+                }
             </div>
         </section>
 

@@ -5,7 +5,7 @@ import Home from './sections/home'
 import Shedule from './sections/shedule'
 export default function Body () {
     return (
-        <main className='flex h-full flex-col mx-10 !scroll-smooth'>
+        <main className='flex h-full flex-col !scroll-smooth'>
             <Home/>
             <About/>
             <Shedule/>
