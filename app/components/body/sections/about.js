@@ -3,7 +3,6 @@ import { Card, CardHeader, CardBody, Divider } from '@nextui-org/react'
 import Image from 'next/image'
 import Img2 from '@/assets/images/image2.jpeg'
 import useGlobalStore from '@/store/globalStore'
-import YouTube from 'react-youtube'
 import { useState, useEffect } from 'react'
 
 const names = [
