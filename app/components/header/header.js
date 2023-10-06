@@ -22,6 +22,17 @@ export default function Header () {
     useEffect(() => {
         setUseView(vw)
     }, [vw])
+    useEffect(() => {
+        if (section) {
+            const focusKey = document.getElementById(section)
+         /*    focusKey?.scrollTo({
+                top: 100,
+                left: 100,
+                behavior: 'smooth'
+            }) */
+            focusKey?.scrollIntoView({ behavior: 'smooth', block: section === 'Nosotros' ? 'start' : 'end', inline: 'nearest' })
+        }
+    }, [section])
     return (
         <header className="sticky top-0 h-auto bg-primary-100 text-black p-4 z-10 fade-in">
             <Navbar className='bg-primary-100 py-[2rem]' maxWidth={'xl'} onMenuOpenChange={setIsMenuOpen}>

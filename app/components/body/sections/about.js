@@ -24,7 +24,7 @@ export default function About () {
         }, 4000)
     }, [currentName])
     return (
-        <section id='About' className='mt-[2rem] h-full lg:mt-[6rem] flex flex-col items items-center'>
+        <section id='Nosotros' className='mt-[2rem] h-full lg:mt-[6rem] flex flex-col items items-center'>
             <div className="w-full h-auto  gap-10 flex flex-col items items-center">
                 <div className="fade-in-up h-auto m-4 lg:mx-28 flex flex-col lg:flex-row lg:items-center lg:pr-10">
                     <div className="grid gap-10 lg:w-10/12 text-center lg:text-left lg:justify-center">
