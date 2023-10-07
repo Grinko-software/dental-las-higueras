@@ -23,24 +23,22 @@ export default function Profesionals () {
         }, 4000)
     }, [currentName])
     return (
-        <section id='Profesionales' className='mt-[2rem] w-full h-full lg:mt-[6rem] flex flex-col items items-center'>
-            <Divider className='w-11/12 h-0.5 rounded-xl'></Divider>
-            <div className='fade-in-up flex flex-col items items-center py-8'>
-                <h1 className="text-bold fade-in text-8xl   font-[600]" >
+        <section className='bg-primary-150 w-full h-full  flex flex-col items items-center mx-auto'>
+            <div id='Profesionales' className='fade-in-up flex flex-col items items-center py-8'>
+                <h5 className="text-bold  text-xl lg:text-7xl font-[600]" >
                 Profesionales
-                </h1>
+                </h5>
             </div>
             <div className="w-full h-auto  gap-10 flex flex-col items items-center">
                 <div className="fade-in-up h-auto m-4 gap-12 lg:mx-28  grid grid-cols-3 lg:flex-row lg:items-center lg:pr-10">
-                    <ProfesionalsCard></ProfesionalsCard>
-                    <ProfesionalsCard></ProfesionalsCard>
-                    <ProfesionalsCard></ProfesionalsCard>
-                    <ProfesionalsCard></ProfesionalsCard>
-                    <ProfesionalsCard></ProfesionalsCard>
-                    <ProfesionalsCard></ProfesionalsCard>
+                    <ProfesionalsCard/>
+                    <ProfesionalsCard/>
+                    <ProfesionalsCard/>
+                    <ProfesionalsCard/>
+                    <ProfesionalsCard/>
+                    <ProfesionalsCard/>
                 </div>
             </div>
-
         </section>
 
     )

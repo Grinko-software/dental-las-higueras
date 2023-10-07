@@ -57,8 +57,8 @@ export default function About () {
         }, 4000)
     }, [currentName])
     return (
-        <section id='Nosotros' className='mt-[2rem] h-full lg:mt-[6rem] flex flex-col items items-center'>
-            <div className="w-full h-auto  gap-10 flex flex-col items items-center">
+        <section className='bg-primary-150 h-full  flex flex-col items items-center'>
+            <div id='Nosotros' className="w-full h-auto  gap-10 flex flex-col items items-center">
                 <div className="fade-in-up h-auto m-4 lg:mx-28 flex flex-col lg:flex-row lg:items-center lg:pr-10">
                     <div className="grid gap-10 lg:w-10/12 text-center lg:text-left lg:justify-center">
                         <div className='w-full lg:w-10/12 fade-in flex flex-row items-center'>
@@ -115,7 +115,7 @@ export default function About () {
                     </div>
                 </div>
             </div>
-            <div className='grid grid-cols-1 p-2 xs:md:grid-cols-2 md:grid-cols-2 md:p-10 md:w-fit xl:grid-cols-3 gap-5 items-center justify-center'>
+            <div className='grid grid-cols-1 p-2 xs:md:grid-cols-2 md:grid-cols-2 md:py-10 md:w-fit xl:grid-cols-3 gap-5 items-center justify-center'>
                 {
                     especialidades?.map((item) => {
                         return <CardItem key={item.name} title={item.name} imageSrc={item.image} />
@@ -123,6 +123,5 @@ export default function About () {
                 }
             </div>
         </section>
-
     )
 }

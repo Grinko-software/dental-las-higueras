@@ -7,8 +7,8 @@ import useGlobalStore from '@/store/globalStore'
 export default function Home () {
     const { section, setSection } = useGlobalStore(({ section, setSection }) => ({ section, setSection }))
     return (
-        <section id='Inicio' className='mt-[2rem] h-full lg:mt-[6rem]'>
-            <div className="w-full h-auto px-5 lg:px-0 max-w-screen-1xl mx-auto grid grid-cols-1 lg:grid-cols-2 ">
+        <section id='Inicio' className='mt-[2rem] h-full lg:mt-[6rem] mx-auto xl:mx-[5rem]'>
+            <div className="w-full h-auto px-5 lg:px-0 max-w-screen-1xl  grid grid-cols-1 lg:grid-cols-2">
                 <div className='h-auto flex flex-col items-center lg:items-stretch '>
                     <div className="py-6 px-12 sm:py-12 sm:px-0 fade-in-left">
                         <div className="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -54,12 +54,18 @@ export default function Home () {
                         </Button>
                     </div>
                 </div>
-
             </div>
         </section>
-
     )
 }
+/*
+ <div className='w-full h-auto relative'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#faf8f4" fillOpacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                    </path>
+                </svg>
+            </div>
+*/
 /*
 <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
                 <div className="relative py-3 sm:max-w-xl sm:mx-auto">
