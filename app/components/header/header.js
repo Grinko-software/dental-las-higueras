@@ -30,7 +30,7 @@ export default function Header () {
                 left: 100,
                 behavior: 'smooth'
             }) */
-            focusKey?.scrollIntoView({ behavior: 'smooth', block: section === 'Nosotros' ? 'start' : 'end', inline: 'nearest' })
+            focusKey?.scrollIntoView({ behavior: 'smooth', block: section === 'Nosotros' || section === 'Profesionales' ? 'start' : 'end', inline: 'nearest' })
         }
     }, [section])
     return (
