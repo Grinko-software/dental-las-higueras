@@ -33,7 +33,7 @@ export default function Header () {
         <header
             style={myFont.style}
             className="sticky z-20 top-0 h-auto bg-primary-100 text-black p-4 fade-in">
-            <Navbar disableAnimation
+            <Navbar
                 className='bg-primary-100 py-[2rem]'
                 maxWidth={'xl'}
                 onMenuOpenChange={setIsMenuOpen}
