@@ -1,11 +1,11 @@
 export default function Shedule () {
     return (
-        <section id='schedule' className='flex flex-1 flex-col items items-center'>
+        <section id='Agendar' className='flex flex-1 flex-col items items-center'>
             <div className="h-full mx-20 flex flex-col items items-center border ">
                 <div className='fade-in flex flex-row'>
-                    <h1 className="text-bold fade-in text-xl items-start lg:text-6xl font-[600]" >
+                    <h5 className="text-bold fade-in text-3xl items-start lg:text-7xl font-[600]" >
                         Agenda con nosotros
-                    </h1>
+                    </h5>
                 </div>
             </div>
             <section className="fade-in w-full flex-1">

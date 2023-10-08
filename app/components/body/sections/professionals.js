@@ -37,12 +37,12 @@ export default function Profesionals () {
         }, 4000)
     }, [currentName])
     return (
-        <section id='About' className='mt-[2rem] w-full h-full lg:mt-[6rem] flex flex-col items items-center my-10'>
-            <Divider className='w-11/12 h-0.5 rounded-xl'></Divider>
-            <div className='fade-in-up flex flex-col items items-center py-8'>
-                <h1 className="text-bold fade-in text-8xl font-[600]" >
+
+        <section className='bg-primary-150 w-full h-full  flex flex-col items items-center mx-auto'>
+            <div id='Profesionales' className='fade-in-up flex flex-col items items-center py-8'>
+                <h5 className="text-bold  text-xl lg:text-7xl font-[600]" >
                 Profesionales
-                </h1>
+                </h5>
             </div>
             <div className='w-full h-full '>
                 <Carousel slides={slides} autoplay={true} interval={9000} arrows={true} className="shadow-none"/>

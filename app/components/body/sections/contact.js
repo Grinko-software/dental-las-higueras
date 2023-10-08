@@ -46,7 +46,7 @@ const CardItem = ({ icon, title, children }) => {
 
 export default function Contact () {
     return (
-        <section id='schedule' className="flex flex-1 flex-col min-h-[50rem] items items-center justify-center bg-[url('https://www.clinicatrei.com/wp-content/uploads/2022/10/dientes-desgastados.jpg')]">
+        <section id='Contacto' className="flex flex-1 flex-col min-h-[50rem] bg-cover  items items-center justify-center bg-[url('https://www.clinicatrei.com/wp-content/uploads/2022/10/dientes-desgastados.jpg')]">
             <div className="gap-5 flex flex-wrap flex-row h-full items p-5 mx-20 opacity-75">
                 <div className='flex-1 max-h-full'>
                     <CardItem
