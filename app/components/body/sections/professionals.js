@@ -1,11 +1,25 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
 import useGlobalStore from '@/store/globalStore'
 import { useState, useEffect } from 'react'
 import ProfesionalsCard from '../../card'
 import { Divider } from '@nextui-org/react'
+import { Carousel } from '3d-react-carousal'
 
 const names = [
     'Empatia', 'Inovacion', 'Calidad'
+]
+
+const slides = [
+    // eslint-disable-next-line react/jsx-key
+    <ProfesionalsCard ></ProfesionalsCard>,
+    <ProfesionalsCard></ProfesionalsCard>,
+    <ProfesionalsCard></ProfesionalsCard>,
+    <ProfesionalsCard></ProfesionalsCard>,
+    <ProfesionalsCard></ProfesionalsCard>,
+    <ProfesionalsCard></ProfesionalsCard>,
+    <ProfesionalsCard></ProfesionalsCard>,
+    <ProfesionalsCard></ProfesionalsCard>
 ]
 export default function Profesionals () {
     const { section, setSection } = useGlobalStore(({ section, setSection }) => ({ section, setSection }))
@@ -23,24 +37,16 @@ export default function Profesionals () {
         }, 4000)
     }, [currentName])
     return (
-        <section id='About' className='mt-[2rem] w-full h-full lg:mt-[6rem] flex flex-col items items-center'>
+        <section id='About' className='mt-[2rem] w-full h-full lg:mt-[6rem] flex flex-col items items-center my-10'>
             <Divider className='w-11/12 h-0.5 rounded-xl'></Divider>
             <div className='fade-in-up flex flex-col items items-center py-8'>
-                <h1 className="text-bold fade-in text-8xl   font-[600]" >
+                <h1 className="text-bold fade-in text-8xl font-[600]" >
                 Profesionales
                 </h1>
             </div>
-            <div className="w-full h-auto  gap-10 flex flex-col items items-center">
-                <div className="fade-in-up h-auto m-4 gap-12 lg:mx-28  grid grid-cols-3 lg:flex-row lg:items-center lg:pr-10">
-                    <ProfesionalsCard></ProfesionalsCard>
-                    <ProfesionalsCard></ProfesionalsCard>
-                    <ProfesionalsCard></ProfesionalsCard>
-                    <ProfesionalsCard></ProfesionalsCard>
-                    <ProfesionalsCard></ProfesionalsCard>
-                    <ProfesionalsCard></ProfesionalsCard>
-                </div>
+            <div className='w-full h-full '>
+                <Carousel slides={slides} autoplay={true} interval={9000} arrows={true} className="shadow-none"/>
             </div>
-
         </section>
 
     )
