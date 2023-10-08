@@ -36,8 +36,8 @@ export default function ProfesionalsCard (props) {
                                         <Divider className='w-8/12 bg-slate-500 rounded-xl'></Divider>
                                     </div>
                                     <div className='flex flex-col items-center  gap-1'>
-                                        <span className="text-sm sm:text-xl  text-gray-800 dark:text-gray-400 ">Especialidad</span>
-                                        <span className="text-sm sm:text-xl  text-gray-500 dark:text-gray-400 mb-10">{Profesional.specialist}</span>
+                                        <span className="text-sm sm:text-xl  text-gray-950 ">Especialidad</span>
+                                        <span className="text-sm sm:text-xl  text-gray-500 mb-10">{Profesional.specialist}</span>
                                         <Button className="bg-primary-600 font-bold text-white font-2xl" variant="shadow" onClick={flipCard}>Experiencia Laboral</Button>
                                     </div>
                                 </div>
