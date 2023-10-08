@@ -33,13 +33,21 @@ export default function Header () {
         <header
             style={myFont.style}
             className="sticky z-20 top-0 h-auto bg-primary-100 text-black p-4 fade-in">
-            <Navbar className='bg-primary-100 py-[2rem]' maxWidth={'xl'} onMenuOpenChange={setIsMenuOpen}>
+            <Navbar
+                className='bg-primary-100 py-[2rem]'
+                maxWidth={'xl'}
+                onMenuOpenChange={setIsMenuOpen}
+            >
                 <NavbarContent>
                     <NavbarMenuToggle
                         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
                         className="sm:hidden"
+                        onClick={() => { setSection('Inicio') }}
                     />
-                    <NavbarBrand className={`${parseInt(useView) < 640 ? 'flex flex-col items-center' : 'flex'}`}>
+                    <NavbarBrand
+
+                        className={`${parseInt(useView) < 640 ? 'flex flex-col items-center' : 'flex'}`}
+                    >
                         <Image
                             src={logo}
                             width={200}
@@ -64,18 +72,22 @@ export default function Header () {
                     ))}
 
                 </NavbarContent>
-                <NavbarMenu className='bg-primary-100'>
+                <NavbarMenu className='to-primary-150 mt-[5rem]'>
                     {menuItems.map((item, index) => (
                         <NavbarMenuItem key={`${item}-${index}`}
-
-                            className='bg-primary-100 text-primary-700'>
+                            // to-primary-150 data-open="false"
+                            className='to-primary-150  text-primary-700'>
                             <Link
                                 color={
                                     index === 2 ? 'primary' : index === menuItems.length - 1 ? '' : ''
                                 }
-                                className="w-full"
-                                href="#"
+                                className="w-full cursor-pointer"
                                 size="lg"
+
+                                onClick={() => {
+                                    setSection(item)
+                                    setIsMenuOpen(null)
+                                }}
 
                             >
                                 {item}
