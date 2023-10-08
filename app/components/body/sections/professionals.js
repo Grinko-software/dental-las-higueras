@@ -92,12 +92,7 @@ const slides = [
     {
         key: uuidv4(),
         content: <ProfesionalsCard alt="4" Profesional={ProfesionalsArray[4]}/>
-    },
-    {
-        key: uuidv4(),
-        content: <ProfesionalsCard alt="5" Profesional={ProfesionalsArray[5]}/>
     }
-
 ]
 
 export default function Profesionals () {
