@@ -16,7 +16,8 @@ node_modules
 
 # production
 /build
-
+Archive.zip
+out
 # misc
 .DS_Store
 .env.local
