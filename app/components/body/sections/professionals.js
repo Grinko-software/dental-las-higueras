@@ -54,6 +54,22 @@ const ProfesionalsArray = [
         ]
 
     },
+    {
+        srcRute: '../../../../assets/images/juanito.png',
+        name: 'Dr. Juan Carlos Benavides Solarte',
+        specialty: 'Cirujano Dentista',
+        specialist: 'Ortodoncia y Ortopedia Bucomaxilofacial',
+        university: 'Universidad Antonio Narino, Colombia Reconocido por Minist. Relaciones Exteriores el 22 de Octubre de 2009',
+        experience: [
+            'Cirujano Dentista en el área privada con más de 12 años de experiencia',
+            'Especialidad de Ortodoncia y O.M.B, Universidad Católica de Uruguay',
+            'Maestría en Anclaje Esqueletal Instituto Mondelli de Ortodoncia, Brasil',
+            'Residencia en Microtornillos Extraalveolares',
+            'Certificación en Invisaling',
+            'Actualización en ortodoncia y vías aéreas Universidad de New York'
+        ]
+
+    },
 
     {
         srcRute: '../../../../assets/images/juanito.png',
