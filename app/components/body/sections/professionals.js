@@ -36,11 +36,9 @@ const slides = [
 
 export default function Profesionals () {
     return (
-        <section id='Profesionales' className='bg-white h-[900px] flex flex-col items items-center justify-center'>
+        <section id='Profesionales' className='bg-white h-[800px] sm:h-[1000px] flex flex-col items items-center justify-center'>
             <Carroussel
                 cards={slides}
-                height="500px"
-                width="70%"
                 offset={2}
                 showArrows={false}
                 autoPlay={true}

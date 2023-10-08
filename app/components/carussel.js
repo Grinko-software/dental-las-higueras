@@ -9,9 +9,9 @@ export default function Carroussel (props) {
 
     const [offsetRadius, setOffsetRadius] = useState(2)
     const [showArrows, setShowArrows] = useState(false)
-    const [reverse, setReverse] = useState(false)
     const [goToSlide, setGoToSlide] = useState(1)
     const [cards] = useState(table)
+    /*     const [reverse, setReverse] = useState(false) */
 
     useEffect(() => {
         setOffsetRadius(props.offset)
@@ -20,24 +20,28 @@ export default function Carroussel (props) {
 
     useEffect(() => {
         setInterval(() => {
-            let newGoToSlide
+            setGoToSlide(goToSlide + 1)
+            /* let newGoToSlide
             if (goToSlide != null) {
-                if ((goToSlide >= props.cards) || (reverse)) {
-                    newGoToSlide = goToSlide - 1
+                if (goToSlide >= props.cards.length) {
                     setReverse(true)
                 } else {
                     setReverse(false)
+                }
+                if (reverse) {
+                    newGoToSlide = goToSlide - 1
+                } else {
                     newGoToSlide = goToSlide + 1
                 }
                 setGoToSlide(newGoToSlide)
             }
-            console.log(goToSlide)
-        }, 5000)
+            console.log(goToSlide) */
+        }, 10000)
     }, [goToSlide])
 
     return (
         <div
-            style={{ width: props.width, height: props.height, margin: props.margin }}
+            className ="shadow-xl h-[100%] w-[100%]"
         >
             <Carousel
                 slides={cards}
