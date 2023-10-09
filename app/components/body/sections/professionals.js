@@ -7,12 +7,12 @@ import ProfesionalsCard from '../../card'
 import { Divider } from '@nextui-org/react'
 import Carroussel from '../../carussel'
 import { v4 as uuidv4 } from 'uuid'
-import Waves from './waves'
+import image1 from '@/assets/images/juanito.png'
 
 const ProfesionalsArray = [
 
     {
-        srcRute: '../../../../assets/images/juanito.png',
+        srcRute: image1,
         name: 'Dr. Juan Carlos Benavides Solarte',
         specialty: 'Cirujano Dentista',
         specialist: 'Ortodoncia y Ortopedia Bucomaxilofacial',
@@ -28,7 +28,7 @@ const ProfesionalsArray = [
 
     },
     {
-        srcRute: '../../../../assets/images/juanito.png',
+        srcRute: image1,
         name: 'Dr. Rodolfo Zamora',
         specialty: 'Especialista titulado',
         specialist: ' -',
@@ -41,7 +41,7 @@ const ProfesionalsArray = [
 
     },
     {
-        srcRute: '../../../../assets/images/juanito.png',
+        srcRute: image1,
         name: 'Dr. José Ignacio Iturra Marín',
         specialty: 'Cirujano Dentista',
         specialist: '-',
@@ -55,7 +55,7 @@ const ProfesionalsArray = [
 
     },
     {
-        srcRute: '../../../../assets/images/juanito.png',
+        srcRute: image1,
         name: 'Dr. Juan Carlos Benavides Solarte',
         specialty: 'Cirujano Dentista',
         specialist: 'Ortodoncia y Ortopedia Bucomaxilofacial',
@@ -72,7 +72,7 @@ const ProfesionalsArray = [
     },
 
     {
-        srcRute: '../../../../assets/images/juanito.png',
+        srcRute: image1,
         name: 'Dra. Nataly Veas Cortés',
         specialty: 'Cirujano Dentista',
         specialist: 'Periodoncia',
@@ -84,36 +84,64 @@ const ProfesionalsArray = [
         ]
 
     }
-
-]
-
-const slides = [
-    // eslint-disable-next-line react/jsx-key
-    {
-        key: uuidv4(),
-        content: <ProfesionalsCard alt="0" Profesional={ProfesionalsArray[0]}/>
-    },
-    {
-        key: uuidv4(),
-        content: <ProfesionalsCard alt="1" Profesional={ProfesionalsArray[1]}/>
-    },
-    {
-        key: uuidv4(),
-        content: <ProfesionalsCard alt="2" Profesional={ProfesionalsArray[2]}/>
-    },
-    {
-        key: uuidv4(),
-        content: <ProfesionalsCard alt="3" Profesional={ProfesionalsArray[3]}/>
-    },
-    {
-        key: uuidv4(),
-        content: <ProfesionalsCard alt="4" Profesional={ProfesionalsArray[4]}/>
-    }
 ]
 
 export default function Profesionals () {
+    const [timer, setTimer] = useState(null)
+    const [goToSlide, setGoToSlide] = useState(null)
+    const slides = [
+        // eslint-disable-next-line react/jsx-key
+        {
+            key: uuidv4(),
+            content: <ProfesionalsCard alt="0" Profesional={ProfesionalsArray[0]}
+                timer={timer}
+                setTimer={setTimer}
+
+            />
+        },
+        {
+            key: uuidv4(),
+            content: <ProfesionalsCard alt="1" Profesional={ProfesionalsArray[1]} timer={timer}
+                setTimer={setTimer}
+            />
+        },
+        {
+            key: uuidv4(),
+            content: <ProfesionalsCard alt="2" Profesional={ProfesionalsArray[2]} timer={timer}
+                setTimer={setTimer}
+            />
+        },
+        {
+            key: uuidv4(),
+            content: <ProfesionalsCard alt="3" Profesional={ProfesionalsArray[3]} timer={timer}
+                setTimer={setTimer}
+            />
+        },
+        {
+            key: uuidv4(),
+            content: <ProfesionalsCard alt="4" Profesional={ProfesionalsArray[4]} timer={timer}
+                setTimer={setTimer}
+            />
+        }
+    ]
+
+    useEffect(() => {
+        setTimer(setInterval(() => {
+            setGoToSlide(goToSlide + 1)
+        }, 10000))
+    }, [])
+    useEffect(() => {
+        if (timer) {
+            clearInterval(timer)
+            setTimer(setInterval(() => {
+                setGoToSlide(goToSlide + 1)
+            }, 10000))
+        }
+    }
+
+    , [goToSlide])
     return (
-        <section id='Profesionales' className='bg-white h-[800px] sm:h-[1000px] flex flex-col items items-center justify-center'>
+        <section id='Profesionales' className='bg-primary-150 h-[800px] sm:h-[1000px] flex flex-col items items-center justify-center'>
             <Carroussel
                 cards={slides}
                 offset={2}
@@ -121,6 +149,10 @@ export default function Profesionals () {
                 autoPlay={true}
                 animationConfig={ 'tension: 120, friction: 14' }
                 showNavigation ={false}
+                timer={timer}
+                setTimer={setTimer}
+                goToSlide={goToSlide}
+                setGoToSlide={setGoToSlide}
             />
         </section>
 

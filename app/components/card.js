@@ -4,9 +4,16 @@ import { Divider, Button, Card } from '@nextui-org/react'
 import ReactCardFlip from 'react-card-flip'
 
 export default function ProfesionalsCard (props) {
-    const { Profesional } = props
+    const { Profesional, timer } = props
     const [isFlipped, setIsFlipped] = useState(false)
-    const flipCard = () => setIsFlipped(!isFlipped)
+    const flipCard = () => {
+        console.log(isFlipped)
+        if (!isFlipped && timer) {
+            clearInterval(timer)
+        }
+        setIsFlipped(!isFlipped)
+    }
+
     useEffect(() => {
         setInterval(() => {
             if (isFlipped) {
@@ -25,9 +32,9 @@ export default function ProfesionalsCard (props) {
                                     <div className='flex flex-col items-center gap-5'>
                                         <div className='w-4/12 sm:w-6/12 '>
                                             <Image
-                                                /* src={Profesional ? Profesional.srcRute : null} */
-                                                width={'100%'}
-                                                height={'100%'}
+                                                src={Profesional ? Profesional.srcRute : null}
+                                                width={'50%'}
+                                                height={'50%'}
                                                 className='rounded-full shadow-lg'
                                             />
                                         </div>

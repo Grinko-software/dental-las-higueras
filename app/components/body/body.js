@@ -8,11 +8,10 @@ import Profesionals from './sections/professionals'
 import Waves from './sections/waves'
 export default function Body () {
     return (
-        <main className='flex h-full flex-col !scroll-smooth bg-white'>
+        <main className='flex h-full flex-col !scroll-smooth'>
             <Home/>
-            <Waves/>
+            <Waves color='#faf8f4' bg='to-primary-150'/>
             <About/>
-
             <Profesionals/>
             <Contact/>
             <Shedule/>
