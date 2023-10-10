@@ -9,7 +9,7 @@ export default function Shedule () {
                 </div>
             </div>
             <section className="fade-in w-full flex-1">
-                <iframe src='https://agendamiento.reservo.cl/makereserva/agenda/Z0oY80v0S0BIDB8J4q66S6X5D542IS' className="w-full h-full min-h-[35rem]"></iframe>
+                <iframe src='https://agendamiento.reservo.cl/makereserva/agenda/U0RAIjE0L0K4EK1y4B66qWj5R462EL' className="w-full h-full min-h-[35rem]"></iframe>
             </section>
         </section>
 
