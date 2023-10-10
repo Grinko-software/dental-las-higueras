@@ -8,8 +8,8 @@ import { Divider } from '@nextui-org/react'
 import Carroussel from '../../carussel'
 import { v4 as uuidv4 } from 'uuid'
 import { useViewport } from 'react-viewport-hooks'
-import juanImage from '@/assets/images/juanito.png'
-import joseImage from '@/assets/images/jose.jpeg'
+import juanImage from '@/assets/images/juanito2.png'
+import joseImage from '@/assets/images/jose2.jpeg'
 import defaultImage from '@/assets/images/image2.jpeg'
 
 const ProfesionalsArray = [
