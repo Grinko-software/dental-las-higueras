@@ -148,7 +148,7 @@ export default function Profesionals () {
                     setGoToSlide={setGoToSlide}
                 />
                 : <div>
-                    <div>
+                    <div className='flex flex-col justify-items-center'>
                         <h1 className="w-full  text-4xl lg:text-7xl font-[600]">Profesionales</h1>
                         <Divider className='w-12/12 bg-slate-800 rounded-xl'></Divider>
                     </div>

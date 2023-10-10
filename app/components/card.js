@@ -54,15 +54,15 @@ export default function ProfesionalsCard (props) {
                     </Card>
                     <Card className="w-[16rem] h-[26rem] sm:w-[26rem] sm:h-[40rem] backdrop-blur-xl shadow-xl bg-primary-600/2 border rounded-2xl border-gray-200 flex flex-col items items-center " >
                         <div className="w-[16rem] h-[26rem] sm:w-[26rem] sm:h-[40rem] flex-col sm:mx-10 text-white bg-slate-800">
-                            <div className='items-center z-20 gap-12 sm:gap-2 mx-2 sm:mx-12 '>
-                                <div className='flex flex-col items-center gap-4 sm:gap-10'>
-                                    <div className="flex flex-col gap-1">
-                                        <h3 className="font-bold text-white text-foreground/90 text-lg sm:text-2xl mt-5">{Profesional.name}</h3>
+                            <div className='flex flex-col items items-center justify-items-center z-20  sm:gap-2 mx-2 sm:mx-12 '>
+                                <div className='flex flex-col items-center gap-4 sm:mb-4 sm:gap-10'>
+                                    <div className="flex flex-col sm:gap-4">
+                                        <h3 className="font-bold text-white text-foreground/90 text-lg sm:text-2xl sm:mt-5">{Profesional.name}</h3>
                                         <Divider className='bg-white/40 h-0.5 rounded-sm'></Divider>
                                         <p className="text-xs font-light ">{Profesional.university}</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-col items-center gap-2">
+                                <div className="flex flex-col items-center sm:gap-4">
                                     <p className="text-lg font-bold text-white text-foreground/80">Experiencia Laboral</p>
                                     <Divider className='w-10/12'></Divider>
                                     <div className="flex flex-col justify-between list-disc gap-1 sm:gap-4 mb-4">
@@ -75,7 +75,7 @@ export default function ProfesionalsCard (props) {
                                             : null}
                                     </div>
                                 </div>
-                                <Button className="bg-primary-600 font-bold text-white font-2xl" variant="shadow" onClick={flipCard}>Información General</Button>
+                                <Button className="bg-primary-600 font-bold self-center text-white font-2xl" variant="shadow" onClick={flipCard}>Información General</Button>
                             </div>
                         </div>
                     </Card>
