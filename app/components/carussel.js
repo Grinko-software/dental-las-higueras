@@ -1,30 +1,52 @@
-import Carousel from 'react-spring-3d-carousel'
-import { useState, useEffect } from 'react'
-import { config } from 'react-spring'
+import React, { useState, useEffect } from 'react'
+import { Carousel } from 'primereact/carousel'
+import ProfesionalsCard from './card'
 
-export default function Carroussel (props) {
-    const { goToSlide, setGoToSlide } = props
-    const table = props.cards.map((element, index) => {
-        return { ...element, onClick: () => setGoToSlide(index) }
-    })
+export default function Carroussel ({ items }) {
+    const [itemsCarousel, setItemsCarousel] = useState([])
+    const responsiveOptions = [
+        {
+            breakpoint: '1199px',
+            numVisible: 1,
+            numScroll: 1
+        },
+        {
+            breakpoint: '991px',
+            numVisible: 2,
+            numScroll: 1
+        },
+        {
+            breakpoint: '767px',
+            numVisible: 1,
+            numScroll: 1
+        }
+    ]
 
-    const [offsetRadius, setOffsetRadius] = useState(2)
-    const [showArrows, setShowArrows] = useState(false)
-    const [cards] = useState(table)
     useEffect(() => {
-        setOffsetRadius(props.offset)
-        setShowArrows(props.showArrows)
-    }, [props.offset, props.showArrows])
+        if (items) {
+            setItemsCarousel(items)
+        }
+    }, [])
+
+    const TemplateItem = (item) => {
+        return (
+            <div key={1} className="py-5 px-3  flex justify-center">
+                <ProfesionalsCard alt="0" Profesional={item}></ProfesionalsCard>
+            </div>
+        )
+    }
+
     return (
-        <div
-            className ="shadow-xl h-full w-full"
-        >
-            <Carousel
-                slides={cards}
-                goToSlide={goToSlide}
-                offsetRadius={offsetRadius}
-                showNavigation={showArrows}
-                animationConfig={config.gentle}
+        <div className="w-full px-40">
+            <Carousel value={itemsCarousel}
+                numScroll={1}
+                numVisible={3}
+                circular
+                showNavigators={true}
+                showIndicators={true}
+                responsiveOptions={responsiveOptions}
+                autoplayInterval={3000}
+                itemTemplate={TemplateItem}
             />
         </div>
     )

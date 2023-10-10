@@ -137,6 +137,7 @@ export default function Profesionals () {
             {parseInt(useView) > 640
                 ? <Carroussel
                     cards={slides}
+                    items={ProfesionalsArray}
                     timer={timer}
                     setTimer={setTimer}
                     goToSlide={goToSlide}
