@@ -76,18 +76,21 @@ export default function Header () {
                 </NavbarContent>
                 <NavbarMenu className='to-primary-150 mt-[2rem]'>
                     {menuItems.map((item, index) => (
-                        <NavbarMenuItem onClick={() => {
-                            setSection(item)
-                            setIsMenuOpen(false)
-                        }} key={`${item}-${index}`}
-                        // to-primary-150 data-open="false"
-                        className='to-primary-150  text-primary-700'>
+                        <NavbarMenuItem
+
+                            key={`${item}-${index}`}
+                            // to-primary-150 data-open="false"
+                            className='to-primary-150  text-primary-700'>
                             <Link
                                 color={
                                     index === 2 ? 'primary' : index === menuItems.length - 1 ? '' : ''
                                 }
                                 className="w-full cursor-pointer"
                                 size="lg"
+                                onClick={() => {
+                                    setSection(item)
+                                    setIsMenuOpen(false)
+                                }}
 
                             >
                                 <div className='text-2xl text-primary-600 hover:text-primary-500 w-full p-2 pb-3'>
