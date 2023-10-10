@@ -8,7 +8,7 @@ export default function Home () {
     const { section, setSection } = useGlobalStore(({ section, setSection }) => ({ section, setSection }))
     return (
         <section id='Inicio' className='mt-[2rem] h-full lg:mt-[6rem] mx-auto xl:mx-[5rem]'>
-            <div className="w-full h-auto px-5 lg:px-0 max-w-screen-1xl  grid grid-cols-1 lg:grid-cols-2">
+            <div className="w-full h-auto px-5 lg:px-0 max-w-screen-1xl  grid grid-cols-1 lg:grid-cols-2 space-x-10 md:space-x-0">
                 <div className='h-auto flex flex-col items-center lg:items-stretch '>
                     <div className="py-6 px-12 sm:py-12 sm:px-0 fade-in-left">
                         <div className="relative py-3 sm:max-w-xl sm:mx-auto">

@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import localFont from 'next/font/local'
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from '@nextui-org/react'
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Divider } from '@nextui-org/react'
 import Image from 'next/image'
 import logo from '@/assets/images/logo.png'
 import Button from '@/ui/button'
@@ -11,6 +11,7 @@ const myFont = localFont({ src: '../../../fonts/nunitoSans.ttf' })
 export default function Header () {
     const { section, setSection } = useGlobalStore(({ section, setSection }) => ({ section, setSection }))
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    // eslint-disable-next-line no-unused-vars
     const [useView, setUseView] = useState(null)
     const { vw/* , vh */ } = useViewport()
     const menuItems = [
@@ -32,32 +33,33 @@ export default function Header () {
     return (
         <header
             style={myFont.style}
-            className="sticky z-20 top-0 h-auto bg-primary-100 text-black p-4 fade-in">
+            className="sticky z-20 top-0 h-auto bg-primary-100 text-black p-2 fade-in shadow-2xl">
             <Navbar
-                className='bg-primary-100 py-[2rem]'
+                className='bg-primary-100 py-[1rem]'
                 maxWidth={'xl'}
                 onMenuOpenChange={setIsMenuOpen}
+                isMenuOpen={isMenuOpen}
             >
                 <NavbarContent>
                     <NavbarMenuToggle
                         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-                        className="sm:hidden"
-                        onClick={() => { setSection('Inicio') }}
+                        className="lg:hidden"
+                        // onClick={() => { setSection(null) }}
                     />
                     <NavbarBrand
-
-                        className={`${parseInt(useView) < 640 ? 'flex flex-col items-center' : 'flex'}`}
+                        // className={`${parseInt(useView) < 640 ? 'flex flex-col items-center' : 'flex'}`}
+                        className='flex flex-col items-center lg:items-start'
                     >
                         <Image
                             src={logo}
                             width={200}
                             height={200}
                             alt="Logo Dental Las Higueras"
-                            className='pb-5'
+                            className='py-2 m-autoo w-auto min-w-[10rem] h-[7rem]'
                         />
                     </NavbarBrand>
                 </NavbarContent>
-                <NavbarContent className="hidden sm:flex gap-8" justify="end">
+                <NavbarContent className="hidden lg:flex " justify="end">
                     {menuItems.map((item, index) => (
                         <NavbarItem key={index}>
                             <Button title={item} className ={`${section === item
@@ -72,11 +74,14 @@ export default function Header () {
                     ))}
 
                 </NavbarContent>
-                <NavbarMenu className='to-primary-150 mt-[5rem]'>
+                <NavbarMenu className='to-primary-150 mt-[2rem]'>
                     {menuItems.map((item, index) => (
-                        <NavbarMenuItem key={`${item}-${index}`}
-                            // to-primary-150 data-open="false"
-                            className='to-primary-150  text-primary-700'>
+                        <NavbarMenuItem onClick={() => {
+                            setSection(item)
+                            setIsMenuOpen(false)
+                        }} key={`${item}-${index}`}
+                        // to-primary-150 data-open="false"
+                        className='to-primary-150  text-primary-700'>
                             <Link
                                 color={
                                     index === 2 ? 'primary' : index === menuItems.length - 1 ? '' : ''
@@ -84,14 +89,15 @@ export default function Header () {
                                 className="w-full cursor-pointer"
                                 size="lg"
 
-                                onClick={() => {
-                                    setSection(item)
-                                    setIsMenuOpen(null)
-                                }}
-
                             >
-                                {item}
+                                <div className='text-2xl text-primary-600 hover:text-primary-500 w-full p-2 pb-3'>
+                                    {item}
+                                </div>
                             </Link>
+                            {index !== menuItems.length - 1
+                                ? <Divider className=''/>
+                                : null
+                            }
                         </NavbarMenuItem>
                     ))}
                 </NavbarMenu>
