@@ -137,11 +137,6 @@ export default function Profesionals () {
             {parseInt(useView) > 640
                 ? <Carroussel
                     cards={slides}
-                    offset={1}
-                    showArrows={false}
-                    autoPlay={true}
-                    animationConfig={ 'tension: 120, friction: 14' }
-                    showNavigation ={false}
                     timer={timer}
                     setTimer={setTimer}
                     goToSlide={goToSlide}
