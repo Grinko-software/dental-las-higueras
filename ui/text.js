@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const names = [
-    'Empatia', 'Inovacion', 'Calidad'
+    'Empatia', 'Innovación', 'Calidad'
 ]
 
 export default function ShuffleText () {

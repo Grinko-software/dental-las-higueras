@@ -3,7 +3,7 @@ import About from './sections/about'
 import Contact from './sections/contact'
 import Home from './sections/home'
 import Shedule from './sections/shedule'
-/* import Profesionals from './sections/professionals' */
+import Profesionals from './sections/professionals'
 import Waves from './sections/waves'
 export default function Body () {
     return (
@@ -11,7 +11,7 @@ export default function Body () {
             <Home/>
             <Waves color='#faf8f4' bg='to-primary-150'/>
             <About/>
-            {/*    <Profesionals/> */}
+            <Profesionals/>
             <Contact/>
             <Shedule/>
         </main>

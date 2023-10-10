@@ -31,7 +31,7 @@ const CardItem = ({ title, imageSrc }) => {
 }
 
 const names = [
-    'Empatia', 'Inovacion', 'Calidad'
+    'Empatia', 'Innovación', 'Calidad'
 ]
 const especialidades = [
     { name: 'Odontolgía General', image: 'https://bfesteticadental.com/wp-content/uploads/2020/01/Odontopediatria-Caracas-Venezuela-BF-Estetica-Dental-1024x683.jpg' },
@@ -75,7 +75,7 @@ export default function About () {
                             </h1>
                             <text className='text-sm lg:text-xl text-primary-700 '>
                                 Un equipo que cuenta con los mejores profesionales, preocupados por brindar la mejor atención, para atender las necesidades de nuestros pacientes,
-                                <span className='font-bold'> cuidando de ti y te tu sonrisa. </span>
+                                <span className='font-bold'> cuidando de ti y de tu sonrisa. </span><br/>
                                 Nace de la necesidad de reunir en un sólo lugar las complejas especialidades que comprende la odontología.
                                 Caracterizándonos por la calidad en nuestros tratamientos y en brindar una buena atención.
                             </text>
@@ -90,7 +90,7 @@ export default function About () {
                                 VISION
                             </h1>
                             <text className='text-sm lg:text-xl text-primary-700 '>
-                                Queremos que nos conozcan por nuestro profesionalismo, por el buen trato, destacándonos por ser los mejores profesionales a vuestros servicios en la Región.
+                                Queremos que nos conozcan por nuestro profesionalismo, por el buen trato, destacándonos por ser los mejores profesionales a vuestro servicio en la Región.
                             </text>
                         </div>
                         <Divider className='w-full lg:w-8/12'/>
