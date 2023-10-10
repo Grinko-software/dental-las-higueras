@@ -25,7 +25,7 @@ export default function ProfesionalsCard (props) {
         <div>
             {Profesional != null
                 ? <ReactCardFlip isFlipped={isFlipped} flipSpeedBackToFront={0.5} flipSpeedFrontToBack={0.5} flipDirection="horizontal">
-                    <div style={{ zIndex: isFlipped ? 1 : 0 }}>
+                    <div style={{ display: isFlipped ? 'none' : null }}>
                         <Card className="w-[16rem] h-[26rem] sm:w-[26rem] sm:h-[40rem] backdrop-blur-xl shadow-xl  border rounded-2xl border-gray-200 flex flex-col items items-center justify-center ">
                             <div className='flex flex-col flex-1 m-10 gap-2'>
                                 <div className='flex flex-col flex-1 items-center gap-2'>
@@ -49,7 +49,7 @@ export default function ProfesionalsCard (props) {
                             </div>
                         </Card>
                     </div>
-                    <div style={{ zIndex: !isFlipped ? 1 : 0 }}>
+                    <div style={{ display: !isFlipped ? 'none' : null }}>
                         <Card className="w-[16rem] h-[26rem] sm:w-[26rem] sm:h-[40rem] backdrop-blur-xl shadow-xl bg-slate-800 border rounded-2xl border-gray-200 flex flex-col items items-center justify-center">
                             <div className="flex flex-col flex-1 m-4 sm:m-10 gap-2 text-white ">
                                 <div className='flex flex-col flex-1'>
