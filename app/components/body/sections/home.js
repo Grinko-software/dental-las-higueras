@@ -30,13 +30,13 @@ export default function Home () {
                 <div className=" fade-in-up h-auto pr-0  flex flex-col items-center lg:items-stretch  lg:grid lg:grid-rows-1 lg:pr-10">
                     <div className="row-span-1">
                         <div className="w-full grid gap-y-[1rem] text-center lg:text-left lg:justify-left">
-                            <h1 className="w-full   text-bold  text-3xl lg:text-7xl font-[600]">
+                            <h1 className="w-full  text-primary-700 text-bold  text-3xl lg:text-7xl font-[600]">
                                     Descubre la excelencia en cuidado dental en
                             </h1>
                             <h1 className='w-full  text-bold  text-3xl lg:text-7xl font-[600] text-primary-600'>
                             Clínica Dental Las Higueras
                             </h1>
-                            <h5 className="w-full  text-bold  text-xl font-[350]">
+                            <h5 className="w-full  text-bold  text-xl font-[350] text-primary-700 ">
                                     Nuestro compromiso es garantizar tu salud bucal y devolverte la confianza en tu sonrisa.
                             </h5>
                         </div>
@@ -48,7 +48,7 @@ export default function Home () {
 
                              bg-primary-600 rounded-[100px] break-all hover:bg-primary-500 text-primary-100  px-5 py-5
                                            text-base font-[600]  transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:border-primary-50
-                                       focus:ring-primary-300 dark:bg-primary-800 dark:text-primary-50  dark:placeholder-primary-50  dark:hover:border-primary-50
+                                       focus:ring-primary-300 dark:bg-primary-600 dark:text-primary-100  dark:placeholder-primary-50  dark:hover:border-primary-50
                                          dark:hover:bg-primary-700  dark:hover:text-primary-50 dark:hover:ring-primary-300 dark:hover:focus:fill-white'>
 
                         </Button>

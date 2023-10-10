@@ -62,7 +62,7 @@ export default function About () {
                 <div className="fade-in-up h-auto m-4 lg:mx-28 flex flex-col lg:flex-row lg:items-center lg:pr-10">
                     <div className="grid gap-10 lg:w-10/12 text-center lg:text-left lg:justify-center">
                         <div className='w-full lg:w-10/12 fade-in flex flex-row items-center'>
-                            <h1 className="text-bold fade-in text-3xl  lg:text-6xl font-[600]" >
+                            <h1 className="text-bold fade-in text-3xl  lg:text-6xl font-[600] text-primary-700 " >
                                 Atendiendo a nuestros pacientes con
                                 <span className='font-extrabold fade-in text-3xl lg:text-5xl text-primary-600'>
                                     {' ' + currentName.toUpperCase()}
@@ -73,7 +73,7 @@ export default function About () {
                             <h1 className="font-bold fade-in text-xl  lg:text-2xl text-primary-600">
                             QUIENES SOMOS
                             </h1>
-                            <text className='text-sm lg:text-xl'>
+                            <text className='text-sm lg:text-xl text-primary-700 '>
                                 Un equipo que cuenta con los mejores profesionales, preocupados por brindar la mejor atención, para atender las necesidades de nuestros pacientes,
                                 <span className='font-bold'> cuidando de ti y te tu sonrisa. </span>
                                 Nace de la necesidad de reunir en un sólo lugar las complejas especialidades que comprende la odontología.
@@ -82,14 +82,14 @@ export default function About () {
                             <h1 className="font-bold fade-in text-xl  lg:text-2xl text-primary-600">
                                 NUESTRA MISION
                             </h1>
-                            <text className='text-sm lg:text-xl'>
+                            <text className='text-sm lg:text-xl text-primary-700 '>
                                 Buscamos conocer perfectamente cada caso y las complicaciones de cada uno, y así poder ofrecer una atención personalizada e individualizada, alcanzando la excelencia en nuestra labor.
                             </text>
 
                             <h1 className="font-bold fade-in text-xl  lg:text-2xl text-primary-600">
                                 VISION
                             </h1>
-                            <text className='text-sm lg:text-xl'>
+                            <text className='text-sm lg:text-xl text-primary-700 '>
                                 Queremos que nos conozcan por nuestro profesionalismo, por el buen trato, destacándonos por ser los mejores profesionales a vuestros servicios en la Región.
                             </text>
                         </div>
