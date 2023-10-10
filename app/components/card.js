@@ -17,63 +17,67 @@ export default function ProfesionalsCard (props) {
     useEffect(() => {
         setInterval(() => {
             if (isFlipped) {
-                flipCard()
+                // flipCard()
             }
-        }, 8000)
+        }, 15000)
     }, [isFlipped])
     return (
         <div>
             {Profesional != null
-                ? <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-                    <Card className="w-[16rem] h-[26rem] sm:w-[26rem] sm:h-[40rem] backdrop-blur-xl shadow-xl  border rounded-2xl border-gray-200 flex flex-col items items-center justify-center ">
-                        <div className='flex flex-col flex-1 m-10 gap-2'>
-                            <div className='flex flex-col flex-1 items-center gap-2'>
-                                <div className='w-4/12 sm:w-6/12 rounded-full '>
-                                    <Image
-                                        src={Profesional ? Profesional.srcRute : null}
-                                        width={'100%'}
-                                        height={'50%'}
-                                        className='rounded-full shadow-lg'
-                                    />
-                                </div>
-                                <h5 className="text-lg sm:text-3xl text-center font-medium text-gray-900">{Profesional.name}</h5>
-                                <span className="text-lg sm:text-2xl font-medium text-gray-500 dark:text-gray-400 ">{Profesional.specialty}</span>
-                                <Divider className='w-8/12 bg-slate-500 rounded-xl'></Divider>
-                            </div>
-                            <div className='flex flex-col items-center gap-1'>
-                                <span className="text-sm sm:text-xl  text-gray-950 ">Especialidad</span>
-                                <span className="text-center text-xs sm:text-xl  text-gray-500 mb-4">{Profesional.specialist}</span>
-                            </div>
-                            <Button className="bg-primary-600 m-10 font-bold text-white font-2xl" variant="shadow" onClick={flipCard}>Experiencia Laboral</Button>
-                        </div>
-                    </Card>
-                    <Card className="w-[16rem] h-[26rem] sm:w-[26rem] sm:h-[40rem] backdrop-blur-xl shadow-xl bg-slate-800 border rounded-2xl border-gray-200 flex flex-col items items-center justify-center">
-                        <div className="flex flex-col flex-1 m-4 sm:m-10 gap-2 text-white ">
-                            <div className='flex flex-col flex-1'>
-                                <div className='flex flex-col items-center gap-4 sm:mb-4 sm:gap-10'>
-                                    <div className="flex flex-col sm:gap-4">
-                                        <h3 className="font-bold text-white text-foreground/90 text-base sm:text-2xl sm:mt-5">{Profesional.name}</h3>
-                                        <Divider className='bg-white/40 h-0.5 rounded-sm'></Divider>
-                                        <p className="text-xs font-light ">{Profesional.university}</p>
+                ? <ReactCardFlip isFlipped={isFlipped} flipSpeedBackToFront={0.5} flipSpeedFrontToBack={0.5} flipDirection="horizontal">
+                    <div style={{ zIndex: isFlipped ? 1 : 0 }}>
+                        <Card className="w-[16rem] h-[26rem] sm:w-[26rem] sm:h-[40rem] backdrop-blur-xl shadow-xl  border rounded-2xl border-gray-200 flex flex-col items items-center justify-center ">
+                            <div className='flex flex-col flex-1 m-10 gap-2'>
+                                <div className='flex flex-col flex-1 items-center gap-2'>
+                                    <div className='w-4/12 sm:w-6/12 rounded-full '>
+                                        <Image
+                                            src={Profesional ? Profesional.srcRute : null}
+                                            width={'100%'}
+                                            height={'50%'}
+                                            className='rounded-full shadow-lg'
+                                        />
                                     </div>
+                                    <h5 className="text-lg sm:text-3xl text-center font-medium text-gray-900">{Profesional.name}</h5>
+                                    <span className="text-lg sm:text-2xl font-medium text-gray-500 dark:text-gray-400 ">{Profesional.specialty}</span>
+                                    <Divider className='w-8/12 bg-slate-500 rounded-xl'></Divider>
                                 </div>
-                                <div className="flex flex-col items-center sm:gap-4">
-                                    <p className="text-base font-bold text-white text-foreground/80">Experiencia Laboral</p>
-                                    <Divider className='w-10/12'></Divider>
-                                    <div className="flex flex-col justify-between list-disc gap-0.5 sm:gap-2 mb-4">
-                                        {Profesional.experience
-                                            ? Profesional.experience.map(
-                                                (item) => (
-                                                    <li key={item} className=" text-xs sm:text-sm font-light">{item}</li>
+                                <div className='flex flex-col items-center gap-1'>
+                                    <span className="text-sm sm:text-xl  text-gray-950 ">Especialidad</span>
+                                    <span className="text-center text-xs sm:text-xl  text-gray-500 mb-4">{Profesional.specialist}</span>
+                                </div>
+                                <Button className="bg-primary-600 m-10 font-bold text-white font-2xl" variant="shadow" onClick={flipCard}>Experiencia Laboral</Button>
+                            </div>
+                        </Card>
+                    </div>
+                    <div style={{ zIndex: !isFlipped ? 1 : 0 }}>
+                        <Card className="w-[16rem] h-[26rem] sm:w-[26rem] sm:h-[40rem] backdrop-blur-xl shadow-xl bg-slate-800 border rounded-2xl border-gray-200 flex flex-col items items-center justify-center">
+                            <div className="flex flex-col flex-1 m-4 sm:m-10 gap-2 text-white ">
+                                <div className='flex flex-col flex-1'>
+                                    <div className='flex flex-col items-center gap-4 sm:mb-4 sm:gap-10'>
+                                        <div className="flex flex-col sm:gap-4">
+                                            <h3 className="font-bold text-white text-foreground/90 text-base sm:text-2xl sm:mt-5">{Profesional.name}</h3>
+                                            <Divider className='bg-white/40 h-0.5 rounded-sm'></Divider>
+                                            <p className="text-xs font-light ">{Profesional.university}</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col items-center sm:gap-4">
+                                        <p className="text-base font-bold text-white text-foreground/80">Experiencia Laboral</p>
+                                        <Divider className='w-10/12'></Divider>
+                                        <div className="flex flex-col justify-between list-disc gap-0.5 sm:gap-2 mb-4">
+                                            {Profesional.experience
+                                                ? Profesional.experience.map(
+                                                    (item) => (
+                                                        <li key={item} className=" text-xs sm:text-sm font-light">{item}</li>
+                                                    )
                                                 )
-                                            )
-                                            : null}
+                                                : null}
+                                        </div>
                                     </div>
                                 </div>
+                                <Button className="bg-primary-600 mb-10 font-bold text-white font-2xl" variant="shadow" onClick={flipCard}>Información General</Button>
                             </div>
-                            <Button className="bg-primary-600 mb-10 font-bold text-white font-2xl" variant="shadow" onClick={flipCard}>Información General</Button>
-                        </div>
-                    </Card>
+                        </Card>
+                    </div>
                 </ReactCardFlip>
                 : <div></div>}
         </div>
