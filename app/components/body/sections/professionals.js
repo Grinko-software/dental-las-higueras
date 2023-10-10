@@ -7,12 +7,15 @@ import ProfesionalsCard from '../../card'
 import { Divider } from '@nextui-org/react'
 import Carroussel from '../../carussel'
 import { v4 as uuidv4 } from 'uuid'
-import image1 from '@/assets/images/juanito.png'
+import { useViewport } from 'react-viewport-hooks'
+import juanImage from '@/assets/images/juanito.png'
+import joseImage from '@/assets/images/jose.jpeg'
+import defaultImage from '@/assets/images/image2.jpeg'
 
 const ProfesionalsArray = [
 
     {
-        srcRute: image1,
+        srcRute: juanImage,
         name: 'Dr. Juan Carlos Benavides Solarte',
         specialty: 'Cirujano Dentista',
         specialist: 'Ortodoncia y Ortopedia Bucomaxilofacial',
@@ -28,7 +31,7 @@ const ProfesionalsArray = [
 
     },
     {
-        srcRute: image1,
+        srcRute: defaultImage,
         name: 'Dr. Rodolfo Zamora',
         specialty: 'Especialista titulado',
         specialist: ' -',
@@ -41,38 +44,20 @@ const ProfesionalsArray = [
 
     },
     {
-        srcRute: image1,
+        srcRute: joseImage,
         name: 'Dr. José Ignacio Iturra Marín',
         specialty: 'Cirujano Dentista',
         specialist: '-',
         university: 'Universidad de Antofagasta (2021)',
         experience: [
             'Cirujano Dentista con experiencia en atención primaria y urgencias (Hospital Carlos Cisternas, Calama)',
-            'Desarrollo y Jefe de unidad Móvil en “Programa de salud Bucal” de JUNAEB y Odontopediatría (2022 a 2023)',
             'Desarrollo y Jefe de unidad Móvil en “Programa de salud Bucal” de JUNAEB y Odontopediatría (2022 a 2023)'
-
-        ]
-
-    },
-    {
-        srcRute: image1,
-        name: 'Dr. Juan Carlos Benavides Solarte',
-        specialty: 'Cirujano Dentista',
-        specialist: 'Ortodoncia y Ortopedia Bucomaxilofacial',
-        university: 'Universidad Antonio Narino, Colombia Reconocido por Minist. Relaciones Exteriores el 22 de Octubre de 2009',
-        experience: [
-            'Cirujano Dentista en el área privada con más de 12 años de experiencia',
-            'Especialidad de Ortodoncia y O.M.B, Universidad Católica de Uruguay',
-            'Maestría en Anclaje Esqueletal Instituto Mondelli de Ortodoncia, Brasil',
-            'Residencia en Microtornillos Extraalveolares',
-            'Certificación en Invisaling',
-            'Actualización en ortodoncia y vías aéreas Universidad de New York'
         ]
 
     },
 
     {
-        srcRute: image1,
+        srcRute: defaultImage,
         name: 'Dra. Nataly Veas Cortés',
         specialty: 'Cirujano Dentista',
         specialist: 'Periodoncia',
@@ -89,6 +74,8 @@ const ProfesionalsArray = [
 export default function Profesionals () {
     const [timer, setTimer] = useState(null)
     const [goToSlide, setGoToSlide] = useState(null)
+    const { vw/* , vh */ } = useViewport()
+    const [useView, setUseView] = useState(null)
     const slides = [
         // eslint-disable-next-line react/jsx-key
         {
@@ -137,23 +124,43 @@ export default function Profesionals () {
                 setGoToSlide(goToSlide + 1)
             }, 10000))
         }
-    }
+    },
+
+    useEffect(() => {
+        setUseView(vw)
+    }, [vw])
 
     , [goToSlide])
     return (
-        <section id='Profesionales' className='bg-primary-150 h-[800px] sm:h-[1000px] flex flex-col items items-center justify-center'>
-            <Carroussel
-                cards={slides}
-                offset={2}
-                showArrows={false}
-                autoPlay={true}
-                animationConfig={ 'tension: 120, friction: 14' }
-                showNavigation ={false}
-                timer={timer}
-                setTimer={setTimer}
-                goToSlide={goToSlide}
-                setGoToSlide={setGoToSlide}
-            />
+        <section id='Profesionales' className='bg-primary-150 h-full  sm:h-[1000px] flex flex-col items items-center justify-center'>
+
+            {parseInt(useView) > 640
+                ? <Carroussel
+                    cards={slides}
+                    offset={1}
+                    showArrows={false}
+                    autoPlay={true}
+                    animationConfig={ 'tension: 120, friction: 14' }
+                    showNavigation ={false}
+                    timer={timer}
+                    setTimer={setTimer}
+                    goToSlide={goToSlide}
+                    setGoToSlide={setGoToSlide}
+                />
+                : <div>
+                    <div>
+                        <h1 className="w-full  text-4xl lg:text-7xl font-[600]">Profesionales</h1>
+                        <Divider className='w-12/12 bg-slate-800 rounded-xl'></Divider>
+                    </div>
+                    <div className='h-full w-full grid grid-cols-1 justify-items-center gap-2'>
+                        {ProfesionalsArray
+                            ? ProfesionalsArray.map(
+                                (item) => (
+                                    <ProfesionalsCard Profesional={item}></ProfesionalsCard>
+                                )
+                            )
+                            : null}
+                    </div></div>}
         </section>
 
     )
