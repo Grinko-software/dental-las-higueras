@@ -1,7 +1,7 @@
 export default function Footer () {
     return (
-        <footer>
-            <div className="bg-primary-100 mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <footer className="bg-primary-100">
+            <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <hr className="my-6 border-gray-200 sm:mx-auto  lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-gray-500 sm:text-cente">© 2023 <a href="https://dentallashigueras.cl/" className="hover:underline"> Dental las higueras</a>.
