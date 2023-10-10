@@ -3,8 +3,8 @@ import { Card, CardHeader, CardBody, Divider, Image as ImageReact } from '@nextu
 import Image from 'next/image'
 import Img2 from '@/assets/images/image2.jpeg'
 import useGlobalStore from '@/store/globalStore'
-import { useState, useEffect } from 'react'
-
+import { useState, useEffect, use } from 'react'
+import { callbackFadeLeft, callbackFadeRight, callbackFadeUp } from '../services'
 const CardItem = ({ title, imageSrc }) => {
     const texts = title.split(' ')
     return <section className='h-full'>
@@ -34,7 +34,7 @@ const names = [
     'Empatia', 'Innovación', 'Calidad'
 ]
 const especialidades = [
-    { name: 'Odontolgía General', image: 'https://bfesteticadental.com/wp-content/uploads/2020/01/Odontopediatria-Caracas-Venezuela-BF-Estetica-Dental-1024x683.jpg' },
+    { name: 'Odontología General', image: 'https://bfesteticadental.com/wp-content/uploads/2020/01/Odontopediatria-Caracas-Venezuela-BF-Estetica-Dental-1024x683.jpg' },
     { name: 'Ortodoncia', image: 'https://www.clinicadelvalle.es/wp-content/uploads/2018/09/Verdades-sobre-los-brackets-1080x627.jpg' },
     { name: 'Periodoncia', image: 'https://doctoraminerva.es/wp-content/uploads/en-que-consiste-la-periodoncia-y-que-alcance-tiene-portada.jpg' },
     { name: 'Endodoncia', image: 'https://clinicajuliansaiz.com/wp-content/uploads/2021/03/que-es-una-endodoncia-clinica-dental-julian-saiz-ppal.jpg' },
@@ -50,19 +50,39 @@ export default function About () {
         const newName = names[index]
         if (newName === currentName) { setRandomName() } else { setCurrentName(newName) }
     }
-
     useEffect(() => {
         setTimeout(() => {
             setRandomName()
         }, 4000)
     }, [currentName])
+    useEffect(() => {
+        const observerLeft = new IntersectionObserver(callbackFadeLeft)
+        const observerRight = new IntersectionObserver(callbackFadeRight)
+        const observerUp = new IntersectionObserver(callbackFadeUp)
+        const targetsLeft = document.querySelectorAll('.scroll-left')
+        const targetsRight = document.querySelectorAll('.scroll-right')
+        const targetsUp = document.querySelectorAll('.scroll-up')
+        targetsLeft.forEach(function (target) {
+            target.classList.add('opacity-0')
+            observerLeft.observe(target)
+        })
+        targetsRight.forEach(function (target) {
+            target.classList.add('opacity-0')
+            observerRight.observe(target)
+        })
+        targetsUp.forEach(function (target) {
+            target.classList.add('opacity-0')
+            observerUp.observe(target)
+        })
+    }, [])
     return (
         <section className='bg-primary-150 h-full  flex flex-col items items-center'>
-            <div id='Nosotros' className="w-full h-auto  gap-10 flex flex-col items items-center">
-                <div className="fade-in-up h-auto m-4 lg:mx-28 flex flex-col lg:flex-row lg:items-center lg:pr-10">
-                    <div className="grid gap-10 lg:w-10/12 text-center lg:text-left lg:justify-center">
-                        <div className='w-full lg:w-10/12 fade-in flex flex-row items-center'>
-                            <h1 className="text-bold fade-in text-3xl  lg:text-6xl font-[600] text-primary-700 " >
+
+            <div id='Nosotros' className="w-full h-auto  gap-10 flex flex-col items items-center ">
+                <div className="reveal h-auto m-4 lg:mx-28 flex flex-col lg:flex-row lg:items-center lg:pr-10">
+                    <div className="grid gap-10 lg:w-10/12 text-center lg:text-left lg:justify-center scroll-left">
+                        <div className='w-full lg:w-10/12 flex flex-row items-center'>
+                            <h1 className="text-bold text-3xl  lg:text-6xl font-[600] text-primary-700 " >
                                 Atendiendo a nuestros pacientes con
                                 <span className='font-extrabold fade-in text-3xl lg:text-5xl text-primary-600'>
                                     {' ' + currentName.toUpperCase()}
@@ -95,7 +115,7 @@ export default function About () {
                         </div>
                         <Divider className='w-full lg:w-8/12'/>
                     </div>
-                    <div className='h-full flex flex-col items-center lg:items-stretch lg:grid lg:grid-col-2 '>
+                    <div className='h-full flex flex-col items-center lg:items-stretch lg:grid lg:grid-col-2 scroll-right'>
                         <div className="py-6 px-12 sm:py-12 sm:px-0 fade-in-rigth">
                             <div className="relative py-3 sm:max-w-xl sm:mx-auto">
                                 <div className="flex flex-col items-center justify-center py-2">
@@ -115,7 +135,7 @@ export default function About () {
                     </div>
                 </div>
             </div>
-            <div className='grid grid-cols-1 p-2 xs:md:grid-cols-2 md:grid-cols-2 md:py-10 md:w-fit xl:grid-cols-3 gap-5 items-center justify-center'>
+            <div className='scroll-up grid grid-cols-1 p-2 xs:md:grid-cols-2 md:grid-cols-2 md:py-10 md:w-fit xl:grid-cols-3 gap-5 items-center justify-center'>
                 {
                     especialidades?.map((item) => {
                         return <CardItem key={item.name} title={item.name} imageSrc={item.image} />

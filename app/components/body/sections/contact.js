@@ -1,4 +1,7 @@
+'use client'
+import { useEffect } from 'react'
 import { Card, CardBody } from '@nextui-org/react'
+import { callbackFadeLeft } from '../services'
 
 const ClockIcon = ({ className }) => {
     return <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -45,10 +48,18 @@ const CardItem = ({ icon, title, children }) => {
 }
 
 export default function Contact () {
+    useEffect(() => {
+        const observer = new IntersectionObserver(callbackFadeLeft)
+        const targets = document.querySelectorAll('.scroll-left')
+        targets.forEach(function (target) {
+            target.classList.add('opacity-0')
+            observer.observe(target)
+        })
+    }, [])
     return (
         <section id='Contacto' className="flex flex-1 flex-col min-h-[50rem] bg-cover  items items-center justify-center bg-[url('https://www.clinicatrei.com/wp-content/uploads/2022/10/dientes-desgastados.jpg')]">
             <div className="gap-5 flex flex-wrap flex-row h-full items p-5 mx-20 opacity-75">
-                <div className='flex-1 max-h-full'>
+                <div className='scroll-left flex-1 max-h-full'>
                     <CardItem
                         title={'CONTACTO'}
                         icon={<TelephoneIcon size={64} className={'w-20 h-20'}/>}>
@@ -56,7 +67,7 @@ export default function Contact () {
                         <p>{'(+56)975527994'}</p>
                     </CardItem>
                 </div>
-                <div className='flex-1 max-h-full'>
+                <div className='scroll-left flex-1 max-h-full'>
                     <CardItem
                         title={'HORARIO'}
                         icon={<ClockIcon className={'w-20 h-20'}/>}>
@@ -64,7 +75,7 @@ export default function Contact () {
                         <p>09:00 a 19:00 hrs.</p>
                     </CardItem>
                 </div>
-                <div className='flex-1 max-h-full'>
+                <div className='scroll-left flex-1 max-h-full'>
                     <CardItem
                         title={'UBICACIÓN'}
                         icon={<LocationIcon className={'w-20 h-20'}/>}>

@@ -11,6 +11,7 @@ import { useViewport } from 'react-viewport-hooks'
 import juanImage from '@/assets/images/juanito2.png'
 import joseImage from '@/assets/images/jose2.jpeg'
 import defaultImage from '@/assets/images/image2.jpeg'
+import { callbackFadeIn, callbackFadeUp } from '../services'
 
 const ProfesionalsArray = [
 
@@ -125,14 +126,20 @@ export default function Profesionals () {
             }, 10000))
         }
     },
-
+    [goToSlide])
     useEffect(() => {
         setUseView(vw)
     }, [vw])
-
-    , [goToSlide])
+    useEffect(() => {
+        const observerIn = new IntersectionObserver(callbackFadeUp)
+        const targetsIn = document.querySelectorAll('.scroll-in')
+        targetsIn.forEach(function (target) {
+            target.classList.add('opacity-0')
+            observerIn.observe(target)
+        })
+    }, [])
     return (
-        <section id='Profesionales' className='bg-primary-150 h-full  sm:h-[1000px] flex flex-col items items-center justify-center'>
+        <section id='Profesionales' className='scroll-in bg-primary-150 h-full  sm:h-[1000px] flex flex-col items items-center justify-center '>
 
             {parseInt(useView) > 640
                 ? <Carroussel
