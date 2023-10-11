@@ -51,6 +51,12 @@ export default function Header () {
                         className='flex flex-col items-center lg:items-start'
                     >
                         <Image
+                            onClick={() => {
+                                setSection(null)
+                                setTimeout(() => {
+                                    setSection('Inicio')
+                                }, 100)
+                            }}
                             src={logo}
                             width={200}
                             height={200}
@@ -67,7 +73,13 @@ export default function Header () {
                                 : 'bg-primary-transparent rounded-[100px] hover:bg-primary-500 text-primary-600  w-full px-5 py-5 text-center  text-lg font-[600]  transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:border-primary-50    focus:ring-primary-300 dark:bg-primary-800 dark:text-primary-50  dark:placeholder-primary-50  dark:hover:border-primary-50  dark:hover:bg-primary-700  dark:hover:text-primary-50 dark:hover:ring-primary-300 dark:hover:focus:fill-white'}
                                 h-12
                                 `}
-                            onClick={() => { setSection(item) }}
+                            onClick={() => {
+                                setSection(null)
+                                setTimeout(() => {
+                                    setSection(item)
+                                }, 100)
+                                setSection(item)
+                            }}
                             >
                             </Button>
                         </NavbarItem>
@@ -88,7 +100,10 @@ export default function Header () {
                                 className="w-full cursor-pointer"
                                 size="lg"
                                 onClick={() => {
-                                    setSection(item)
+                                    setSection(null)
+                                    setTimeout(() => {
+                                        setSection(item)
+                                    }, 100)
                                     setIsMenuOpen(false)
                                 }}
 
