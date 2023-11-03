@@ -13,12 +13,6 @@ export default function RootLayout ({ children }) {
         <html lang='en' suppressHydrationWarning>
             <head>
                 <title>dental las higueras</title>
-                <meta name="google-site-verification" content="KgShFYNgKOm6QKQ5eNLxJwNjXxsoonzqn8CWWCtRvuo" />
-                <noscript>
-                    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FJWB7K9"
-                        height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}>
-                    </iframe>
-                </noscript>
             </head>
             {/* className={inter.className + ''} */}
             <body style={myFont.style}>
