@@ -12,7 +12,9 @@ export default function RootLayout ({ children }) {
     return (
         <html lang='en' suppressHydrationWarning>
             <head>
-                <title>Dental Las Higueras</title>
+                <title>dental las higueras</title>
+                <meta name="google-site-verification" content="KgShFYNgKOm6QKQ5eNLxJwNjXxsoonzqn8CWWCtRvuo" />
+
             </head>
             {/* className={inter.className + ''} */}
             <body style={myFont.style}>
