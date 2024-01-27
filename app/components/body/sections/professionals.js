@@ -9,8 +9,10 @@ import Carroussel from '../../carussel'
 import { v4 as uuidv4 } from 'uuid'
 import { useViewport } from 'react-viewport-hooks'
 import juanImage from '@/assets/images/juanito2.png'
-import joseImage from '@/assets/images/jose2.jpeg'
+import millerlandy from '@/assets/images/millerlandy.png'
 import defaultImage from '@/assets/images/image2.jpeg'
+import rodolfoZamora from '@/assets/images/rodolfo-zamora.jpeg'
+import iturra from '@/assets/images/iturra.png'
 import { callbackFadeIn, callbackFadeUp } from '../services'
 
 const ProfesionalsArray = [
@@ -32,7 +34,7 @@ const ProfesionalsArray = [
 
     },
     {
-        srcRute: defaultImage,
+        srcRute: rodolfoZamora,
         name: 'Dr. Rodolfo Zamora',
         specialty: 'Especialista titulado',
         specialist: ' -',
@@ -45,7 +47,7 @@ const ProfesionalsArray = [
 
     },
     {
-        srcRute: joseImage,
+        srcRute: iturra,
         name: 'Dr. José Ignacio Iturra Marín',
         specialty: 'Cirujano Dentista',
         specialist: '-',
@@ -57,6 +59,18 @@ const ProfesionalsArray = [
 
     },
 
+    {
+        srcRute: millerlandy,
+        name: 'Dra. Millerlandy chavarro lozano',
+        specialty: 'Cirujano Dentista',
+        specialist: 'Endodoncia',
+        university: 'Titulado de la Universidad antonio Nariño, Colombia, reconocido por mins de relaciones exteriores con el N• 1113/2017',
+        experience: [
+            'Cirujano dentista en el área pública y privada desde el 2013 ',
+            'Endodoncista en el área privada desde 2021, manejo de urgencias endodonticas, endodoncia mecanizada y cirugía apical'
+        ]
+
+    },
     {
         srcRute: defaultImage,
         name: 'Dra. Nataly Veas Cortés',
@@ -106,6 +120,11 @@ export default function Profesionals () {
             />
         },
         {
+            key: uuidv4(),
+            content: <ProfesionalsCard alt="4" Profesional={ProfesionalsArray[4]} timer={timer}
+                setTimer={setTimer}
+            />
+        }, {
             key: uuidv4(),
             content: <ProfesionalsCard alt="4" Profesional={ProfesionalsArray[4]} timer={timer}
                 setTimer={setTimer}

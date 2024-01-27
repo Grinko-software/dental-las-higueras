@@ -29,12 +29,12 @@ export default function ProfesionalsCard (props) {
                         <Card className="w-[16rem] h-[26rem] sm:w-[26rem] sm:h-[40rem] backdrop-blur-xl shadow-xl  border rounded-2xl border-gray-200 flex flex-col items items-center justify-center ">
                             <div className='flex flex-col flex-1 m-10 gap-2'>
                                 <div className='flex flex-col flex-1 items-center gap-2'>
-                                    <div className='w-4/12 sm:w-6/12 rounded-full '>
+                                    <div className='w-4/12 sm:w-6/12 rounded-full object-fill '>
                                         <Image
                                             src={Profesional ? Profesional.srcRute : null}
                                             width={'100%'}
                                             height={'50%'}
-                                            className='rounded-full shadow-lg'
+                                            className='rounded-full shadow-lg  object-fill  '
                                         />
                                     </div>
                                     <h5 className="text-lg sm:text-3xl text-center font-medium text-gray-900">{Profesional.name}</h5>

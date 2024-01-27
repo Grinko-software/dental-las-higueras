@@ -13,6 +13,9 @@ export default function Home () {
                         height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}>
                     </iframe>
                 </noscript>
+                <script>
+
+                </script>
             </Head>
             <Header/>
             <Body/>
