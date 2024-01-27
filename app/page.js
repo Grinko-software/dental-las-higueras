@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 import Header from './components/header/header'
 import Body from './components/body/body'
@@ -14,6 +15,18 @@ export default function Home () {
                     </iframe>
                 </noscript>
                 <script>
+                    {
+                        (!function ($_x, _s, id) {
+                            let js
+                            const fjs = $_x.getElementsByTagName(_s)[0]
+                            if (!$_x.getElementById(id)) {
+                                js = $_x.createElement(_s)
+                                js.id = id
+                                js.src = '//platform.docplanner.com/js/widget.js'
+                                fjs.parentNode.insertBefore(js, fjs)
+                            }
+                        })
+                    }
 
                 </script>
             </Head>
