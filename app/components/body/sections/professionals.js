@@ -37,7 +37,7 @@ const ProfesionalsArray = [
         srcRute: rodolfoZamora,
         name: 'Dr. Rodolfo Zamora',
         specialty: 'Especialista titulado',
-        specialist: ' -',
+        specialist: 'Implantología',
         university: 'certificado por la Universidad del Desarrollo y la Clínica Alemana de Santiago.  Titulado con alto honor de la Universidad Mayor de Santiago.',
         experience: [
             'Docente Titular de pregrado del Departamento de Cirugia Oral.',
