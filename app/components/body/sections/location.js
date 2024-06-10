@@ -61,12 +61,12 @@ export default function Location () {
                 </div>
             </div>
 
-            <Tabs aria-label="Dynamic tabs" items={ITEMS} className='fade-in'>
+            <Tabs aria-label="Dynamic tabs" items={ITEMS}>
                 {(item) => (
-                    <Tab key={item.key} title={item.label} className='w-full flex-1 fade-in flex flex-col items-center space-y-3'>
+                    <Tab key={item.key} title={item.label} className='w-full flex-1'>
                         <section className='mx-5 fade-in flex flex-col  lg:items-center space-y-3'>
                             <h4 className="font-normal text-xl  lg:text-2xl text-primary-600">
-                                <span className='font-bold'> Dirrección: </span> {item.adress}
+                                <span className='font-bold'> Dirección: </span> {item.adress}
                             </h4>
                             <h4 className="font-normal text-xl  lg:text-2xl text-primary-600">
                                 <span className='font-bold'> Contacto: </span> {item.phone}
