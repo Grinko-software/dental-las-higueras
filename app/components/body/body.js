@@ -4,6 +4,7 @@ import Contact from './sections/contact'
 import Home from './sections/home'
 import Shedule from './sections/shedule'
 import Profesionals from './sections/professionals'
+import Location from './sections/location'
 import Waves from './sections/waves'
 import { useEffect } from 'react'
 
@@ -30,6 +31,7 @@ export default function Body () {
             <About/>
             <Profesionals/>
             <Contact/>
+            <Location/>
             <Shedule/>
         </main>
     )

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import ProfesionalsCard from '../../card'
 import { Divider } from '@nextui-org/react'
-import Carroussel from '../../carussel'
+import Carroussel from '../../../../ui/carousel/carussel'
 import { v4 as uuidv4 } from 'uuid'
 import { useViewport } from 'react-viewport-hooks'
 import juanImage from '@/assets/images/professionals/juan.jpg'
