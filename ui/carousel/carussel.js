@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Carousel } from 'primereact/carousel'
-import ProfesionalsCard from './card'
+import ProfesionalsCard from '../../app/components/card'
 
 export default function Carroussel ({ items }) {
     const [itemsCarousel, setItemsCarousel] = useState([])
