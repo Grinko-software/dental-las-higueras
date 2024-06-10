@@ -11,7 +11,7 @@ import { useViewport } from 'react-viewport-hooks'
 import juanImage from '@/assets/images/juanito2.png'
 import millerlandy from '@/assets/images/millerlandy.png'
 import defaultImage from '@/assets/images/image2.jpeg'
-import rodolfoZamora from '@/assets/images/rodolfo-zamora.jpeg'
+import rodolfoZamora from '@/assets/images/professionals/rodolfo-zamora.jpeg'
 import iturra from '@/assets/images/iturra.png'
 import { callbackFadeIn, callbackFadeUp } from '../services'
 
