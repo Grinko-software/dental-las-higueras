@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Divider, Button, Card } from '@nextui-org/react'
+import { Divider, Button, Card, CardHeader, CardBody, CardFooter } from '@nextui-org/react'
 import ReactCardFlip from 'react-card-flip'
 
 export default function ProfesionalsCard (props) {
@@ -26,17 +26,15 @@ export default function ProfesionalsCard (props) {
             {Profesional != null
                 ? <ReactCardFlip isFlipped={isFlipped} flipSpeedBackToFront={0.5} flipSpeedFrontToBack={0.5} flipDirection="horizontal">
                     <div style={{ display: isFlipped ? 'none' : null }}>
-                        <Card className="w-[16rem] h-[26rem] sm:w-[26rem] sm:h-[40rem] backdrop-blur-xl shadow-xl  border rounded-2xl border-gray-200 flex flex-col items items-center justify-center ">
-                            <div className='flex flex-col flex-1 m-10 gap-2'>
+                        <Card className="w-[16rem] h-[26rem] sm:w-[26rem] sm:h-[40rem] gap-8 backdrop-blur-xl shadow-xl  border rounded-2xl border-gray-200 grid grid-row-3 items items-center justify-center ">
+                            <CardHeader className='items items-center mt-6 justify-center' >
+                                <Image
+                                    src={Profesional ? Profesional.srcRute : null}
+                                    className='rounded-full  shadow-lg h-[18rem] w-[18rem]'
+                                />
+                            </CardHeader>
+                            <CardBody>
                                 <div className='flex flex-col flex-1 items-center gap-2'>
-                                    <div className='w-4/12 sm:w-6/12 rounded-full object-fill '>
-                                        <Image
-                                            src={Profesional ? Profesional.srcRute : null}
-                                            width={'100%'}
-                                            height={'50%'}
-                                            className='rounded-full shadow-lg  object-fill  '
-                                        />
-                                    </div>
                                     <h5 className="text-lg sm:text-3xl text-center font-medium text-gray-900">{Profesional.name}</h5>
                                     <span className="text-lg sm:text-2xl font-medium text-gray-500 dark:text-gray-400 ">{Profesional.specialty}</span>
                                     <Divider className='w-8/12 bg-slate-500 rounded-xl'></Divider>
@@ -45,8 +43,10 @@ export default function ProfesionalsCard (props) {
                                     <span className="text-sm sm:text-xl  text-gray-950 ">Especialidad</span>
                                     <span className="text-center text-xs sm:text-xl  text-gray-500 mb-4">{Profesional.specialist}</span>
                                 </div>
+                            </CardBody>
+                            <CardFooter className='items items-center justify-center'>
                                 <Button className="bg-primary-600 m-10 font-bold text-white font-2xl" variant="shadow" onClick={flipCard}>Experiencia Laboral</Button>
-                            </div>
+                            </CardFooter>
                         </Card>
                     </div>
                     <div style={{ display: !isFlipped ? 'none' : null }}>
