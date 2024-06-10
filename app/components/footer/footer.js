@@ -8,7 +8,7 @@ export default function Footer () {
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-gray-500 sm:text-cente">© {today()} <a href="https://dentallashigueras.cl/" className="hover:underline"> Dental las higueras</a>.
                     </span>
-                    <span className="text-sm text-gray-500 sm:text-cente"><a href="https://grinko.cl/" className="hover:underline">© {today()} by Grinko</a>.
+                    <span className="text-sm text-gray-500 sm:text-cente"><a href="https://isdone.tech/" className="hover:underline">© {today()} by IsDone</a>.
                     </span>
                     <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
                         <a href="https://maps.app.goo.gl/ivgtx9TWLnd9G5d17" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-red-400">
