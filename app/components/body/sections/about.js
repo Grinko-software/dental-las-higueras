@@ -17,7 +17,7 @@ const CardItem = ({ title, imageSrc }) => {
     const texts = title.split(' ')
     return (
         <section className='h-full flex justify-center items-center'>
-            <Card className="relative col-span-12 sm:col-span-4 h-[200px] max-w-[30rem] shadow-2xl">
+            <Card className="relative col-span-12 sm:col-span-4 h-[300px] max-w-[30rem] shadow-2xl">
                 <CardHeader className="absolute z-10 top-1 flex-col !items-start">
                     <div className='rounded-2xl'>
                         {texts?.map((t) => (
@@ -34,6 +34,7 @@ const CardItem = ({ title, imageSrc }) => {
                     <Image
                         alt={'Speciality'}
                         src={imageSrc}
+                        className=' object-fill  object-left-bottoms'
                     />
                 </div>
             </Card>
