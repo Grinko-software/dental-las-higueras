@@ -7,42 +7,23 @@ import { Tab, Tabs } from '@nextui-org/react'
 import BranchHiguera1 from '@/assets/images/branch/branch_higueras_1.JPG'
 import BranchHigueras2 from '@/assets/images/branch/branch_higueras_2.JPG'
 import BranchHigueras3 from '@/assets/images/branch/branch_higueras_3.JPG'
-import BranchHigueras4 from '@/assets/images/branch/branch_higueras_4.JPG'
-import BranchHigueras5 from '@/assets/images/branch/branch_higueras_5.JPG'
-import BranchHigueras6 from '@/assets/images/branch/branch_higueras_6.JPG'
-import BranchHigueras7 from '@/assets/images/branch/branch_higueras_7.JPG'
-import BranchHigueras8 from '@/assets/images/branch/branch_higueras_8.JPG'
-import BranchHigueras9 from '@/assets/images/branch/branch_higueras_9.JPG'
-import BranchHigueras10 from '@/assets/images/branch/branch_higueras_10.JPG'
-
 import BranchDowntown from '@/assets/images/branch/branch_downtown_1.JPG'
 import BranchDowntown2 from '@/assets/images/branch/branch_downtown_2.JPG'
 import BranchDowntown3 from '@/assets/images/branch/branch_downtown_3.JPG'
 import BranchDowntown4 from '@/assets/images/branch/branch_downtown_4.JPG'
-import BranchDowntown5 from '@/assets/images/branch/branch_downtown_5.JPG'
-import BranchDowntown6 from '@/assets/images/branch/branch_downtown_6.JPG'
 
 const OPTIONS = {}
 const IMAGES_1 = [
     { image: BranchHiguera1 },
     { image: BranchHigueras2 },
-    { image: BranchHigueras3 },
-    { image: BranchHigueras4 },
-    { image: BranchHigueras5 },
-    { image: BranchHigueras6 },
-    { image: BranchHigueras7 },
-    { image: BranchHigueras8 },
-    { image: BranchHigueras9 },
-    { image: BranchHigueras10 }
+    { image: BranchHigueras3 }
 ]
 
 const IMAGES_2 = [
     { image: BranchDowntown },
     { image: BranchDowntown2 },
     { image: BranchDowntown3 },
-    { image: BranchDowntown4 },
-    { image: BranchDowntown5 },
-    { image: BranchDowntown6 }
+    { image: BranchDowntown4 }
 ]
 const ITEMS = [
     {
