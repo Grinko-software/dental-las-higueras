@@ -60,7 +60,7 @@ export default function Location () {
             <Tabs aria-label="Dynamic tabs" items={ITEMS}>
                 {(item) => (
                     <Tab key={item.key} title={item.label} className='w-full flex-1'>
-                        <section className='mx-5 fade-in flex flex-col  lg:items-center space-y-3'>
+                        <section className='mx-5  flex flex-col  lg:items-center space-y-3'>
                             <h4 className="font-normal text-xl  lg:text-2xl text-primary-600">
                                 <span className='font-bold'> Dirección: </span> {item.adress}
                             </h4>
@@ -68,7 +68,7 @@ export default function Location () {
                                 <span className='font-bold'> Contacto: </span> {item.phone}
                             </h4>
                         </section>
-                        <section className="scroll-up px-[1rem] lg:px-[13rem] fade-in  xlg:px-[23rem] h-[20rem] flex-1 fade-in">
+                        <section className="scroll-up px-[1rem] lg:px-[13rem]   xlg:px-[23rem] h-[20rem] flex-1 ">
                             <EmblaCarousel slides={item.images} options={OPTIONS} />
                         </section>
                     </Tab>
