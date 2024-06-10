@@ -8,11 +8,17 @@ import { Divider } from '@nextui-org/react'
 import Carroussel from '../../carussel'
 import { v4 as uuidv4 } from 'uuid'
 import { useViewport } from 'react-viewport-hooks'
-import juanImage from '@/assets/images/juanito2.png'
-import millerlandy from '@/assets/images/millerlandy.png'
+import juanImage from '@/assets/images/professionals/juan.jpg'
+import millerlandy from '@/assets/images/professionals/Millerlandy.jpg'
 import defaultImage from '@/assets/images/image2.jpeg'
 import rodolfoZamora from '@/assets/images/professionals/rodolfo-zamora.jpeg'
-import iturra from '@/assets/images/iturra.png'
+import iturra from '@/assets/images/professionals/josé.jpg'
+import Nataly from '@/assets/images/professionals/Nataly.jpg'
+import Sandra from '@/assets/images/professionals/Sandra.jpg'
+import Manary from '@/assets/images/professionals/Manary.jpg'
+import Matías from '@/assets/images/professionals/Matías.jpg'
+import Beatriz from '@/assets/images/professionals/Beatriz.jpg'
+
 import { callbackFadeIn, callbackFadeUp } from '../services'
 
 const ProfesionalsArray = [
@@ -49,7 +55,7 @@ const ProfesionalsArray = [
     {
         srcRute: iturra,
         name: 'Dr. José Ignacio Iturra Marín',
-        specialty: 'Cirujano Dentista',
+        specialty: 'Odontología General',
         specialist: '-',
         university: 'Universidad de Antofagasta (2021)',
         experience: [
@@ -58,7 +64,6 @@ const ProfesionalsArray = [
         ]
 
     },
-
     {
         srcRute: millerlandy,
         name: 'Dra. Millerlandy chavarro lozano',
@@ -72,7 +77,7 @@ const ProfesionalsArray = [
 
     },
     {
-        srcRute: defaultImage,
+        srcRute: Nataly,
         name: 'Dra. Nataly Veas Cortés',
         specialty: 'Cirujano Dentista',
         specialist: 'Periodoncia',
@@ -83,6 +88,46 @@ const ProfesionalsArray = [
             'Diplomado Ortodoncia-Periodoncia, Universidad del Desarrollo'
         ]
 
+    },
+    {
+        srcRute: Sandra,
+        name: 'Dra. Sandra Benavides',
+        specialty: 'Ortodoncista',
+        specialist: '-',
+        university: '',
+        experience: [
+            ''
+        ]
+    },
+    {
+        srcRute: Manary,
+        name: 'Dra. Manary Murcia',
+        specialty: 'Odontología General',
+        specialist: 'Armonización Facial',
+        university: '',
+        experience: [
+            ''
+        ]
+    },
+    {
+        srcRute: Matías,
+        name: 'Dra. Matías Veas',
+        specialty: 'Odontología General',
+        specialist: '-',
+        university: '',
+        experience: [
+            ''
+        ]
+    },
+    {
+        srcRute: Beatriz,
+        name: 'Dra. Beatriz Giraldo',
+        specialty: 'Odontología General',
+        specialist: '-',
+        university: '',
+        experience: [
+            ''
+        ]
     }
 ]
 
