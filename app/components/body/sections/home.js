@@ -10,9 +10,9 @@ export default function Home () {
         <section id='Inicio' className='mt-[2rem] h-full lg:mt-[6rem] mx-auto xl:mx-[5rem]'>
             <div className="w-full h-auto px-5 lg:px-0 max-w-screen-1xl  grid grid-cols-1 lg:grid-cols-2">
                 <div className='flex flex-col items-center lg:items-stretch '>
-                    <div className="py-6 px-12 sm:py-12 sm:px-0 fade-in-left">
+                    <div className="py-6 px-12 sm:py-12 sm:px-0 fade-in-left ">
                         <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-                            <div className="flex flex-col items-center justify-center py-2">
+                            <div className="flex flex-col items-center justify-center py-2 ">
                                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-200 to-primary-600 shadow-2xl transform rotate-6 rounded-3xl"></div>
                                 <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-5">
                                     <Image

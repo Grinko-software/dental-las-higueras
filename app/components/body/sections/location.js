@@ -11,7 +11,7 @@ import BranchDowntown from '@/assets/images/branch/branch_downtown_1.JPG'
 import BranchDowntown2 from '@/assets/images/branch/branch_downtown_2.JPG'
 import BranchDowntown3 from '@/assets/images/branch/branch_downtown_3.JPG'
 import BranchDowntown4 from '@/assets/images/branch/branch_downtown_4.JPG'
-
+import BranchDowntown5 from '@/assets/images/branch/branch_downtown_5.JPG'
 const OPTIONS = {}
 const IMAGES_1 = [
     { image: BranchHiguera1 },
@@ -23,7 +23,8 @@ const IMAGES_2 = [
     { image: BranchDowntown },
     { image: BranchDowntown2 },
     { image: BranchDowntown3 },
-    { image: BranchDowntown4 }
+    { image: BranchDowntown4 },
+    { image: BranchDowntown5 }
 ]
 const ITEMS = [
     {
@@ -51,7 +52,7 @@ export default function Location () {
         })
     }, [])
     return (
-        <section id='Ubicacion' className="flex flex-1 flex-col bg-cover gap-6 items items-center justify-center mt-20">
+        <section id='Ubicacion' className="flex flex-1 flex-col bg-cover gap-6 items items-center justify-center mt-20 fade-in ">
             <div className="scroll-up h-full mx-5 flex flex-col items items-center">
                 <div className='fade-in flex flex-row'>
                     <h5 className="text-bold fade-in hover:shadow text-3xl items-start lg:text-6xl font-[600] text-primary-700" >
@@ -62,16 +63,16 @@ export default function Location () {
 
             <Tabs aria-label="Dynamic tabs" items={ITEMS} className='fade-in'>
                 {(item) => (
-                    <Tab key={item.key} title={item.label} className='w-full flex-1 flex flex-col items-center space-y-3'>
+                    <Tab key={item.key} title={item.label} className='w-full flex-1 fade-in flex flex-col items-center space-y-3'>
                         <section className='mx-5 fade-in flex flex-col  lg:items-center space-y-3'>
-                            <h4 className="font-normal fade-in text-xl  lg:text-2xl text-primary-600">
+                            <h4 className="font-normal text-xl  lg:text-2xl text-primary-600">
                                 <span className='font-bold'> Dirrección: </span> {item.adress}
                             </h4>
-                            <h4 className="font-normal fade-in text-xl  lg:text-2xl text-primary-600">
+                            <h4 className="font-normal text-xl  lg:text-2xl text-primary-600">
                                 <span className='font-bold'> Contacto: </span> {item.phone}
                             </h4>
                         </section>
-                        <section className="scroll-up px-[1rem] lg:px-[13rem] xlg:px-[23rem] h-[20rem] flex-1 fade-in">
+                        <section className="scroll-up px-[1rem] lg:px-[13rem] fade-in  xlg:px-[23rem] h-[20rem] flex-1 fade-in">
                             <EmblaCarousel slides={item.images} options={OPTIONS} />
                         </section>
                     </Tab>

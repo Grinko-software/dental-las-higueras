@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Card, CardHeader, CardBody, Divider } from '@nextui-org/react'
+import { Card, CardHeader, CardBody, Button, CardFooter, Divider } from '@nextui-org/react'
 import Image from 'next/image'
 import Img2 from '@/assets/images/image2.jpeg'
 /* Images specialyts */
@@ -11,32 +11,25 @@ import Speciality5 from '@/assets/images/speciality/5.jpg'
 import Speciality6 from '@/assets/images/speciality/6.jpg'
 
 import useGlobalStore from '@/store/globalStore'
-import { useState, useEffect, use } from 'react'
+import { useState, useEffect, use, lazy } from 'react'
 import { callbackFadeLeft, callbackFadeRight, callbackFadeUp } from '../services'
 const CardItem = ({ title, imageSrc }) => {
-    const texts = title.split(' ')
+    const texts = title.split('/')
     return (
-        <section className='h-full flex justify-center items-center'>
-            <Card className="relative col-span-12 sm:col-span-4 h-[300px] max-w-[30rem] shadow-2xl">
-                <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-                    <div className='rounded-2xl'>
-                        {texts?.map((t) => (
-                            <h4
-                                key={t}
-                                className='text-3xl font-sans font-bold text-gray-500 w-fit shadow-sm opacity-60 bg-white px-2'
-                            >
-                                {t}
-                            </h4>
-                        ))}
-                    </div>
-                </CardHeader>
-                <div className='flex justify-center items-center w-full h-full'>
-                    <Image
-                        alt={'Speciality'}
-                        src={imageSrc}
-                        className=' object-fill  object-left-bottoms'
-                    />
-                </div>
+        <section>
+            <Card isFooterBlurred = {true} className="sm:col-span-4 h-[500px] sm:w-[530px] w-[350px]">
+                <Image
+                    alt={'Speciality'}
+                    src={imageSrc}
+                    className="z-0 w-full h-full object-cover"
+                />
+                <CardFooter className=" h-[3rem] justify-center before:bg-white/20 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large  w-[calc(100%_-_8px)] shadow-small ml-1 z-10 bottom-1">
+                    {texts?.map((t) => (
+                        <>
+                            <span className='inline-block text-2xl font-extrabold text-white'>{t.toUpperCase()}</span>
+                        </>
+                    ))}
+                </CardFooter>
             </Card>
         </section>
     )
