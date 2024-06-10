@@ -10,8 +10,6 @@ import BranchHigueras3 from '@/assets/images/branch/branch_higueras_3.JPG'
 import BranchDowntown from '@/assets/images/branch/branch_downtown_1.JPG'
 import BranchDowntown2 from '@/assets/images/branch/branch_downtown_2.JPG'
 import BranchDowntown3 from '@/assets/images/branch/branch_downtown_3.JPG'
-import BranchDowntown4 from '@/assets/images/branch/branch_downtown_4.JPG'
-import BranchDowntown5 from '@/assets/images/branch/branch_downtown_5.JPG'
 const OPTIONS = {}
 const IMAGES_1 = [
     { image: BranchHiguera1 },
@@ -22,9 +20,7 @@ const IMAGES_1 = [
 const IMAGES_2 = [
     { image: BranchDowntown },
     { image: BranchDowntown2 },
-    { image: BranchDowntown3 },
-    { image: BranchDowntown4 },
-    { image: BranchDowntown5 }
+    { image: BranchDowntown3 }
 ]
 const ITEMS = [
     {
