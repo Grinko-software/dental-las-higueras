@@ -79,7 +79,10 @@ export default function Contact () {
                     <CardItem
                         title={'UBICACIÓN'}
                         icon={<LocationIcon className={'w-20 h-20'}/>}>
-                        Balmaceda 2195, Local 106 - Portal Las Higueras. La Serena, Chile.
+                        <ul className='list-disc'>
+                            <li>Balmaceda 2195, Local 106 - Portal Las Higueras. La Serena, Chile.</li>
+                            <li>Gregorio Cordovez 588, Local 106, Edificio Don Oscar, Centro de La Serena.</li>
+                        </ul >
                     </CardItem>
                 </div>
             </div>
