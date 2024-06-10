@@ -27,7 +27,7 @@ export default function ProfesionalsCard (props) {
             {Profesional != null
                 ? <ReactCardFlip isFlipped={isFlipped} flipSpeedBackToFront={0.5} flipSpeedFrontToBack={0.5} flipDirection="horizontal">
                     <div style={{ display: isFlipped ? 'none' : null }}>
-                        <Card className="w-[16rem] sm:w-[26rem] h-[40rem] gap-8 backdrop-blur-xl shadow-xl border rounded-2xl border-gray-200 grid grid-row-3 items-center justify-center">
+                        <Card className="w-[20rem]   sm:w-[26rem] h-[40rem] backdrop-blur-xl shadow-xl border rounded-2xl border-gray-200 grid grid-row-3 items-center justify-center">
                             <CardHeader className='flex justify-center items-center h-[20rem]'>
                                 <div className='relative w-[18rem] h-full'>
                                     <Image
@@ -55,8 +55,8 @@ export default function ProfesionalsCard (props) {
                         </Card>
                     </div>
                     <div style={{ display: !isFlipped ? 'none' : null }}>
-                        <Card className="w-[16rem] h-[26rem] sm:w-[26rem] sm:h-[40rem] backdrop-blur-xl shadow-xl bg-slate-800 border rounded-2xl border-gray-200 flex flex-col items-center justify-center">
-                            <div className="flex flex-col flex-1 m-4 sm:m-10 gap-2 text-white">
+                        <Card className="w-[20rem] sm:w-[26rem] h-[40rem]  backdrop-blur-xl shadow-xl bg-slate-800 border rounded-2xl border-gray-200 flex flex-col items-center justify-center">
+                            <div className="flex px-5  w-full flex-col flex-1 m-4 sm:m-10 gap-2 text-white">
                                 <div className='flex flex-col flex-1'>
                                     <div className='flex flex-col items-center gap-4 sm:mb-4 sm:gap-10'>
                                         <div className="flex flex-col sm:gap-4">

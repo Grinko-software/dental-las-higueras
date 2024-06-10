@@ -200,7 +200,7 @@ export default function Profesionals () {
         })
     }, [])
     return (
-        <section id='Profesionales' className='scroll-in bg-primary-150 h-full  sm:h-[1000px] flex flex-col items items-center justify-center '>
+        <section id='Profesionales' className='scroll-in h-full py-10 px-0 xlg:px-[10rem]  flex flex-col items items-center justify-center '>
 
             {parseInt(useView) > 640
                 ? <Carroussel
@@ -213,7 +213,7 @@ export default function Profesionals () {
                 />
                 : <div>
                     <div className='flex flex-col justify-items-center'>
-                        <h1 className="w-full  text-4xl lg:text-7xl font-[600]">Profesionales</h1>
+                        <h4 className="w-full  text-4xl lg:text-7xl font-[600]">Profesionales</h4>
                         <Divider className='w-12/12 bg-slate-800 rounded-xl'></Divider>
                     </div>
                     <div className='h-full w-full grid grid-cols-1 justify-items-center gap-2'>

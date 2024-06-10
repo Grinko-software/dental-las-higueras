@@ -21,10 +21,10 @@ export default function ShuffleText () {
 
     return (
         <div className='flex flex-row gap-2 text-justify'>
-            <h1 className="text-bold  text-2xl lg:text-7xl font-[600]" >Atendiendo a nuestros pacientes con</h1>
-            <h1 className='text-bold  text-2xl lg:text-7xl font-[600] text-primary-600'>
+            <h4 className="text-bold  text-2xl lg:text-7xl font-[600]" >Atendiendo a nuestros pacientes con</h4>
+            <h4 className='text-bold  text-2xl lg:text-7xl font-[600] text-primary-600'>
                 {currentName.toUpperCase()}
-            </h1>
+            </h4>
         </div>
     )
 }

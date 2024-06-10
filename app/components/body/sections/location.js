@@ -51,7 +51,7 @@ export default function Location () {
         })
     }, [])
     return (
-        <section id='Ubicacion' className="flex flex-1 flex-col bg-cover gap-6 items items-center justify-center h-[20rem] mt-20">
+        <section id='Ubicacion' className="flex flex-1 flex-col bg-cover gap-6 items items-center justify-center mt-20">
             <div className="scroll-up h-full mx-5 flex flex-col items items-center">
                 <div className='fade-in flex flex-row'>
                     <h5 className="text-bold fade-in hover:shadow text-3xl items-start lg:text-6xl font-[600] text-primary-700" >
@@ -62,16 +62,16 @@ export default function Location () {
 
             <Tabs aria-label="Dynamic tabs" items={ITEMS} className='fade-in'>
                 {(item) => (
-                    <Tab key={item.key} title={item.label} className='w-full flex-1'>
-                        <section className='fade-in items items-center justify-center flex flex-col'>
-                            <h1 className="font-normal fade-in text-xl  lg:text-2xl text-primary-600">
+                    <Tab key={item.key} title={item.label} className='w-full flex-1 flex flex-col items-center space-y-3'>
+                        <section className='mx-5 fade-in flex flex-col  lg:items-center space-y-3'>
+                            <h4 className="font-normal fade-in text-xl  lg:text-2xl text-primary-600">
                                 <span className='font-bold'> Dirrección: </span> {item.adress}
-                            </h1>
-                            <h1 className="font-normal fade-in text-xl  lg:text-2xl text-primary-600">
+                            </h4>
+                            <h4 className="font-normal fade-in text-xl  lg:text-2xl text-primary-600">
                                 <span className='font-bold'> Contacto: </span> {item.phone}
-                            </h1>
+                            </h4>
                         </section>
-                        <section className="scroll-up w-full flex-1 fade-in">
+                        <section className="scroll-up px-[1rem] lg:px-[13rem] xlg:px-[23rem] h-[20rem] flex-1 fade-in">
                             <EmblaCarousel slides={item.images} options={OPTIONS} />
                         </section>
                     </Tab>

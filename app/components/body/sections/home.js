@@ -30,9 +30,9 @@ export default function Home () {
                 <div className=" fade-in-up h-auto pr-0  flex flex-col items-center lg:items-stretch  lg:grid lg:grid-rows-1 lg:pr-10">
                     <div className="row-span-1">
                         <div className="w-full grid gap-y-[1rem] text-center lg:text-left lg:justify-left">
-                            <h1 className="w-full  text-primary-700 text-bold  text-3xl lg:text-7xl font-[600]">
+                            <h5 className="w-full  text-primary-700 text-bold  text-3xl lg:text-7xl font-[600]">
                                     Descubre la excelencia en cuidado dental en
-                            </h1>
+                            </h5>
                             <h1 className='w-full  text-bold  text-3xl lg:text-7xl font-[600] text-primary-600'>
                             Clínica Dental Las Higueras
                             </h1>
