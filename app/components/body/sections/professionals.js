@@ -1,7 +1,4 @@
-/* eslint-disable react/jsx-key */
-/* eslint-disable no-unused-vars */
 'use client'
-import useGlobalStore from '@/store/globalStore'
 import { useState, useEffect } from 'react'
 import ProfesionalsCard from '../../card'
 import { Divider } from '@nextui-org/react'
@@ -10,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { useViewport } from 'react-viewport-hooks'
 import juanImage from '@/assets/images/professionals/juan.jpg'
 import millerlandy from '@/assets/images/professionals/Millerlandy.jpg'
-import defaultImage from '@/assets/images/image2.jpeg'
+/* import defaultImage from '@/assets/images/image2.jpeg' */
 import rodolfoZamora from '@/assets/images/professionals/rodolfo-zamora.jpeg'
 import iturra from '@/assets/images/professionals/josé.jpg'
 import Nataly from '@/assets/images/professionals/Nataly.jpg'
@@ -19,7 +16,7 @@ import Manary from '@/assets/images/professionals/Manary.jpg'
 import Matías from '@/assets/images/professionals/Matías.jpg'
 import Beatriz from '@/assets/images/professionals/Beatriz.jpg'
 
-import { callbackFadeIn, callbackFadeUp } from '../services'
+import { /* callbackFadeIn */ callbackFadeUp } from '../services'
 
 const ProfesionalsArray = [
 
@@ -222,8 +219,8 @@ export default function Profesionals () {
                     <div className='h-full w-full grid grid-cols-1 justify-items-center gap-2'>
                         {ProfesionalsArray
                             ? ProfesionalsArray.map(
-                                (item) => (
-                                    <ProfesionalsCard Profesional={item}></ProfesionalsCard>
+                                (item, index) => (
+                                    <ProfesionalsCard key={index} Profesional={item}></ProfesionalsCard>
                                 )
                             )
                             : null}

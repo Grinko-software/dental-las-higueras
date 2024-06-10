@@ -34,7 +34,7 @@ export default function ProfesionalsCard (props) {
                                         alt={'Professionals'}
                                         src={Profesional ? Profesional.srcRute : null}
                                         className='rounded-full  shadow-lg object-cover object-top'
-                                        layout="fill"
+                                        fill
                                     />
                                 </div>
                             </CardHeader>
