@@ -9,10 +9,10 @@ import juanImage from '@/assets/images/professionals/juan.jpg'
 import millerlandy from '@/assets/images/professionals/Millerlandy.jpg'
 /* import defaultImage from '@/assets/images/image2.jpeg' */
 import rodolfoZamora from '@/assets/images/professionals/rodolfo-zamora.jpeg'
-import iturra from '@/assets/images/professionals/josé.jpg'
-import Nataly from '@/assets/images/professionals/Nataly.jpg'
+import iturra from '@/assets/images/professionals/jose.jpg'
+import Nataly from '@/assets/images/professionals/Nataly.JPG'
 import Sandra from '@/assets/images/professionals/Sandra.jpg'
-import Manary from '@/assets/images/professionals/Manary.jpg'
+import Manary from '@/assets/images/professionals/Manary.JPG'
 import Matías from '@/assets/images/professionals/Matías.jpg'
 import Beatriz from '@/assets/images/professionals/Beatriz.jpg'
 
