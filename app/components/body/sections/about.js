@@ -1,45 +1,56 @@
 /* eslint-disable no-unused-vars */
-import { Card, CardHeader, CardBody, Divider, Image as ImageReact } from '@nextui-org/react'
+import { Card, CardHeader, CardBody, Divider } from '@nextui-org/react'
 import Image from 'next/image'
 import Img2 from '@/assets/images/image2.jpeg'
+/* Images specialyts */
+import Speciality1 from '@/assets/images/speciality/1.jpg'
+import Speciality2 from '@/assets/images/speciality/2.jpg'
+import Speciality3 from '@/assets/images/speciality/3.jpg'
+import Speciality4 from '@/assets/images/speciality/4.jpg'
+import Speciality5 from '@/assets/images/speciality/5.jpg'
+import Speciality6 from '@/assets/images/speciality/6.jpg'
+
 import useGlobalStore from '@/store/globalStore'
 import { useState, useEffect, use } from 'react'
 import { callbackFadeLeft, callbackFadeRight, callbackFadeUp } from '../services'
 const CardItem = ({ title, imageSrc }) => {
     const texts = title.split(' ')
-    return <section className='h-full'>
-        <Card className="col-span-12 sm:col-span-4 h-[200px] max-w-[30rem]">
-            <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-                {/*              <p className="text-tiny text-white/60 uppercase font-bold">What to watch</p>
-                <h4 className="text-white font-medium text-large">Stream the Acme event</h4> */}
-                <div className='rounded-2xl'>
-                    {texts?.map((t) => {
-                        return <h4 key={t} className='text-3xl font-sans font-bold text-gray-500 w-fit shadow-sm opacity-60 bg-white px-2'>{t}</h4>
-                    })}
+    return (
+        <section className='h-full flex justify-center items-center'>
+            <Card className="relative col-span-12 sm:col-span-4 h-[200px] max-w-[30rem] shadow-2xl">
+                <CardHeader className="absolute z-10 top-1 flex-col !items-start">
+                    <div className='rounded-2xl'>
+                        {texts?.map((t) => (
+                            <h4
+                                key={t}
+                                className='text-3xl font-sans font-bold text-gray-500 w-fit shadow-sm opacity-60 bg-white px-2'
+                            >
+                                {t}
+                            </h4>
+                        ))}
+                    </div>
+                </CardHeader>
+                <div className='flex justify-center items-center w-full h-full'>
+                    <Image
+                        alt={'Speciality'}
+                        src={imageSrc}
+                    />
                 </div>
-            </CardHeader>
-            <ImageReact
-                removeWrapper
-                alt="Card background"
-                className="z-0 w-full h-full object-cover"
-                width={20}
-                height={20}
-                src={imageSrc || 'https://www.clinicatrei.com/wp-content/uploads/2022/10/dientes-desgastados.jpg'}
-            />
-        </Card>
-    </section>
+            </Card>
+        </section>
+    )
 }
 
 const names = [
     'Empatia', 'Innovación', 'Calidad'
 ]
 const especialidades = [
-    { name: 'Odontología General', image: 'https://bfesteticadental.com/wp-content/uploads/2020/01/Odontopediatria-Caracas-Venezuela-BF-Estetica-Dental-1024x683.jpg' },
-    { name: 'Ortodoncia', image: 'https://www.clinicadelvalle.es/wp-content/uploads/2018/09/Verdades-sobre-los-brackets-1080x627.jpg' },
-    { name: 'Periodoncia', image: 'https://doctoraminerva.es/wp-content/uploads/en-que-consiste-la-periodoncia-y-que-alcance-tiene-portada.jpg' },
-    { name: 'Endodoncia', image: 'https://clinicajuliansaiz.com/wp-content/uploads/2021/03/que-es-una-endodoncia-clinica-dental-julian-saiz-ppal.jpg' },
-    { name: 'Cirugías Implantes', image: 'https://glidewelldental.com/content/glidewell/en/education/chairside-magazine/volume-14-issue-1/anterior-implant-placement/_jcr_content/root/container/container_467654658/container_1170571169/image.coreimg.jpeg/1668758888080/hd-cm1401-anterior-implant-placement.jpeg' },
-    { name: 'Estetica Integral', image: 'https://www.clinicatrei.com/wp-content/uploads/2022/10/dientes-desgastados.jpg' }
+    { name: 'Odontología General', image: Speciality1 },
+    { name: 'Ortodoncia', image: Speciality2 },
+    { name: 'Periodoncia', image: Speciality3 },
+    { name: 'Endodoncia', image: Speciality4 },
+    { name: 'Cirugías Implantes', image: Speciality5 },
+    { name: 'Estetica Integral', image: Speciality6 }
 ]
 export default function About () {
     const { section, setSection } = useGlobalStore(({ section, setSection }) => ({ section, setSection }))

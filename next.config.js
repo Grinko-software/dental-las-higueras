@@ -1,19 +1,41 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: false
+    reactStrictMode: false,
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'www.clinicadelvalle.es',
+                port: '',
+                pathname: '**'
+            },
+            {
+                protocol: 'https',
+                hostname: 'doctoraminerva.es',
+                port: '',
+                pathname: '**'
+            },
+            {
+                protocol: 'https',
+                hostname: 'clinicajuliansaiz.com',
+                port: '',
+                pathname: '**'
+            },
+            {
+                protocol: 'https',
+                hostname: 'glidewelldental.com',
+                port: '',
+                pathname: '**'
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.clinicatrei.com',
+                port: '',
+                pathname: '**'
+            }
+
+        ]
+    }
 }
 
 module.exports = nextConfig
-/*
-
-    output: 'export',
-    distDir: 'out'
-    // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
-    // trailingSlash: true,
-
-    // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
-    // skipTrailingSlashRedirect: true,
-
-    // Optional: Change the output directory `out` -> `dist`
-
-*/
