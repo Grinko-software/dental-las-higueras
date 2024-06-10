@@ -63,7 +63,7 @@ const ProfesionalsArray = [
     },
     {
         srcRute: millerlandy,
-        name: 'Dra. Millerlandy chavarro lozano',
+        name: 'Dra. Millerlandy Chavarro Lozano',
         specialty: 'Cirujano Dentista',
         specialist: 'Endodoncia',
         university: 'Titulado de la Universidad antonio Nariño, Colombia, reconocido por mins de relaciones exteriores con el N• 1113/2017',
