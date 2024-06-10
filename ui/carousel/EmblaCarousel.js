@@ -33,7 +33,7 @@ const EmblaCarousel = (props) => {
                             <div className="embla__slide__number ">
                                 <Image
                                     src={item.image || null}
-                                    className='rounded-3xl shadow-lg h-full w-full object-fill'
+                                    className='rounded-3xl shadow-lg h-full w-full object-cover object-center'
                                 />
                             </div>
                         </div>
