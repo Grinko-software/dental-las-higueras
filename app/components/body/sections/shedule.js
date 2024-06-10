@@ -35,7 +35,14 @@ export default function Shedule () {
                 </div>
             </div>
 
-            <Tabs aria-label="Dynamic tabs" items={SCHEDULE_ITEMS}>
+            <Tabs
+                aria-label="Dynamic tabs"
+                items={SCHEDULE_ITEMS}
+                classNames={{
+                    cursor: 'w-full bg-[#672881]',
+                    tabContent: 'group-data-[selected=true]:text-primary-50 font-normal'
+                }}
+            >
                 {(item) => (
                     <Tab key={item.key} title={item.label} className='w-full flex-1'>
                         <section className="scroll-up w-full flex-1">

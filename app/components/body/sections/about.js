@@ -17,7 +17,7 @@ const CardItem = ({ title, imageSrc }) => {
     const texts = title.split('/')
     return (
         <section>
-            <Card isFooterBlurred = {true} className="sm:col-span-4 h-[500px] sm:w-[530px] w-[350px]">
+            <Card isFooterBlurred = {true} className="sm:col-span-4 h-[25rem] w-full">
                 <Image
                     alt={'Speciality'}
                     src={imageSrc}
@@ -140,7 +140,7 @@ export default function About () {
                     </div>
                 </div>
             </div>
-            <div className='scroll-up grid grid-cols-1 p-2 xs:md:grid-cols-2 md:grid-cols-2 md:py-10 md:w-fit xl:grid-cols-3 gap-5 items-center justify-center'>
+            <div className='scroll-up grid grid-cols-1 p-2 md:grid-cols-2 md:py-10 md:w-fit xl:grid-cols-3 gap-5 items-center justify-center'>
                 {
                     especialidades?.map((item) => {
                         return <CardItem key={item.name} title={item.name} imageSrc={item.image} />

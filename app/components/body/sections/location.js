@@ -57,7 +57,14 @@ export default function Location () {
                 </div>
             </div>
 
-            <Tabs aria-label="Dynamic tabs" items={ITEMS}>
+            <Tabs
+                aria-label="Dynamic tabs"
+                items={ITEMS}
+                classNames={{
+                    cursor: 'w-full bg-[#672881]',
+                    tabContent: 'group-data-[selected=true]:text-primary-50 font-normal'
+                }}
+            >
                 {(item) => (
                     <Tab key={item.key} title={item.label} className='w-full flex-1'>
                         <section className='mx-5  flex flex-col  lg:items-center space-y-3'>
@@ -68,7 +75,7 @@ export default function Location () {
                                 <span className='font-bold'> Contacto: </span> {item.phone}
                             </h4>
                         </section>
-                        <section className="scroll-up px-[1rem] lg:px-[13rem]   xlg:px-[23rem] h-[20rem] flex-1 ">
+                        <section className="scroll-up px-[1rem] lg:px-[13rem]   xlg:px-[23rem] flex-1 py-10 ">
                             <EmblaCarousel slides={item.images} options={OPTIONS} />
                         </section>
                     </Tab>

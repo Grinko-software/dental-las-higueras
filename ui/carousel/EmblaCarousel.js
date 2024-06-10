@@ -30,7 +30,7 @@ const EmblaCarousel = (props) => {
                 <div className="embla__container">
                     {slides.map((item, index) => (
                         <div className="embla__slide" key={index}>
-                            <div className="embla__slide__number ">
+                            <div className="h-[30rem]">
                                 <Image
                                     src={item.image || null}
                                     className='rounded-3xl shadow-lg h-full w-full object-cover object-center'
