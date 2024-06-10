@@ -1,6 +1,21 @@
 'use client'
 import { useEffect } from 'react'
 import { callbackFadeUp } from '../services'
+import { Tab, Tabs } from '@nextui-org/react'
+
+const SCHEDULE_ITEMS = [
+    {
+        key: '1',
+        label: 'Las Higueras',
+        url: 'https://agendamiento.reservo.cl/makereserva/agenda/w0s1lns0L0VWaB0T4j46uux5w0b293'
+    },
+    {
+        key: '2',
+        label: 'Centro La Serena',
+        url: 'https://agendamiento.reservo.cl/makereserva/agenda/r0PMG9G090pwUa5B53471yr6H0K3Tz'
+    }
+]
+
 export default function Shedule () {
     useEffect(() => {
         const observer = new IntersectionObserver(callbackFadeUp)
@@ -19,9 +34,17 @@ export default function Shedule () {
                     </h5>
                 </div>
             </div>
-            <section className="scroll-up w-full flex-1">
-                <iframe src='https://agendamiento.reservo.cl/makereserva/agenda/w0s1lns0L0VWaB0T4j46uux5w0b293' className="w-full h-full min-h-[35rem]"></iframe>
-            </section>
+
+            <Tabs aria-label="Dynamic tabs" items={SCHEDULE_ITEMS}>
+                {(item) => (
+                    <Tab key={item.key} title={item.label} className='w-full flex-1'>
+                        <section className="scroll-up w-full flex-1">
+                            <iframe src={item.url} className="w-full h-full min-h-[35rem]"></iframe>
+                        </section>
+                    </Tab>
+                )}
+            </Tabs>
+
         </section>
 
     )
