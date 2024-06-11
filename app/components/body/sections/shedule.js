@@ -12,7 +12,7 @@ const SCHEDULE_ITEMS = [
     {
         key: '2',
         label: 'Centro La Serena',
-        url: 'https://agendamiento.reservo.cl/makereserva/agenda/r0PMG9G090pwUa5B53471yr6H0K3Tz'
+        url: 'https://agendamiento.reservo.cl/makereserva/agenda/h0Mp9FV0s0gi199k5a77Efi6i5i3QS'
     }
 ]
 
