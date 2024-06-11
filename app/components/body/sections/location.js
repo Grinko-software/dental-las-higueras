@@ -75,7 +75,7 @@ export default function Location () {
                                 <span className='font-bold'> Contacto: </span> {item.phone}
                             </h4>
                         </section>
-                        <section className="scroll-up px-[1rem] lg:px-[13rem]   xlg:px-[23rem] flex-1 py-10 ">
+                        <section className="scroll-up px-[1rem] lg:px-[5rem]   xlg:px-[10%] flex-1 py-10 ">
                             <EmblaCarousel slides={item.images} options={OPTIONS} />
                         </section>
                     </Tab>

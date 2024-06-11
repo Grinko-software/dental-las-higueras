@@ -5,6 +5,17 @@
     --slide-spacing: 1rem;
     --slide-size: 100%;
   }
+  @media screen and (max-width: 640px) {
+    .embla {
+      --slide-height: 20rem;
+    }
+  }
+  @media screen and (min-width: 641px) and (max-width: 920px) {
+    .embla {
+      --slide-height: 30rem;
+    }
+  }
+  
   .embla__viewport {
     overflow: hidden;
   }
