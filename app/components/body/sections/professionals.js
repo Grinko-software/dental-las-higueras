@@ -108,7 +108,7 @@ const ProfesionalsArray = [
     },
     {
         srcRute: Matías,
-        name: 'Dra. Matías Veas',
+        name: 'Dr. Matías Veas',
         specialty: 'Odontología General',
         specialist: '-',
         university: '',
