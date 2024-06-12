@@ -9,7 +9,7 @@ import juanImage from '@/assets/images/professionals/juan.jpg'
 import millerlandy from '@/assets/images/professionals/Millerlandy.jpg'
 /* import defaultImage from '@/assets/images/image2.jpeg' */
 import rodolfoZamora from '@/assets/images/professionals/rodolfo-zamora.jpeg'
-import iturra from '@/assets/images/professionals/iturra.jpg'
+import iturra from '@/assets/images/professionals/iturra2.jpg'
 import Nataly from '@/assets/images/professionals/Nataly.JPG'
 import Sandra from '@/assets/images/professionals/Sandra.jpg'
 import Manary from '@/assets/images/professionals/Manary.JPG'
@@ -39,8 +39,8 @@ const ProfesionalsArray = [
     {
         srcRute: rodolfoZamora,
         name: 'Dr. Rodolfo Zamora',
-        specialty: 'Especialista titulado',
-        specialist: 'Implantología',
+        specialty: 'Cirujando Dentista',
+        specialist: 'Implantología y Cirugía Bucal',
         university: 'certificado por la Universidad del Desarrollo y la Clínica Alemana de Santiago.  Titulado con alto honor de la Universidad Mayor de Santiago.',
         experience: [
             'Docente Titular de pregrado del Departamento de Cirugia Oral.',
@@ -52,8 +52,8 @@ const ProfesionalsArray = [
     {
         srcRute: iturra,
         name: 'Dr. José Ignacio Iturra Marín',
-        specialty: 'Odontología General',
-        specialist: '-',
+        specialty: 'Cirujando Dentista',
+        specialist: 'Odontología General',
         university: 'Universidad de Antofagasta (2021)',
         experience: [
             'Cirujano Dentista con experiencia en atención primaria y urgencias (Hospital Carlos Cisternas, Calama)',
@@ -109,8 +109,8 @@ const ProfesionalsArray = [
     {
         srcRute: Matías,
         name: 'Dr. Matías Veas',
-        specialty: 'Odontología General',
-        specialist: '-',
+        specialty: 'Cirujando Dentista',
+        specialist: 'Odontología General',
         university: '',
         experience: [
             ''
@@ -119,8 +119,8 @@ const ProfesionalsArray = [
     {
         srcRute: Beatriz,
         name: 'Dra. Beatriz Giraldo',
-        specialty: 'Odontología General',
-        specialist: '-',
+        specialty: 'Cirujando Dentista',
+        specialist: 'Odontología General',
         university: '',
         experience: [
             ''
