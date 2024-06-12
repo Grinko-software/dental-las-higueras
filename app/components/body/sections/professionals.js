@@ -89,8 +89,8 @@ const ProfesionalsArray = [
     {
         srcRute: Sandra,
         name: 'Dra. Sandra Benavides',
-        specialty: 'Ortodoncista',
-        specialist: '-',
+        specialty: 'Cirujano Dentista',
+        specialist: 'Ortodoncia',
         university: '',
         experience: [
             ''
