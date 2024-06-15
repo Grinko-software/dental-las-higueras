@@ -32,7 +32,9 @@ const ProfesionalsArray = [
             'Maestría en Anclaje Esqueletal Instituto Mondelli de Ortodoncia, Brasil',
             'Residencia en Microtornillos Extraalveolares',
             'Certificación en Invisaling',
-            'Actualización en ortodoncia y vías aéreas Universidad de New York'
+            'Actualización en ortodoncia y vías aéreas Universidad de New York',
+            'Certificación en Clear Corret',
+            'Miembro INTERNATIONAL ASSOCIATION OF ORTHODONTICS AND FORENSIC ODONTOLOGY (IAOFO)'
         ]
 
     },
@@ -69,7 +71,8 @@ const ProfesionalsArray = [
         university: 'Titulado de la Universidad antonio Nariño, Colombia, reconocido por mins de relaciones exteriores con el N• 1113/2017',
         experience: [
             'Cirujano dentista en el área pública y privada desde el 2013 ',
-            'Endodoncista en el área privada desde 2021, manejo de urgencias endodonticas, endodoncia mecanizada y cirugía apical'
+            'Endodoncista en el área privada desde 2021, manejo de urgencias endodonticas, endodoncia mecanizada y cirugía apical',
+            'Posee Título en la Especialidad de  Endodoncia  en la Universidad Autónoma de Chile 2021, Registro Superintendencia de Salud: 559008'
         ]
 
     },
@@ -91,9 +94,10 @@ const ProfesionalsArray = [
         name: 'Dra. Sandra Benavides',
         specialty: 'Cirujano Dentista',
         specialist: 'Ortodoncia',
-        university: '',
+        university: 'Universidad Central del Ecuador, Reconocido por Minist. Relaciones Exteriores el 20 de Noviembre de 2015',
         experience: [
-            ''
+            'Cirujano Dentista en el área privada con más de 6 años de experiencia',
+            'Especialidad de Ortodoncia, Universidad de los Andes'
         ]
     },
     {
@@ -111,7 +115,7 @@ const ProfesionalsArray = [
         name: 'Dr. Matías Veas',
         specialty: 'Cirujando Dentista',
         specialist: 'Odontología General',
-        university: '',
+        university: 'Universidad de Antofagasta 2024',
         experience: [
             ''
         ]
@@ -121,9 +125,12 @@ const ProfesionalsArray = [
         name: 'Dra. Beatriz Giraldo',
         specialty: 'Cirujando Dentista',
         specialist: 'Odontología General',
-        university: '',
+        university: 'Universidad Antonio Nariño Colombia con reconocimiento por el ministerio de relaciones exteriores el 28 Abril 2017',
         experience: [
-            ''
+            'Cirujano Dentista en el área pública por 1 año',
+            'Cirujano Dentista área privada por 9 años',
+            'Tecnóloga en Mecánica Dental (Colombia)',
+            'Diplomado de Implantología multidisciplinaria (Universidad Andrés Bello - Chile)'
         ]
     }
 ]
