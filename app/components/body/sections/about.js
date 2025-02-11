@@ -44,7 +44,7 @@ const especialidades = [
     { name: 'Periodoncia', image: Speciality3 },
     { name: 'Endodoncia', image: Speciality4 },
     { name: 'Cirugías Implantes', image: Speciality5 },
-    { name: 'Estetica Integral', image: Speciality6 }
+    { name: 'Estética dental', image: Speciality6 }
 ]
 export default function About () {
     const { section, setSection } = useGlobalStore(({ section, setSection }) => ({ section, setSection }))

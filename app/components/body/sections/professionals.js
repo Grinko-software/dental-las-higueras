@@ -10,7 +10,7 @@ import millerlandy from '@/assets/images/professionals/Millerlandy.jpg'
 /* import defaultImage from '@/assets/images/image2.jpeg' */
 import Gabriela from '@/public/images/professionals/Gabriela.jpg'
 import rodolfoZamora from '@/assets/images/professionals/rodolfo-zamora.jpeg'
-import iturra from '@/assets/images/professionals/iturra.jpg'
+import iturra from '@/assets/images/professionals/iturra2.jpg'
 import Nataly from '@/assets/images/professionals/Nataly.JPG'
 import Sandra from '@/assets/images/professionals/Sandra.jpg'
 import Manary from '@/assets/images/professionals/Manary.JPG'
@@ -33,15 +33,17 @@ const ProfesionalsArray = [
             'Maestría en Anclaje Esqueletal Instituto Mondelli de Ortodoncia, Brasil',
             'Residencia en Microtornillos Extraalveolares',
             'Certificación en Invisaling',
-            'Actualización en ortodoncia y vías aéreas Universidad de New York'
+            'Actualización en ortodoncia y vías aéreas Universidad de New York',
+            'Certificación en Clear Corret',
+            'Miembro INTERNATIONAL ASSOCIATION OF ORTHODONTICS AND FORENSIC ODONTOLOGY (IAOFO)'
         ]
 
     },
     {
         srcRute: rodolfoZamora,
         name: 'Dr. Rodolfo Zamora',
-        specialty: 'Especialista titulado',
-        specialist: 'Implantología',
+        specialty: 'Cirujando Dentista',
+        specialist: 'Implantología y Cirugía Bucal',
         university: 'certificado por la Universidad del Desarrollo y la Clínica Alemana de Santiago.  Titulado con alto honor de la Universidad Mayor de Santiago.',
         experience: [
             'Docente Titular de pregrado del Departamento de Cirugia Oral.',
@@ -53,8 +55,8 @@ const ProfesionalsArray = [
     {
         srcRute: iturra,
         name: 'Dr. José Ignacio Iturra Marín',
-        specialty: 'Odontología General',
-        specialist: '-',
+        specialty: 'Cirujando Dentista',
+        specialist: 'Odontología General',
         university: 'Universidad de Antofagasta (2021)',
         experience: [
             'Cirujano Dentista con experiencia en atención primaria y urgencias (Hospital Carlos Cisternas, Calama)',
@@ -70,7 +72,8 @@ const ProfesionalsArray = [
         university: 'Titulado de la Universidad antonio Nariño, Colombia, reconocido por mins de relaciones exteriores con el N• 1113/2017',
         experience: [
             'Cirujano dentista en el área pública y privada desde el 2013 ',
-            'Endodoncista en el área privada desde 2021, manejo de urgencias endodonticas, endodoncia mecanizada y cirugía apical'
+            'Endodoncista en el área privada desde 2021, manejo de urgencias endodonticas, endodoncia mecanizada y cirugía apical',
+            'Posee Título en la Especialidad de  Endodoncia  en la Universidad Autónoma de Chile 2021, Registro Superintendencia de Salud: 559008'
         ]
 
     },
@@ -90,11 +93,12 @@ const ProfesionalsArray = [
     {
         srcRute: Sandra,
         name: 'Dra. Sandra Benavides',
-        specialty: 'Ortodoncista',
-        specialist: '-',
-        university: '',
+        specialty: 'Cirujano Dentista',
+        specialist: 'Ortodoncia',
+        university: 'Universidad Central del Ecuador, Reconocido por Minist. Relaciones Exteriores el 20 de Noviembre de 2015',
         experience: [
-            ''
+            'Cirujano Dentista en el área privada con más de 6 años de experiencia',
+            'Especialidad de Ortodoncia, Universidad de los Andes'
         ]
     },
     {
