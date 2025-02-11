@@ -8,12 +8,13 @@ import { useViewport } from 'react-viewport-hooks'
 import juanImage from '@/assets/images/professionals/juan.jpg'
 import millerlandy from '@/assets/images/professionals/Millerlandy.jpg'
 /* import defaultImage from '@/assets/images/image2.jpeg' */
+import Gabriela from '@/public/images/professionals/Gabriela.jpg'
 import rodolfoZamora from '@/assets/images/professionals/rodolfo-zamora.jpeg'
 import iturra from '@/assets/images/professionals/iturra.jpg'
 import Nataly from '@/assets/images/professionals/Nataly.JPG'
 import Sandra from '@/assets/images/professionals/Sandra.jpg'
 import Manary from '@/assets/images/professionals/Manary.JPG'
-import Matías from '@/assets/images/professionals/Matías.jpg'
+import Matias from '@/assets/images/professionals/Matias.jpg'
 import Beatriz from '@/assets/images/professionals/Beatriz.jpg'
 
 import { /* callbackFadeIn */ callbackFadeUp } from '../services'
@@ -107,8 +108,8 @@ const ProfesionalsArray = [
         ]
     },
     {
-        srcRute: Matías,
-        name: 'Dra. Matías Veas',
+        srcRute: Beatriz,
+        name: 'Dra. Beatriz Giraldo',
         specialty: 'Odontología General',
         specialist: '-',
         university: '',
@@ -117,13 +118,26 @@ const ProfesionalsArray = [
         ]
     },
     {
-        srcRute: Beatriz,
-        name: 'Dra. Beatriz Giraldo',
+        srcRute: Matias,
+        name: 'Dr. Matias Páez Dominguez',
         specialty: 'Odontología General',
         specialist: '-',
-        university: '',
+        university: 'Universidad de La serena',
         experience: [
-            ''
+            'Dentista General en Clinica Dental Uno Salud',
+            'Dentista General Clínica Dental Las Higueras (2024)',
+            'Dentista General en Clínica Densalud La Serena (2024)'
+        ]
+    },
+    {
+        srcRute: Gabriela,
+        name: 'Dra. Gabriela Sepúlveda Márquez',
+        specialty: 'Odontología General',
+        specialist: 'Armonización orofacial',
+        university: 'Universidad de La serena',
+        experience: [
+            'Cesfam Pan de Azúcar 2023',
+            'CDT hospital La Serena 2023'
         ]
     }
 ]
@@ -168,7 +182,7 @@ export default function Profesionals () {
             />
         }, {
             key: uuidv4(),
-            content: <ProfesionalsCard alt="4" Profesional={ProfesionalsArray[4]} timer={timer}
+            content: <ProfesionalsCard alt="4" Profesional={ProfesionalsArray[5]} timer={timer}
                 setTimer={setTimer}
             />
         }
