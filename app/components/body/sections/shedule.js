@@ -5,11 +5,6 @@ import { Tab, Tabs } from '@nextui-org/react'
 
 const SCHEDULE_ITEMS = [
     {
-        key: '1',
-        label: 'Las Higueras',
-        url: 'https://agendamiento.reservo.cl/makereserva/agenda/w0s1lns0L0VWaB0T4j46uux5w0b293'
-    },
-    {
         key: '2',
         label: 'Centro La Serena',
         url: 'https://agendamiento.reservo.cl/makereserva/agenda/h0Mp9FV0s0gi199k5a77Efi6i5i3QS'

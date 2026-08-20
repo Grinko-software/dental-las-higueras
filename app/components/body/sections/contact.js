@@ -63,7 +63,6 @@ export default function Contact () {
                     <CardItem
                         title={'CONTACTO'}
                         icon={<TelephoneIcon size={64} className={'w-20 h-20'}/>}>
-                        <p>{'(+56)926357188'}</p>
                         <p>{'(+56)975527994'}</p>
                     </CardItem>
                 </div>
@@ -80,7 +79,6 @@ export default function Contact () {
                         title={'UBICACIÓN'}
                         icon={<LocationIcon className={'w-20 h-20'}/>}>
                         <ul className='list-disc'>
-                            <li>Balmaceda 2195, Local 106 - Portal Las Higueras. La Serena, Chile.</li>
                             <li>Gregorio Cordovez 588, Local 106, Edificio Don Oscar, Centro de La Serena.</li>
                         </ul >
                     </CardItem>

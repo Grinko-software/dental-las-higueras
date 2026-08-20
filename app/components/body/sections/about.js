@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 import { Card, CardHeader, CardBody, Button, CardFooter, Divider } from '@nextui-org/react'
 import Image from 'next/image'
-import Img2 from '@/assets/images/image2.jpeg'
+import Img2 from '@/assets/images/clinica-mision-vision.jpg'
 /* Images specialyts */
-import Speciality1 from '@/assets/images/speciality/1.jpg'
-import Speciality2 from '@/assets/images/speciality/2.jpg'
-import Speciality3 from '@/assets/images/speciality/3.jpg'
-import Speciality4 from '@/assets/images/speciality/4.jpg'
-import Speciality5 from '@/assets/images/speciality/5.jpg'
-import Speciality6 from '@/assets/images/speciality/6.jpg'
+import Speciality1 from '@/assets/images/speciality/odontologia-general.jpg'
+import Speciality2 from '@/assets/images/speciality/ortodoncia.jpg'
+import Speciality3 from '@/assets/images/speciality/periodoncia.jpg'
+import Speciality4 from '@/assets/images/speciality/endodoncia.jpg'
+import Speciality5 from '@/assets/images/speciality/cirugia-implantes.jpg'
+import Speciality6 from '@/assets/images/speciality/estetica-dental.jpg'
 
 import useGlobalStore from '@/store/globalStore'
 import { useState, useEffect, use, lazy } from 'react'

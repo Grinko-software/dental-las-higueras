@@ -5,17 +5,17 @@ import { Divider } from '@nextui-org/react'
 import Carroussel from '../../../../ui/carousel/carussel'
 import { v4 as uuidv4 } from 'uuid'
 import { useViewport } from 'react-viewport-hooks'
-import juanImage from '@/assets/images/professionals/juan.jpg'
-import millerlandy from '@/assets/images/professionals/Millerlandy.jpg'
-/* import defaultImage from '@/assets/images/image2.jpeg' */
-import Gabriela from '@/public/images/professionals/Gabriela.jpg'
-import rodolfoZamora from '@/assets/images/professionals/rodolfo-zamora.jpeg'
-import iturra from '@/assets/images/professionals/iturra2.jpg'
-import Nataly from '@/assets/images/professionals/Nataly.JPG'
-import Sandra from '@/assets/images/professionals/Sandra.jpg'
-import Manary from '@/assets/images/professionals/Manary.JPG'
-import Matias from '@/assets/images/professionals/Matias.jpg'
-import Beatriz from '@/assets/images/professionals/Beatriz.jpg'
+import juanImage from '@/assets/images/professionals/juan-benavides.jpg'
+/* import defaultImage from '@/assets/images/clinica-mision-vision.jpg' */
+import Nataly from '@/assets/images/professionals/nataly-veas.jpg'
+import Sandra from '@/assets/images/professionals/sandra-benavides.jpg'
+import Manary from '@/assets/images/professionals/manary-murcia.jpg'
+import Matias from '@/assets/images/professionals/matias-paez.jpg'
+import Beatriz from '@/assets/images/professionals/beatriz-giraldo.jpg'
+import Ariel from '@/assets/images/professionals/ariel-peinado.jpg'
+import Ingrid from '@/assets/images/professionals/ingrid-skinner.jpg'
+import Edgardo from '@/assets/images/professionals/edgardo-guzman.jpg'
+import Scarlett from '@/assets/images/professionals/scarlett-araya.jpg'
 
 import { /* callbackFadeIn */ callbackFadeUp } from '../services'
 
@@ -36,44 +36,6 @@ const ProfesionalsArray = [
             'Actualización en ortodoncia y vías aéreas Universidad de New York',
             'Certificación en Clear Corret',
             'Miembro INTERNATIONAL ASSOCIATION OF ORTHODONTICS AND FORENSIC ODONTOLOGY (IAOFO)'
-        ]
-
-    },
-    {
-        srcRute: rodolfoZamora,
-        name: 'Dr. Rodolfo Zamora',
-        specialty: 'Cirujando Dentista',
-        specialist: 'Implantología y Cirugía Bucal',
-        university: 'certificado por la Universidad del Desarrollo y la Clínica Alemana de Santiago.  Titulado con alto honor de la Universidad Mayor de Santiago.',
-        experience: [
-            'Docente Titular de pregrado del Departamento de Cirugia Oral.',
-            'Miembro de la Sociedad De implantologìa Oral de Chile',
-            'Ex jefe de programa de Vichuquen de odontología y de programas'
-        ]
-
-    },
-    {
-        srcRute: iturra,
-        name: 'Dr. José Ignacio Iturra Marín',
-        specialty: 'Cirujando Dentista',
-        specialist: 'Odontología General',
-        university: 'Universidad de Antofagasta (2021)',
-        experience: [
-            'Cirujano Dentista con experiencia en atención primaria y urgencias (Hospital Carlos Cisternas, Calama)',
-            'Desarrollo y Jefe de unidad Móvil en “Programa de salud Bucal” de JUNAEB y Odontopediatría (2022 a 2023)'
-        ]
-
-    },
-    {
-        srcRute: millerlandy,
-        name: 'Dra. Millerlandy Chavarro Lozano',
-        specialty: 'Cirujano Dentista',
-        specialist: 'Endodoncia',
-        university: 'Titulado de la Universidad antonio Nariño, Colombia, reconocido por mins de relaciones exteriores con el N• 1113/2017',
-        experience: [
-            'Cirujano dentista en el área pública y privada desde el 2013 ',
-            'Endodoncista en el área privada desde 2021, manejo de urgencias endodonticas, endodoncia mecanizada y cirugía apical',
-            'Posee Título en la Especialidad de  Endodoncia  en la Universidad Autónoma de Chile 2021, Registro Superintendencia de Salud: 559008'
         ]
 
     },
@@ -134,14 +96,55 @@ const ProfesionalsArray = [
         ]
     },
     {
-        srcRute: Gabriela,
-        name: 'Dra. Gabriela Sepúlveda Márquez',
-        specialty: 'Odontología General',
-        specialist: 'Armonización orofacial',
-        university: 'Universidad de La serena',
+        srcRute: Ariel,
+        name: 'Ariel Peinado Madera',
+        specialty: 'Odontólogo',
+        specialist: 'Rehabilitación Oral',
+        university: 'Odontólogo egresado en 2011',
         experience: [
-            'Cesfam Pan de Azúcar 2023',
-            'CDT hospital La Serena 2023'
+            'Diplomado en Implantología',
+            'Diplomado en Estética Dental',
+            'Especialista en Rehabilitación Oral'
+        ]
+    },
+    {
+        srcRute: Ingrid,
+        name: 'Dra. Ingrid Skinner Rojas',
+        specialty: 'Cirujano Dentista',
+        specialist: 'Odontología General',
+        university: 'Universidad de La Serena',
+        experience: [
+            'Dentista general Clínica Dental Somi (2024)',
+            'Dentista general Clínicas Dental Jade (2024-actualidad)',
+            'Dentista general Clínica Dental Las Higueras (2025-actualidad)'
+        ]
+    },
+    {
+        srcRute: Edgardo,
+        name: 'Dr. Edgardo Guzmán Baldecchi',
+        specialty: 'Cirujano Dentista',
+        specialist: 'Odontología General',
+        university: 'Egresado y titulado 2024, Universidad de La Serena',
+        experience: [
+            'Internado Clínica Dental Escolar',
+            'Dentista independiente López Dental Clinic (2025)',
+            'Dental Las Higueras (2025)',
+            'Clínica Puertas del Mar (2026)',
+            'Curso blanqueamiento Beyond',
+            'Curso intensivo teórico-práctico de Carillas Directas Estratificadas (EquilibrArte Clinic, Santiago de Chile)',
+            'Diversos congresos en restauraciones anteriores'
+        ]
+    },
+    {
+        srcRute: Scarlett,
+        name: 'Dra. Scarlett Araya Arratia',
+        specialty: 'Cirujano Dentista',
+        specialist: 'Odontología Restauradora',
+        university: 'Cirujana Dentista titulada en 2025, Universidad de La Serena',
+        experience: [
+            'Atención de adultos y niños',
+            'Formación en prevención y promoción de salud bucal',
+            'Formación en odontología restauradora'
         ]
     }
 ]
@@ -151,46 +154,15 @@ export default function Profesionals () {
     const [goToSlide, setGoToSlide] = useState(null)
     const { vw/* , vh */ } = useViewport()
     const [useView, setUseView] = useState(null)
-    const slides = [
-        // eslint-disable-next-line react/jsx-key
-        {
+    const slides = ProfesionalsArray.map(
+        (item) => ({
             key: uuidv4(),
-            content: <ProfesionalsCard alt="0" Profesional={ProfesionalsArray[0]}
+            content: <ProfesionalsCard alt={item.name} Profesional={item}
                 timer={timer}
                 setTimer={setTimer}
-
             />
-        },
-        {
-            key: uuidv4(),
-            content: <ProfesionalsCard alt="1" Profesional={ProfesionalsArray[1]} timer={timer}
-                setTimer={setTimer}
-            />
-        },
-        {
-            key: uuidv4(),
-            content: <ProfesionalsCard alt="2" Profesional={ProfesionalsArray[2]} timer={timer}
-                setTimer={setTimer}
-            />
-        },
-        {
-            key: uuidv4(),
-            content: <ProfesionalsCard alt="3" Profesional={ProfesionalsArray[3]} timer={timer}
-                setTimer={setTimer}
-            />
-        },
-        {
-            key: uuidv4(),
-            content: <ProfesionalsCard alt="4" Profesional={ProfesionalsArray[4]} timer={timer}
-                setTimer={setTimer}
-            />
-        }, {
-            key: uuidv4(),
-            content: <ProfesionalsCard alt="4" Profesional={ProfesionalsArray[5]} timer={timer}
-                setTimer={setTimer}
-            />
-        }
-    ]
+        })
+    )
 
     useEffect(() => {
         setTimer(setInterval(() => {

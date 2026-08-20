@@ -4,18 +4,10 @@ import { callbackFadeLeft } from '../services'
 import EmblaCarousel from '../../../../ui/carousel/EmblaCarousel'
 import { Tab, Tabs } from '@nextui-org/react'
 
-import BranchHiguera1 from '@/assets/images/branch/branch_higueras_1.JPG'
-import BranchHigueras2 from '@/assets/images/branch/branch_higueras_2.JPG'
-import BranchHigueras3 from '@/assets/images/branch/branch_higueras_3.JPG'
-import BranchDowntown from '@/assets/images/branch/branch_downtown_1.JPG'
-import BranchDowntown2 from '@/assets/images/branch/branch_downtown_2.JPG'
-import BranchDowntown3 from '@/assets/images/branch/branch_downtown_3.JPG'
+import BranchDowntown from '@/assets/images/branch/centro-la-serena-1.jpg'
+import BranchDowntown2 from '@/assets/images/branch/centro-la-serena-2.jpg'
+import BranchDowntown3 from '@/assets/images/branch/centro-la-serena-3.jpg'
 const OPTIONS = {}
-const IMAGES_1 = [
-    { image: BranchHiguera1 },
-    { image: BranchHigueras2 },
-    { image: BranchHigueras3 }
-]
 
 const IMAGES_2 = [
     { image: BranchDowntown },
@@ -23,13 +15,6 @@ const IMAGES_2 = [
     { image: BranchDowntown3 }
 ]
 const ITEMS = [
-    {
-        key: '1',
-        label: 'Las Higueras',
-        images: IMAGES_1,
-        adress: 'Balmaceda 2195, Local 106 - Portal Las Higueras. La Serena, Chile.',
-        phone: '(+56)926357188'
-    },
     {
         key: '2',
         label: 'Centro La Serena',

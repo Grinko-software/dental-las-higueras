@@ -30,3 +30,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .vscode/launch.json
+
+# respaldo de assets/código dados de baja (fase de contenido 2026-08-20)
+/_respaldo-2026-08-20
