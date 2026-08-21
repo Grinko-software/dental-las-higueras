@@ -7,7 +7,6 @@ export default function ProfesionalsCard (props) {
     const { Profesional, timer } = props
     const [isFlipped, setIsFlipped] = useState(false)
     const flipCard = () => {
-        
         if (!isFlipped && timer) {
             clearInterval(timer)
         }
