@@ -47,8 +47,8 @@ export default function SpecialtyCard ({ title, imageSrc }) {
                 sizes="(max-width: 768px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.08]"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/0 to-transparent" style={{ backgroundImage: 'linear-gradient(180deg, rgba(36,26,43,0) 42%, rgba(36,26,43,0.85) 100%)' }} />
-            <div className="absolute left-[0.9rem] top-[0.9rem] flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-primary-600 shadow-md">
+            <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: 'linear-gradient(180deg, rgba(36,26,43,0) 42%, rgba(36,26,43,0.85) 100%)' }} />
+            <div className="absolute left-[0.9rem] top-[0.9rem] flex h-9 w-9 items-center justify-center rounded-full bg-primary-100/95 text-primary-600 shadow-md">
                 <svg viewBox="0 0 24 24" fill="none" className="h-[18px] w-[18px]">
                     {ICONS[title] ?? null}
                 </svg>

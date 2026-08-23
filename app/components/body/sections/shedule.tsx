@@ -17,13 +17,13 @@ export default function Shedule () {
         <section id='Agendar' className='bg-white py-16 lg:py-24'>
             <div className='mx-auto max-w-screen-xl px-5 lg:px-10'>
                 <div className='reveal-scale overflow-hidden rounded-3xl bg-gradient-to-br from-primary-600 to-primary-500 px-6 py-12 text-center shadow-2xl lg:px-16 lg:py-16'>
-                    <span className='inline-block rounded-full bg-white/16 px-4 py-1 text-xs font-bold uppercase tracking-wider text-white'>
+                    <span className='inline-block rounded-full bg-primary-100/16 px-4 py-1 text-xs font-bold uppercase tracking-wider text-primary-100'>
                         Reserva online
                     </span>
                     <h2 className='mt-4 text-2xl font-[600] text-white lg:text-4xl'>
                         Agenda tu hora en un par de clics.
                     </h2>
-                    <p className='mx-auto mt-3 max-w-xl text-base text-white/85 lg:text-lg'>
+                    <p className='mx-auto mt-3 max-w-xl text-base text-primary-100/90 lg:text-lg'>
                         Elegí el motivo de consulta, el profesional y el horario que más te acomode. Te confirmamos por WhatsApp o llamada.
                     </p>
                     <a

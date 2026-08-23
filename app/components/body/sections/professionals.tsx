@@ -26,7 +26,7 @@ export default function Profesionals () {
     }))
 
     return (
-        <section id='Profesionales' className='bg-primary-150 py-16 lg:py-24'>
+        <section id='Profesionales' className='relative bg-primary-150 py-16 before:absolute before:inset-x-0 before:top-0 before:h-16 before:bg-gradient-to-b before:from-white before:to-transparent after:absolute after:inset-x-0 after:bottom-0 after:h-16 after:bg-gradient-to-t after:from-white after:to-transparent lg:py-24'>
             <div className='mx-auto max-w-screen-xl px-5 lg:px-10'>
                 <div className='reveal mb-10'>
                     <span className='text-sm font-bold uppercase tracking-wider text-primary-600'>Profesionales</span>

@@ -4,7 +4,6 @@ import Contact from './sections/contact'
 import Home from './sections/home'
 import Shedule from './sections/shedule'
 import Profesionals from './sections/professionals'
-import Waves from './sections/waves'
 import { useEffect } from 'react'
 
 export const initializeGoogleTagManager = () => {
@@ -26,7 +25,6 @@ export default function Body () {
     return (
         <main className='flex h-full flex-col !scroll-smooth bg-primary-100'>
             <Home/>
-            <Waves color='#f2ecf3' bg='to-primary-150'/>
             <About/>
             <Profesionals/>
             <Contact/>

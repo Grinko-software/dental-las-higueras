@@ -57,19 +57,19 @@ export default function ProfesionalsCard ({ Profesional, isLead = false }) {
 
                 {/* Cara trasera */}
                 <div
-                    className='absolute inset-0 flex flex-col items-center overflow-y-auto rounded-3xl bg-gradient-to-br from-primary-600 to-[#4E1D66] p-6 text-center text-white/90 [backface-visibility:hidden]'
+                    className='absolute inset-0 flex flex-col items-center overflow-y-auto rounded-3xl bg-gradient-to-br from-primary-600 to-[#4E1D66] p-6 text-center text-primary-100/90 [backface-visibility:hidden]'
                     style={{ transform: 'rotateY(180deg)' }}
                 >
-                    <div className='mb-4 font-[600] text-white' style={{ fontFamily: 'Georgia, serif' }}>{name}</div>
-                    <div className='w-full text-left text-[0.8rem] leading-relaxed text-white/85'>
+                    <div className='mb-4 font-[600] text-primary-100' style={{ fontFamily: 'Georgia, serif' }}>{name}</div>
+                    <div className='w-full text-left text-[0.8rem] leading-relaxed text-primary-100/85'>
                         {hasMeta
                             ? (
                                 <>
-                                    {university ? <p><strong className='text-white'>Formación:</strong> {university}</p> : null}
+                                    {university ? <p><strong className='text-primary-100'>Formación:</strong> {university}</p> : null}
                                     {experience && experience.some((e) => e)
                                         ? (
                                             <p className='mt-3'>
-                                                <strong className='text-white'>Experiencia:</strong> {experience.filter(Boolean).join('; ')}.
+                                                <strong className='text-primary-100'>Experiencia:</strong> {experience.filter(Boolean).join('; ')}.
                                             </p>
                                         )
                                         : null}
@@ -80,7 +80,7 @@ export default function ProfesionalsCard ({ Profesional, isLead = false }) {
                     <button
                         type='button'
                         onClick={() => setIsFlipped(false)}
-                        className='mt-auto inline-flex items-center gap-[0.4rem] rounded-full border border-white/28 bg-white/14 px-[1.05rem] py-2 text-[0.8rem] font-[600] text-white transition-colors duration-200 hover:bg-white hover:text-primary-600'
+                        className='mt-auto inline-flex items-center gap-[0.4rem] rounded-full border border-primary-100/28 bg-primary-100/14 px-[1.05rem] py-2 text-[0.8rem] font-[600] text-primary-100 transition-colors duration-200 hover:bg-primary-100 hover:text-primary-600'
                     >
                         <FlipIcon />
                         Volver

@@ -15,7 +15,7 @@ export default function Home () {
     const ripple = useRipple()
 
     return (
-        <section id='Inicio' className='relative overflow-hidden bg-gradient-to-b from-primary-150 to-primary-200/40 pt-16 pb-24 lg:pt-24 lg:pb-28'>
+        <section id='Inicio' className='relative overflow-hidden bg-[linear-gradient(180deg,theme(colors.primary.150)_0%,theme(colors.primary.200/40%)_55%,#fff_100%)] pt-16 pb-28 lg:pt-24 lg:pb-36'>
             <div className='mx-auto max-w-screen-xl px-5 lg:px-10'>
                 <div className='grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16'>
                     <div className='reveal-left order-2 lg:order-1'>
@@ -60,15 +60,15 @@ export default function Home () {
                             </div>
                         </div>
 
-                        <div className='absolute -bottom-7 -left-8 flex max-w-[270px] items-center gap-4 rounded-[22px] border border-white/20 bg-gradient-to-br from-primary-600/70 to-[#4E1D66]/80 p-5 shadow-2xl backdrop-blur-xl backdrop-saturate-150'>
-                            <div className='flex h-[52px] w-[52px] flex-shrink-0 items-center justify-center rounded-full bg-white text-primary-600 shadow-md'>
+                        <div className='absolute -bottom-7 -left-8 flex max-w-[270px] items-center gap-4 rounded-[22px] border border-primary-100/20 bg-gradient-to-br from-primary-600/70 to-[#4E1D66]/80 p-5 shadow-2xl backdrop-blur-xl backdrop-saturate-150'>
+                            <div className='flex h-[52px] w-[52px] flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 shadow-md'>
                                 <svg viewBox='0 0 24 24' fill='none' className='h-6 w-6'>
                                     <path d='M5 12.5l4.5 4.5L19 7' stroke='currentColor' strokeWidth='2.2' strokeLinecap='round' strokeLinejoin='round' />
                                 </svg>
                             </div>
                             <div className='flex flex-col gap-1'>
-                                <span className='text-[0.66rem] font-bold uppercase tracking-wider text-white/75'>Sin compromiso</span>
-                                <span className='font-[600] leading-tight text-white'>Primera evaluación<br />sin costo</span>
+                                <span className='text-[0.66rem] font-bold uppercase tracking-wider text-primary-100/75'>Sin compromiso</span>
+                                <span className='font-[600] leading-tight text-primary-100'>Primera evaluación<br />sin costo</span>
                             </div>
                         </div>
                     </div>
