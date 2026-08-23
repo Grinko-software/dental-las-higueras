@@ -112,7 +112,7 @@ export default function Header () {
                         </button>
                     </NavbarItem>
                 </NavbarContent>
-                <NavbarMenu className='mt-[2rem] bg-primary-100'>
+                <NavbarMenu className='gap-0 bg-primary-100 pt-8'>
                     {menuItems.map((item, index) => (
                         <NavbarMenuItem key={item} className='text-primary-700'>
                             <Link
