@@ -14,7 +14,16 @@ module.exports = {
             version: 'detect'
         }
     },
-    overrides: [],
+    overrides: [
+        {
+            files: ['*.ts', '*.tsx'],
+            parser: '@typescript-eslint/parser',
+            parserOptions: {
+                ecmaVersion: 'latest',
+                sourceType: 'module'
+            }
+        }
+    ],
     plugins: ['react'],
     rules: {
         'no-mixed-spaces-and-tabs': 0, // disable rule,

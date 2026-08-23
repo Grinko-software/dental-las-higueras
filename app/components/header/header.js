@@ -4,16 +4,15 @@ import localFont from 'next/font/local'
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Divider } from '@nextui-org/react'
 import Image from 'next/image'
 import logo from '@/assets/images/logo.png'
-import Button from '@/ui/button'
-import { useViewport } from 'react-viewport-hooks'
 import useGlobalStore from '@/store/globalStore'
+import useRipple from '@/app/hooks/useRipple'
 const myFont = localFont({ src: '../../../fonts/nunitoSans.ttf' })
+
 export default function Header () {
-    const { section, setSection } = useGlobalStore(({ section, setSection }) => ({ section, setSection }))
+    const { setSection } = useGlobalStore(({ setSection }) => ({ setSection }))
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    // eslint-disable-next-line no-unused-vars
-    const [useView, setUseView] = useState(null)
-    const { vw/* , vh */ } = useViewport()
+    const [isScrolled, setIsScrolled] = useState(false)
+    const ripple = useRipple()
     const menuItems = [
         'Inicio',
         'Nosotros',
@@ -21,101 +20,86 @@ export default function Header () {
         'Contacto',
         'Agendar'
     ]
+
+    const goTo = (item) => {
+        setSection(null)
+        setTimeout(() => setSection(item), 100)
+    }
+
     useEffect(() => {
-        setUseView(vw)
-    }, [vw])
-    useEffect(() => {
-        if (section) {
-            const focusKey = document.getElementById(section)
-            focusKey?.scrollIntoView({ behavior: 'smooth', block: section === 'Nosotros' || section === 'Profesionales' ? 'center' : 'center', inline: 'nearest' })
-        }
-    }, [section])
+        // Header siempre fijo (sticky) — este efecto solo intensifica el
+        // glass (más opacidad/sombra) una vez que el usuario empieza a
+        // scrollear, para que la transición se sienta con intención.
+        const onScroll = () => setIsScrolled(window.scrollY > 12)
+        onScroll()
+        window.addEventListener('scroll', onScroll, { passive: true })
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [])
+
     return (
         <header
             style={myFont.style}
-            className="sticky z-20 top-0 h-auto bg-primary-100 text-black p-2 fade-in shadow-2xl">
+            className={`sticky z-20 top-0 h-auto p-2 backdrop-blur-xl backdrop-saturate-150 transition-[background-color,box-shadow] duration-300 ${
+                isScrolled ? 'bg-primary-100/95 shadow-xl' : 'bg-primary-100/75 shadow-none'
+            }`}>
             <Navbar
-                className='bg-primary-100 py-[1rem]'
+                className='bg-transparent py-[0.6rem]'
                 maxWidth={'xl'}
                 onMenuOpenChange={setIsMenuOpen}
                 isMenuOpen={isMenuOpen}
             >
                 <NavbarContent>
                     <NavbarMenuToggle
-                        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-                        className="lg:hidden"
-                        // onClick={() => { setSection(null) }}
+                        aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+                        className='lg:hidden'
                     />
-                    <NavbarBrand
-                        // className={`${parseInt(useView) < 640 ? 'flex flex-col items-center' : 'flex'}`}
-                        className='flex flex-col items-center lg:items-start'
-                    >
-                        <Image
-                            onClick={() => {
-                                setSection(null)
-                                setTimeout(() => {
-                                    setSection('Inicio')
-                                }, 100)
-                            }}
-                            src={logo}
-                            width={200}
-                            height={200}
-                            alt="Logo Dental Las Higueras"
-                            className='py-2 m-autoo w-auto min-w-[10rem] h-[7rem]'
-                        />
+                    <NavbarBrand>
+                        <button type='button' onClick={() => goTo('Inicio')} className='flex items-center'>
+                            <Image
+                                src={logo}
+                                width={200}
+                                height={200}
+                                alt='Logo Dental Las Higueras'
+                                className='h-[3.6rem] w-auto py-1'
+                            />
+                        </button>
                     </NavbarBrand>
                 </NavbarContent>
-                <NavbarContent className="hidden lg:flex " justify="end">
-                    {menuItems.map((item, index) => (
-                        <NavbarItem key={index}>
-                            <Button title={item} className ={`${section === item
-                                ? 'bg-primary-600 rounded-[100px] hover:bg-primary-500 text-primary-100  w-full px-5 py-5 text-center  text-lg font-[600]  transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:border-primary-50    focus:ring-primary-300 dark:bg-primary-800 dark:text-primary-50  dark:placeholder-primary-50  dark:hover:border-primary-50  dark:hover:bg-primary-700  dark:hover:text-primary-50 dark:hover:ring-primary-300 dark:hover:focus:fill-white'
-                                : 'bg-primary-transparent rounded-[100px] hover:bg-primary-500 text-primary-600  w-full px-5 py-5 text-center  text-lg font-[600]  transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:border-primary-50    focus:ring-primary-300 dark:bg-primary-800 dark:text-primary-50  dark:placeholder-primary-50  dark:hover:border-primary-50  dark:hover:bg-primary-700  dark:hover:text-primary-50 dark:hover:ring-primary-300 dark:hover:focus:fill-white'}
-                                h-12
-                                `}
-                            onClick={() => {
-                                setSection(null)
-                                setTimeout(() => {
-                                    setSection(item)
-                                }, 100)
-                                setSection(item)
-                            }}
+                <NavbarContent className='hidden gap-1 lg:flex' justify='end'>
+                    {menuItems.slice(0, -1).map((item) => (
+                        <NavbarItem key={item}>
+                            <button
+                                type='button'
+                                onClick={() => goTo(item)}
+                                className='rounded-full px-4 py-2 text-base font-[600] text-primary-600 transition-colors duration-200 hover:bg-primary-200/60'
                             >
-                            </Button>
+                                {item}
+                            </button>
                         </NavbarItem>
                     ))}
-
+                    <NavbarItem>
+                        <button
+                            type='button'
+                            onClick={(e) => { ripple(e); goTo('Agendar') }}
+                            className='btn-ripple-host inline-flex h-11 items-center justify-center rounded-full bg-primary-600 px-6 text-base font-[600] text-white shadow-md shadow-primary-600/30 transition-transform duration-300 ease-out hover:-translate-y-0.5'
+                        >
+                            Agendar hora
+                        </button>
+                    </NavbarItem>
                 </NavbarContent>
-                <NavbarMenu className='to-primary-150 mt-[2rem]'>
+                <NavbarMenu className='mt-[2rem] bg-primary-100'>
                     {menuItems.map((item, index) => (
-                        <NavbarMenuItem
-
-                            key={`${item}-${index}`}
-                            // to-primary-150 data-open="false"
-                            className='to-primary-150  text-primary-700'>
+                        <NavbarMenuItem key={item} className='text-primary-700'>
                             <Link
-                                color={
-                                    index === 2 ? 'primary' : index === menuItems.length - 1 ? '' : ''
-                                }
-                                className="w-full cursor-pointer"
-                                size="lg"
-                                onClick={() => {
-                                    setSection(null)
-                                    setTimeout(() => {
-                                        setSection(item)
-                                    }, 100)
-                                    setIsMenuOpen(false)
-                                }}
-
+                                className='w-full cursor-pointer'
+                                size='lg'
+                                onClick={() => { goTo(item); setIsMenuOpen(false) }}
                             >
-                                <div className='text-2xl text-primary-600 hover:text-primary-500 w-full p-2 pb-3'>
+                                <div className='w-full p-2 pb-3 text-2xl text-primary-600 hover:text-primary-500'>
                                     {item}
                                 </div>
                             </Link>
-                            {index !== menuItems.length - 1
-                                ? <Divider className=''/>
-                                : null
-                            }
+                            {index !== menuItems.length - 1 ? <Divider /> : null}
                         </NavbarMenuItem>
                     ))}
                 </NavbarMenu>

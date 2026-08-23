@@ -5,6 +5,11 @@ module.exports = {
         './pages/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
         './app/**/*.{js,ts,jsx,tsx,mdx}',
+        // 'ui/' faltaba en este glob: ningún componente ahí (specialty-card,
+        // info-card, button, carousel/*) era escaneado por Tailwind, así que
+        // cualquier clase usada SOLO en esos archivos nunca se generaba en el
+        // CSS final — causa raíz de que aspect-[20/17] no aplicara.
+        './ui/**/*.{js,ts,jsx,tsx,mdx}',
         './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
     ],
     theme: {

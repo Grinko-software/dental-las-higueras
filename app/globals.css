@@ -1,206 +1,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
-  }
-  
-  .card:hover {
-    transform: rotateY(180deg);
-    transform-style: preserve-3d;
-  }
-  
-  .card-back {
-    transform: rotateY(180deg);
-   
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --foreground-rgb: 255, 255, 255;
-      --background-start-rgb: 0, 0, 0;
-      --background-end-rgb: 0, 0, 0;
-    }
-  }
-  
-  /* trunk-ignore(git-diff-check/error) */
-  body { 
-    background-color: '#f0f0f0';
-    font-family: 'OpenSans';
-    font-style: normal;
-  }
-  @layer components {
-    .fade-in {
-      animation: fadeIn 1.5s;
-      -webkit-animation: fadeIn 1.5s;
-      -moz-animation: fadeIn 1.5s;
-      -o-animation: fadeIn 1.5s;
-      -ms-animation: fadeIn 1.5s;
-    }
-    .animate-fadeIn {
-      animation: fadeIn 2s ease-in forwards;
-      -webkit-animation:;
-}
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-    
-    @-moz-keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-    
-    @-webkit-keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-    
-    @-o-keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-    
-    @-ms-keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-  .fade-in-out {
-    opacity: 0;
-    animation: fade-in 1s ease-in forwards, fade-out 4s 1s ease-out forwards;
-    -webkit-animation: fade-in 1s ease-in forwards, fade-out 4s 1s ease-out forwards;
-}
-  
-  @keyframes fade-in {
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes fade-out {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  .fade-in-left {
-    opacity: 0;
-    animation: fadeInLeft 1.5s ease-in forwards;
-    -webkit-animation: fadeInLeft 1.5s ease-in forwards;
-  }
-  @-webkit-keyframes fadeInLeft {
-    0% {
-       opacity: 0;
-       -webkit-transform: translateX(-150px);
-    }
-    100% {
-       opacity: 1;
-       -webkit-transform: translateX(0);
-    }
-  }
- 
-  @keyframes fadeInLeft {
-    0% {
-       opacity: 0;
-       transform: translateX(-150px);
-       -webkit-transform: translateX(-150px);
-       -moz-transform: translateX(-150px);
-       -ms-transform: translateX(-150px);
-       -o-transform: translateX(-150px);
-}
-    100% {
-       opacity: 1;
-       transform: translateX(0);
-    }
-  }
-  .fade-in-right {
-    opacity: 0;
-    animation: fadeInRight 1.5s ease-in forwards;
-    -webkit-animation: fadeInRight 1.5s ease-in forwards;
-}  
-  @-webkit-keyframes fadeInRight {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateX(450px);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateX(0);
-    }
-  }
-  @keyframes fadeInRight {
-    0% {
-      opacity: 0;
-      transform: translateX(450px);
-      -webkit-transform: translateX(450px);
-      -moz-transform: translateX(450px);
-      -ms-transform: translateX(450px);
-      -o-transform: translateX(450px);
-}
-  100% {
-     opacity: 1;
-     transform: translateX(0);
-  }
-}
-  .fade-in-up{
-    opacity: 0;
-    animation: fadeInUp 1.5s ease-in forwards;
-    -webkit-animation: fadeInUp 1.5s ease-in forwards;
-}
-  @-webkit-keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(150px);
-   }
-   100% {
-      opacity: 1;
-      -webkit-transform: translateY(0);
-   }
- }
- 
- @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(150px);
-    -webkit-transform: translateY(150px);
-    -moz-transform: translateY(150px);
-    -ms-transform: translateY(150px);
-    -o-transform: translateY(150px);
-}
- 100% {
-    opacity: 1;
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-}
- }
- 
- /* Section Scroll */
 
- 
+:root {
+    --shadow-color: 280 30% 20%;
+}
+
+body {
+    background-color: #FAF8F5;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+/* ==========================================================================
+   Sistema de animaciones — reveal, tilt, ripple, parallax
+   Reemplaza el sistema anterior (fade-in-left/right/up con prefijos de
+   vendor obsoletos) que dejaba contenido en opacity:0 permanente si el
+   IntersectionObserver no disparaba a tiempo. Ver useScrollReveal.ts.
+   ========================================================================== */
+
+@layer components {
+    /* ---------- reveal (fallback-safe: visible por default, JS solo refuerza) ---------- */
+    .reveal, .reveal-left, .reveal-right, .reveal-scale {
+        opacity: 1;
+        transform: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .reveal, .reveal-left, .reveal-right, .reveal-scale {
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.js-armed { opacity: 0; transform: translateY(30px); }
+        .reveal-left.js-armed { opacity: 0; transform: translateX(-40px); }
+        .reveal-right.js-armed { opacity: 0; transform: translateX(40px); }
+        .reveal-scale.js-armed { opacity: 0; transform: scale(0.92) translateY(16px); }
+
+        .reveal.js-armed.is-visible,
+        .reveal-left.js-armed.is-visible,
+        .reveal-right.js-armed.is-visible,
+        .reveal-scale.js-armed.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    /* ---------- hover-tilt: inclinación 3D sutil siguiendo el cursor ---------- */
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+        .tilt {
+            transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+            will-change: transform;
+        }
+    }
+
+    /* ---------- parallax layers ---------- */
+    @media (prefers-reduced-motion: no-preference) {
+        .parallax-wrap { will-change: transform; }
+    }
+
+    /* ---------- ripple: círculo que se expande desde el punto de click ---------- */
+    .btn-ripple-host {
+        position: relative;
+        overflow: hidden;
+    }
+    .btn-ripple-host .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        transform: scale(0);
+        pointer-events: none;
+        animation: btn-ripple 0.6s ease-out;
+    }
+    .btn-ripple-host.btn-ripple-dark .ripple {
+        background: hsl(var(--shadow-color) / 0.12);
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .btn-ripple-host .ripple { display: none; }
+    }
+}
+
+@keyframes btn-ripple {
+    to { transform: scale(2.6); opacity: 0; }
 }

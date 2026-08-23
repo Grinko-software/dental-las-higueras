@@ -1,12 +1,6 @@
-'use client'
-import { useState, useEffect } from 'react'
-import ProfesionalsCard from '../../card'
-import { Divider } from '@nextui-org/react'
-import Carroussel from '../../../../ui/carousel/carussel'
-import { v4 as uuidv4 } from 'uuid'
-import { useViewport } from 'react-viewport-hooks'
+import type { Professional } from '@/app/types/domain'
+
 import juanImage from '@/assets/images/professionals/juan-benavides.jpg'
-/* import defaultImage from '@/assets/images/clinica-mision-vision.jpg' */
 import Nataly from '@/assets/images/professionals/nataly-veas.jpg'
 import Sandra from '@/assets/images/professionals/sandra-benavides.jpg'
 import Manary from '@/assets/images/professionals/manary-murcia.jpg'
@@ -17,10 +11,10 @@ import Ingrid from '@/assets/images/professionals/ingrid-skinner.jpg'
 import Edgardo from '@/assets/images/professionals/edgardo-guzman.jpg'
 import Scarlett from '@/assets/images/professionals/scarlett-araya.jpg'
 
-import { /* callbackFadeIn */ callbackFadeUp } from '../services'
-
-const ProfesionalsArray = [
-
+/**
+ * Profesionales del equipo clínico mostrados en la sección de profesionales.
+ */
+const professionals: Professional[] = [
     {
         srcRute: juanImage,
         name: 'Dr. Juan Carlos Benavides Solarte',
@@ -37,7 +31,6 @@ const ProfesionalsArray = [
             'Certificación en Clear Corret',
             'Miembro INTERNATIONAL ASSOCIATION OF ORTHODONTICS AND FORENSIC ODONTOLOGY (IAOFO)'
         ]
-
     },
     {
         srcRute: Nataly,
@@ -50,7 +43,6 @@ const ProfesionalsArray = [
             'Especialidad de Periodoncia, Universidad del Desarrollo',
             'Diplomado Ortodoncia-Periodoncia, Universidad del Desarrollo'
         ]
-
     },
     {
         srcRute: Sandra,
@@ -69,9 +61,7 @@ const ProfesionalsArray = [
         specialty: 'Odontología General',
         specialist: 'Armonización Facial',
         university: '',
-        experience: [
-            ''
-        ]
+        experience: ['']
     },
     {
         srcRute: Beatriz,
@@ -79,9 +69,7 @@ const ProfesionalsArray = [
         specialty: 'Odontología General',
         specialist: '-',
         university: '',
-        experience: [
-            ''
-        ]
+        experience: ['']
     },
     {
         srcRute: Matias,
@@ -149,73 +137,4 @@ const ProfesionalsArray = [
     }
 ]
 
-export default function Profesionals () {
-    const [timer, setTimer] = useState(null)
-    const [goToSlide, setGoToSlide] = useState(null)
-    const { vw/* , vh */ } = useViewport()
-    const [useView, setUseView] = useState(null)
-    const slides = ProfesionalsArray.map(
-        (item) => ({
-            key: uuidv4(),
-            content: <ProfesionalsCard alt={item.name} Profesional={item}
-                timer={timer}
-                setTimer={setTimer}
-            />
-        })
-    )
-
-    useEffect(() => {
-        setTimer(setInterval(() => {
-            setGoToSlide(goToSlide + 1)
-        }, 10000))
-    }, [])
-    useEffect(() => {
-        if (timer) {
-            clearInterval(timer)
-            setTimer(setInterval(() => {
-                setGoToSlide(goToSlide + 1)
-            }, 10000))
-        }
-    },
-    [goToSlide])
-    useEffect(() => {
-        setUseView(vw)
-    }, [vw])
-    useEffect(() => {
-        const observerIn = new IntersectionObserver(callbackFadeUp)
-        const targetsIn = document.querySelectorAll('.scroll-in')
-        targetsIn.forEach(function (target) {
-            target.classList.add('opacity-0')
-            observerIn.observe(target)
-        })
-    }, [])
-    return (
-        <section id='Profesionales' className='scroll-in h-full py-10 px-0 xlg:px-[10rem]  flex flex-col items items-center justify-center '>
-
-            {parseInt(useView) > 640
-                ? <Carroussel
-                    cards={slides}
-                    items={ProfesionalsArray}
-                    timer={timer}
-                    setTimer={setTimer}
-                    goToSlide={goToSlide}
-                    setGoToSlide={setGoToSlide}
-                />
-                : <div>
-                    <div className='flex flex-col justify-items-center'>
-                        <h4 className="w-full  text-4xl lg:text-7xl font-[600]">Profesionales</h4>
-                        <Divider className='w-12/12 bg-slate-800 rounded-xl'></Divider>
-                    </div>
-                    <div className='h-full w-full grid grid-cols-1 justify-items-center gap-2'>
-                        {ProfesionalsArray
-                            ? ProfesionalsArray.map(
-                                (item, index) => (
-                                    <ProfesionalsCard key={index} Profesional={item}></ProfesionalsCard>
-                                )
-                            )
-                            : null}
-                    </div></div>}
-        </section>
-
-    )
-}
+export default professionals

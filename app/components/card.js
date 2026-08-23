@@ -1,89 +1,92 @@
-import { React, useState, useEffect } from 'react'
+'use client'
+import { useState } from 'react'
 import Image from 'next/image'
-import { Divider, Button, Card, CardHeader, CardBody, CardFooter } from '@nextui-org/react'
-import ReactCardFlip from 'react-card-flip'
 
-export default function ProfesionalsCard (props) {
-    const { Profesional, timer } = props
+const FlipIcon = () => (
+    <svg viewBox='0 0 24 24' fill='none' className='h-[13px] w-[13px] flex-shrink-0'>
+        <path d='M4 12a8 8 0 0 1 14.5-4.5M20 12a8 8 0 0 1-14.5 4.5M15 4v4h4M9 20v-4H5' stroke='currentColor' strokeWidth='1.6' strokeLinecap='round' strokeLinejoin='round' />
+    </svg>
+)
+
+// Tarjeta de profesional con flip 3D: cara frontal liviana (foto, nombre,
+// rol, especialidad) y cara trasera con formación/experiencia completa.
+// Reemplaza la dependencia de react-card-flip por un transform CSS directo
+// (más liviano, mismo resultado visual).
+export default function ProfesionalsCard ({ Profesional, isLead = false }) {
     const [isFlipped, setIsFlipped] = useState(false)
-    const flipCard = () => {
-        if (!isFlipped && timer) {
-            clearInterval(timer)
-        }
-        setIsFlipped(!isFlipped)
-    }
 
-    useEffect(() => {
-        setInterval(() => {
-            if (isFlipped) {
-                // flipCard()
-            }
-        }, 15000)
-    }, [isFlipped])
+    if (!Profesional) return null
+
+    const { srcRute, name, specialty, specialist, university, experience } = Profesional
+    const hasMeta = Boolean(university) || (experience && experience.some((e) => e))
 
     return (
-        <div>
-            {Profesional != null
-                ? <ReactCardFlip isFlipped={isFlipped} flipSpeedBackToFront={0.5} flipSpeedFrontToBack={0.5} flipDirection="horizontal">
-                    <div style={{ display: isFlipped ? 'none' : null }}>
-                        <Card className="w-[20rem]   sm:w-[26rem] h-[40rem] backdrop-blur-xl shadow-xl border rounded-2xl border-gray-200 grid grid-row-3 items-center justify-center">
-                            <CardHeader className='flex justify-center items-center h-[20rem]'>
-                                <div className='relative w-[18rem] h-full'>
-                                    <Image
-                                        alt={'Professionals'}
-                                        src={Profesional ? Profesional.srcRute : null}
-                                        className='rounded-full  shadow-lg object-cover object-top'
-                                        fill
-                                    />
-                                </div>
-                            </CardHeader>
-                            <CardBody>
-                                <div className='flex flex-col flex-1 items-center gap-2'>
-                                    <h5 className="text-lg sm:text-3xl text-center font-medium text-gray-900">{Profesional.name}</h5>
-                                    <span className="text-lg sm:text-2xl font-medium text-gray-500 dark:text-gray-400">{Profesional.specialty}</span>
-                                    <Divider className='w-8/12 bg-slate-500 rounded-xl'></Divider>
-                                </div>
-                                <div className='flex flex-col items-center gap-1'>
-                                    <span className="text-sm sm:text-xl text-gray-950">Especialidad</span>
-                                    <span className="text-center text-xs sm:text-xl text-gray-500 mb-4">{Profesional.specialist}</span>
-                                </div>
-                            </CardBody>
-                            <CardFooter className='items-center justify-center'>
-                                <Button className="bg-primary-600 m-10 font-bold text-white font-2xl" variant="shadow" onClick={flipCard}>Experiencia Laboral</Button>
-                            </CardFooter>
-                        </Card>
+        <div className={`tilt w-full max-w-[320px] [perspective:1600px] ${isLead ? 'h-[460px]' : 'h-[440px]'}`} data-tilt-max='5'>
+            <div
+                className='relative h-full w-full transition-transform duration-[650ms] [transform-style:preserve-3d]'
+                style={{ transform: isFlipped ? 'rotateY(180deg)' : 'none', transitionTimingFunction: 'cubic-bezier(0.4, 0.1, 0.2, 1)' }}
+            >
+                {/* Cara frontal */}
+                <div className='absolute inset-0 flex flex-col overflow-hidden rounded-3xl border border-primary-300/60 bg-white shadow-[0_4px_18px_-10px_rgba(0,0,0,0.3)] transition-shadow duration-300 [backface-visibility:hidden]'>
+                    <div className='aspect-[4/3] w-full flex-shrink-0 overflow-hidden'>
+                        <Image
+                            src={srcRute}
+                            alt={`Foto de ${name}`}
+                            className='h-full w-full object-cover'
+                            style={{ objectPosition: '50% 15%' }}
+                        />
                     </div>
-                    <div style={{ display: !isFlipped ? 'none' : null }}>
-                        <Card className="w-[20rem] sm:w-[26rem] h-[40rem]  backdrop-blur-xl shadow-xl bg-slate-800 border rounded-2xl border-gray-200 flex flex-col items-center justify-center">
-                            <div className="flex px-5  w-full flex-col flex-1 m-4 sm:m-10 gap-2 text-white">
-                                <div className='flex flex-col flex-1'>
-                                    <div className='flex flex-col items-center gap-4 sm:mb-4 sm:gap-10'>
-                                        <div className="flex flex-col sm:gap-4">
-                                            <h3 className="font-bold text-white text-foreground/90 text-base sm:text-2xl sm:mt-5">{Profesional.name}</h3>
-                                            <Divider className='bg-white/40 h-0.5 rounded-sm'></Divider>
-                                            <p className="text-xs font-light">{Profesional.university}</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col items-center sm:gap-4">
-                                        <p className="text-base font-bold text-white text-foreground/80">Experiencia Laboral</p>
-                                        <Divider className='w-10/12'></Divider>
-                                        <div className="flex flex-col justify-between list-disc gap-0.5 sm:gap-2 mb-4">
-                                            {Profesional.experience
-                                                ? Profesional.experience.map(
-                                                    (item) => (
-                                                        <li key={item} className="text-xs sm:text-sm font-light">{item}</li>
-                                                    )
-                                                )
-                                                : null}
-                                        </div>
-                                    </div>
-                                </div>
-                                <Button className="bg-primary-600 mb-10 font-bold text-white font-2xl" variant="shadow" onClick={flipCard}>Información General</Button>
-                            </div>
-                        </Card>
+                    <div className='flex flex-1 flex-col justify-between gap-2 p-5 text-center'>
+                        <div>
+                            <div className='text-[1.08rem] font-[600] leading-tight text-primary-700'>{name}</div>
+                            <div className='mt-1 text-[0.84rem] font-[600] text-primary-600'>{specialty}</div>
+                            {specialist && specialist !== '-'
+                                ? <div className='mt-2 text-[0.88rem] text-primary-500'>{specialist}</div>
+                                : null}
+                        </div>
+                        <button
+                            type='button'
+                            onClick={() => setIsFlipped(true)}
+                            className='mx-auto inline-flex items-center gap-[0.4rem] rounded-full border border-primary-300 bg-primary-150 px-[1.05rem] py-2 text-[0.8rem] font-[600] text-primary-600 transition-colors duration-200 hover:bg-primary-600 hover:text-white'
+                        >
+                            <FlipIcon />
+                            Ver experiencia
+                        </button>
                     </div>
-                </ReactCardFlip>
-                : <div></div>}
+                </div>
+
+                {/* Cara trasera */}
+                <div
+                    className='absolute inset-0 flex flex-col items-center overflow-y-auto rounded-3xl bg-gradient-to-br from-primary-600 to-[#4E1D66] p-6 text-center text-white/90 [backface-visibility:hidden]'
+                    style={{ transform: 'rotateY(180deg)' }}
+                >
+                    <div className='mb-4 font-[600] text-white' style={{ fontFamily: 'Georgia, serif' }}>{name}</div>
+                    <div className='w-full text-left text-[0.8rem] leading-relaxed text-white/85'>
+                        {hasMeta
+                            ? (
+                                <>
+                                    {university ? <p><strong className='text-white'>Formación:</strong> {university}</p> : null}
+                                    {experience && experience.some((e) => e)
+                                        ? (
+                                            <p className='mt-3'>
+                                                <strong className='text-white'>Experiencia:</strong> {experience.filter(Boolean).join('; ')}.
+                                            </p>
+                                        )
+                                        : null}
+                                </>
+                            )
+                            : <p>Sin información adicional registrada.</p>}
+                    </div>
+                    <button
+                        type='button'
+                        onClick={() => setIsFlipped(false)}
+                        className='mt-auto inline-flex items-center gap-[0.4rem] rounded-full border border-white/28 bg-white/14 px-[1.05rem] py-2 text-[0.8rem] font-[600] text-white transition-colors duration-200 hover:bg-white hover:text-primary-600'
+                    >
+                        <FlipIcon />
+                        Volver
+                    </button>
+                </div>
+            </div>
         </div>
     )
 }
