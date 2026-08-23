@@ -15,7 +15,7 @@ export default function About () {
     return (
         <section id='Nosotros' className='bg-white py-16 lg:py-24'>
             <div className='mx-auto max-w-screen-xl px-5 lg:px-10'>
-                <div className='mb-4'>
+                <div className='reveal mb-4'>
                     <span className='text-sm font-bold uppercase tracking-wider text-primary-600'>Nosotros</span>
                     <h2 className='mt-2 text-3xl font-[600] text-primary-700 lg:text-5xl'>
                         Un equipo que cuenta con los mejores profesionales.

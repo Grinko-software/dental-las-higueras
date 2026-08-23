@@ -43,6 +43,21 @@ body {
         }
     }
 
+    /* En mobile el usuario ve una tarjeta a la vez ocupando casi toda la
+       pantalla — la misma duración/stagger que se sentía elegante en
+       desktop (viendo varias tarjetas juntas) se percibe como lentitud
+       cuando solo hay una a la vista. Se acorta la transición y el
+       desplazamiento inicial es menor para que el contenido "llegue" antes. */
+    @media (prefers-reduced-motion: no-preference) and (max-width: 640px) {
+        .reveal, .reveal-left, .reveal-right, .reveal-scale {
+            transition-duration: 0.35s;
+        }
+        .reveal.js-armed { transform: translateY(14px); }
+        .reveal-left.js-armed { transform: translateX(-18px); }
+        .reveal-right.js-armed { transform: translateX(18px); }
+        .reveal-scale.js-armed { transform: scale(0.97) translateY(8px); }
+    }
+
     /* ---------- hover-tilt: inclinación 3D sutil siguiendo el cursor ---------- */
     @media (hover: hover) and (prefers-reduced-motion: no-preference) {
         .tilt {

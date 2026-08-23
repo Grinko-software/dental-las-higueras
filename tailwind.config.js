@@ -56,7 +56,11 @@ module.exports = {
                     400: '#808285',
                     500: '#AD8FB9',
                     600: '#672881',
-                    700: '#000000'
+                    // Antes era negro puro (#000000), rompiendo la progresión
+                    // tonal de la escala. Ahora es el morado oscuro real que
+                    // ya se usaba hardcodeado en gradientes (home.js, card.js).
+                    700: '#4E1D66',
+                    900: '#000000'
                 }
             },
             backgroundImage: {

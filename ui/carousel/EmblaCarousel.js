@@ -45,11 +45,13 @@ const useEmblaAutoplay = (emblaApi, intervalMs) => {
     return { pause: stop, resume: start }
 }
 
-const defaultRenderSlide = (item) => (
+const defaultRenderSlide = (item, index) => (
     <div className="embla__slide__number">
         <Image
             src={item.image}
             alt={item.alt || 'Foto de la sucursal'}
+            placeholder='blur'
+            priority={index === 0}
             className='rounded-3xl shadow-lg h-full w-full object-cover object-center'
         />
     </div>

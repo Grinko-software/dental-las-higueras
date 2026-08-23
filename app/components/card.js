@@ -28,10 +28,11 @@ export default function ProfesionalsCard ({ Profesional, isLead = false }) {
             >
                 {/* Cara frontal */}
                 <div className='absolute inset-0 flex flex-col overflow-hidden rounded-3xl border border-primary-300/60 bg-white shadow-[0_4px_18px_-10px_rgba(0,0,0,0.3)] transition-shadow duration-300 [backface-visibility:hidden]'>
-                    <div className='aspect-[4/3] w-full flex-shrink-0 overflow-hidden'>
+                    <div className='aspect-[4/3] w-full flex-shrink-0 overflow-hidden bg-primary-150'>
                         <Image
                             src={srcRute}
                             alt={`Foto de ${name}`}
+                            placeholder='blur'
                             className='h-full w-full object-cover'
                             style={{ objectPosition: '50% 15%' }}
                         />
@@ -57,10 +58,10 @@ export default function ProfesionalsCard ({ Profesional, isLead = false }) {
 
                 {/* Cara trasera */}
                 <div
-                    className='absolute inset-0 flex flex-col items-center overflow-y-auto rounded-3xl bg-gradient-to-br from-primary-600 to-[#4E1D66] p-6 text-center text-primary-100/90 [backface-visibility:hidden]'
+                    className='absolute inset-0 flex flex-col items-center overflow-y-auto rounded-3xl bg-gradient-to-br from-primary-600 to-primary-700 p-6 text-center text-primary-100/90 [backface-visibility:hidden]'
                     style={{ transform: 'rotateY(180deg)' }}
                 >
-                    <div className='mb-4 font-[600] text-primary-100' style={{ fontFamily: 'Georgia, serif' }}>{name}</div>
+                    <div className='mb-4 font-[600] text-primary-100'>{name}</div>
                     <div className='w-full text-left text-[0.8rem] leading-relaxed text-primary-100/85'>
                         {hasMeta
                             ? (

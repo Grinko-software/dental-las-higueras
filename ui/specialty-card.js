@@ -44,6 +44,7 @@ export default function SpecialtyCard ({ title, imageSrc }) {
                 alt={title}
                 src={imageSrc}
                 fill
+                placeholder="blur"
                 sizes="(max-width: 768px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.08]"
             />
@@ -53,7 +54,7 @@ export default function SpecialtyCard ({ title, imageSrc }) {
                     {ICONS[title] ?? null}
                 </svg>
             </div>
-            <span className="relative z-10 mt-auto p-[1.1rem] font-[700] leading-tight text-white" style={{ fontFamily: 'Georgia, serif' }}>
+            <span className="relative z-10 mt-auto p-[1.1rem] font-[700] leading-tight text-white">
                 {title}
             </span>
         </div>

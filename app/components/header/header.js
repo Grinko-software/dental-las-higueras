@@ -49,10 +49,10 @@ export default function Header () {
     return (
         <header
             style={myFont.style}
-            className={`sticky z-20 top-0 h-auto p-2 backdrop-blur-2xl backdrop-saturate-[1.8] transition-[background-color,box-shadow,border-color] duration-500 ${
+            className={`sticky z-20 top-0 h-auto backdrop-blur-2xl backdrop-saturate-[1.8] transition-[background-color,box-shadow,border-color] duration-500 ${
                 isScrolled
-                    ? 'border-b border-primary-300/40 bg-primary-100/90 shadow-[0_12px_32px_-16px_rgba(103,40,129,0.35)]'
-                    : 'border-b border-transparent bg-primary-100/60 shadow-none'
+                    ? 'border-b border-primary-300/50 bg-primary-100/90 shadow-[0_12px_32px_-16px_rgba(103,40,129,0.35)]'
+                    : 'border-b border-primary-200/25 bg-primary-100/80 shadow-none'
             }`}>
             <Navbar
                 className='bg-transparent py-[0.6rem]'

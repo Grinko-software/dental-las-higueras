@@ -29,11 +29,16 @@ export default function useReveal (rootSelector?: string): void {
 
         // Stagger: dentro de un grid, cada tarjeta aparece con un pequeño delay
         // incremental respecto a la anterior en vez de todas a la vez.
+        // En mobile el delay se reduce: el usuario ve una tarjeta por pantalla,
+        // así que un stagger pensado para ver varias juntas en desktop solo
+        // se siente como lentitud ahí.
+        const isMobile = window.matchMedia('(max-width: 640px)').matches
+        const stepMs = isMobile ? 25 : 60
         const staggerGroups = root.querySelectorAll('[data-stagger-group]')
         staggerGroups.forEach((group) => {
             const children = Array.from(group.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale'))
             children.forEach((el, i) => {
-                (el as HTMLElement).style.transitionDelay = `${Math.min(i, 7) * 60}ms`
+                (el as HTMLElement).style.transitionDelay = `${Math.min(i, 7) * stepMs}ms`
             })
         })
 

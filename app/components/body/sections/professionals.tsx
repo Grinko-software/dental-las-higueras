@@ -55,7 +55,7 @@ export default function Profesionals () {
                     : (
                         <div className='grid grid-cols-1 gap-6' data-stagger-group>
                             {ProfesionalsArray.map((item, index) => (
-                                <div key={index} className='reveal'>
+                                <div key={index} className='reveal flex justify-center'>
                                     <ProfesionalsCard Profesional={item} isLead={index === 0} />
                                 </div>
                             ))}
