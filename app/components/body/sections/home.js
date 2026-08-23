@@ -60,8 +60,24 @@ export default function Home () {
                             </div>
                         </div>
 
-                        <div className='absolute -bottom-4 left-1/2 w-[calc(100%-1.5rem)] max-w-[300px] -translate-x-1/2 lg:left-3 lg:-bottom-7 lg:w-auto lg:max-w-none lg:translate-x-0'>
-                            <div data-header-contrast='dark' className='reveal flex items-center gap-3 rounded-[18px] border border-primary-100/20 bg-gradient-to-br from-primary-600/70 to-primary-700/80 p-4 shadow-2xl backdrop-blur-xl backdrop-saturate-150 lg:gap-4 lg:rounded-[22px] lg:p-5'>
+                        {/*
+                            Antes era position:absolute -bottom-4, anclado al
+                            contenedor .relative de la foto (línea 49, que tiene
+                            rotate-[-3deg] + overflow-hidden). WebKit real
+                            (Safari/Chrome iOS) directamente NO PINTABA este
+                            elemento con esa combinación — bug de compositing
+                            confirmado con el motor webkit real de Playwright
+                            (device iPhone 13); no reproducible en Chromium ni
+                            en el emulador de DevTools, por eso pasó desapercibido
+                            hasta que el usuario lo vio en su celular real.
+                            Se reemplaza el positioning absoluto por flujo normal
+                            con margin-top negativo: mismo efecto visual de
+                            "flotar sobre el borde de la foto", sin depender de
+                            que el navegador combine bien absolute+transform+
+                            overflow-hidden de un ancestro.
+                        */}
+                        <div className='relative z-10 mx-3 -mt-[4.5rem] flex justify-center lg:mx-0 lg:-mt-[3.75rem] lg:justify-start lg:pl-3'>
+                            <div data-header-contrast='dark' className='reveal flex w-full max-w-[300px] items-center gap-3 rounded-[18px] border border-primary-100/20 bg-primary-700/90 p-4 shadow-2xl lg:max-w-none lg:gap-4 lg:rounded-[22px] lg:p-5'>
                                 <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 shadow-md lg:h-[52px] lg:w-[52px]'>
                                     <svg viewBox='0 0 24 24' fill='none' className='h-5 w-5 lg:h-6 lg:w-6'>
                                         <path d='M5 12.5l4.5 4.5L19 7' stroke='currentColor' strokeWidth='2.2' strokeLinecap='round' strokeLinejoin='round' />
