@@ -49,13 +49,13 @@ export default function Header () {
     return (
         <header
             style={myFont.style}
-            className={`sticky z-20 top-0 h-auto backdrop-blur-2xl backdrop-saturate-[1.8] transition-[background-color,box-shadow,border-color] duration-500 ${
+            className={`sticky z-20 top-0 h-[4.5rem] shrink-0 backdrop-blur-lg backdrop-saturate-150 transition-[box-shadow,border-color] duration-300 bg-primary-100/89 ${
                 isScrolled
-                    ? 'border-b border-primary-300/50 bg-primary-100/90 shadow-[0_12px_32px_-16px_rgba(103,40,129,0.35)]'
-                    : 'border-b border-primary-200/25 bg-primary-100/80 shadow-none'
+                    ? 'border-b border-primary-300/50 shadow-[0_4px_20px_-8px_rgba(103,40,129,0.2)]'
+                    : 'border-b border-primary-200/30 shadow-none'
             }`}>
             <Navbar
-                className='bg-transparent py-[0.6rem]'
+                className='h-full bg-transparent'
                 maxWidth={'xl'}
                 onMenuOpenChange={setIsMenuOpen}
                 isMenuOpen={isMenuOpen}

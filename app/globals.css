@@ -80,6 +80,16 @@ body {
          * clase, así que el scale desaparecía en cada frame de scroll.
          */
         .parallax-wrap {
+            /*
+             * position: relative es obligatorio acá: <Image fill> renderiza
+             * un <img> con position:absolute;inset:0 que se posiciona
+             * respecto al ancestro posicionado más cercano. Sin esto, el
+             * <img> ignora este contenedor y se posiciona contra otro
+             * ancestro (ej. el div rotado exterior en home.js), quedando
+             * con dimensiones que no coinciden con el marco visible —
+             * causa real del bug "imagen incompleta / espacio sin rellenar".
+             */
+            position: relative;
             --parallax-y: 0px;
             will-change: transform;
             transform: scale(var(--parallax-scale, 1)) translateY(var(--parallax-y));
