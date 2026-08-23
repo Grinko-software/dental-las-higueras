@@ -76,7 +76,7 @@ export default function Home () {
                             que el navegador combine bien absolute+transform+
                             overflow-hidden de un ancestro.
                         */}
-                        <div className='relative z-10 mx-3 -mt-[4.5rem] flex justify-center lg:mx-0 lg:-mt-[3.75rem] lg:justify-start lg:pl-3'>
+                        <div className='relative z-10 mx-3 -mt-[4.5rem] flex justify-center lg:max-w-[300px] lg:ml-20 lg:mx-0 lg:-mt-[3.75rem] lg:justify-start lg:pl-3'>
                             <div data-header-contrast='dark' className='reveal flex w-full max-w-[300px] items-center gap-3 rounded-[18px] border border-primary-100/20 bg-primary-700/90 p-4 shadow-2xl lg:max-w-none lg:gap-4 lg:rounded-[22px] lg:p-5'>
                                 <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 shadow-md lg:h-[52px] lg:w-[52px]'>
                                     <svg viewBox='0 0 24 24' fill='none' className='h-5 w-5 lg:h-6 lg:w-6'>
