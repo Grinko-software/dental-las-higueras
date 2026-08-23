@@ -61,7 +61,7 @@ export default function Home () {
                         </div>
 
                         <div className='absolute -bottom-4 left-1/2 w-[calc(100%-1.5rem)] max-w-[300px] -translate-x-1/2 lg:left-3 lg:-bottom-7 lg:w-auto lg:max-w-none lg:translate-x-0'>
-                            <div className='reveal flex items-center gap-3 rounded-[18px] border border-primary-100/20 bg-gradient-to-br from-primary-600/70 to-primary-700/80 p-4 shadow-2xl backdrop-blur-xl backdrop-saturate-150 lg:gap-4 lg:rounded-[22px] lg:p-5'>
+                            <div data-header-contrast='dark' className='reveal flex items-center gap-3 rounded-[18px] border border-primary-100/20 bg-gradient-to-br from-primary-600/70 to-primary-700/80 p-4 shadow-2xl backdrop-blur-xl backdrop-saturate-150 lg:gap-4 lg:rounded-[22px] lg:p-5'>
                                 <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 shadow-md lg:h-[52px] lg:w-[52px]'>
                                     <svg viewBox='0 0 24 24' fill='none' className='h-5 w-5 lg:h-6 lg:w-6'>
                                         <path d='M5 12.5l4.5 4.5L19 7' stroke='currentColor' strokeWidth='2.2' strokeLinecap='round' strokeLinejoin='round' />

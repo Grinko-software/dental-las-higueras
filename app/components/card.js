@@ -58,6 +58,7 @@ export default function ProfesionalsCard ({ Profesional, isLead = false }) {
 
                 {/* Cara trasera */}
                 <div
+                    data-header-contrast='dark'
                     className='absolute inset-0 flex flex-col items-center overflow-y-auto rounded-3xl bg-gradient-to-br from-primary-600 to-primary-700 p-6 text-center text-primary-100/90 [backface-visibility:hidden]'
                     style={{ transform: 'rotateY(180deg)' }}
                 >

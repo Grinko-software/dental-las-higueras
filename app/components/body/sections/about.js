@@ -66,7 +66,7 @@ export default function About () {
                     </div>
                     <div className='grid grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-5' data-stagger-group>
                         {especialidades?.map((item) => (
-                            <div key={item.name} className='reveal'>
+                            <div key={item.name} data-header-contrast='dark' className='reveal'>
                                 <SpecialtyCard title={item.name} imageSrc={item.image} />
                             </div>
                         ))}

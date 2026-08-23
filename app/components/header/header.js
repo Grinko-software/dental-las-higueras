@@ -6,13 +6,21 @@ import Image from 'next/image'
 import logo from '@/assets/images/logo.png'
 import useGlobalStore from '@/store/globalStore'
 import useRipple from '@/app/hooks/useRipple'
+import useHeaderContrast from '@/app/hooks/useHeaderContrast'
 const myFont = localFont({ src: '../../../fonts/nunitoSans.ttf' })
+const HEADER_HEIGHT_PX = 72 // debe coincidir con h-[4.5rem] (4.5 * 16)
 
 export default function Header () {
     const { section, setSection } = useGlobalStore(({ section, setSection }) => ({ section, setSection }))
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
     const ripple = useRipple()
+    // 'dark' cuando un bloque marcado con data-header-contrast="dark" (cards
+    // moradas, fotos oscuras) queda justo debajo del header — ahí el texto
+    // pasa a blanco para no perder contraste, sin importar cuán transparente
+    // sea el fondo del header en ese momento.
+    const contrast = useHeaderContrast(HEADER_HEIGHT_PX)
+    const isDark = contrast === 'dark'
     const menuItems = [
         'Inicio',
         'Nosotros',
@@ -49,10 +57,12 @@ export default function Header () {
     return (
         <header
             style={myFont.style}
-            className={`sticky z-20 top-0 h-[4.5rem] shrink-0 backdrop-blur-lg backdrop-saturate-150 transition-[box-shadow,border-color] duration-300 bg-primary-100/89 ${
-                isScrolled
-                    ? 'border-b border-primary-300/50 shadow-[0_4px_20px_-8px_rgba(103,40,129,0.2)]'
-                    : 'border-b border-primary-200/30 shadow-none'
+            className={`sticky z-20 top-0 h-[4.5rem] shrink-0 backdrop-blur-lg backdrop-saturate-150 transition-[background-color,box-shadow,border-color] duration-300 ${
+                isDark
+                    ? 'bg-primary-700/55 border-b border-white/15 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.35)]'
+                    : isScrolled
+                        ? 'bg-primary-100/70 border-b border-primary-300/50 shadow-[0_4px_20px_-8px_rgba(103,40,129,0.2)]'
+                        : 'bg-primary-100/55 border-b border-primary-200/30 shadow-none'
             }`}>
             <Navbar
                 className='h-full bg-transparent'
@@ -83,10 +93,12 @@ export default function Header () {
                             <button
                                 type='button'
                                 onClick={() => goTo(item)}
-                                className='group relative px-4 py-2 text-base font-[600] text-primary-600 transition-colors duration-200 hover:text-primary-700'
+                                className={`group relative px-4 py-2 text-base font-[600] transition-colors duration-200 ${
+                                    isDark ? 'text-white hover:text-white/80' : 'text-primary-600 hover:text-primary-700'
+                                }`}
                             >
                                 {item}
-                                <span className='pointer-events-none absolute inset-x-4 bottom-1 h-[2px] origin-center scale-x-0 rounded-full bg-primary-600 transition-transform duration-300 ease-out group-hover:scale-x-100' />
+                                <span className={`pointer-events-none absolute inset-x-4 bottom-1 h-[2px] origin-center scale-x-0 rounded-full transition-transform duration-300 ease-out group-hover:scale-x-100 ${isDark ? 'bg-white' : 'bg-primary-600'}`} />
                             </button>
                         </NavbarItem>
                     ))}
