@@ -47,7 +47,7 @@ export default function Home () {
 
                     <div className='reveal-scale tilt order-1 mx-auto w-full max-w-[620px] lg:order-2' data-tilt-max='4'>
                         <div className='relative rotate-[-3deg] overflow-hidden rounded-[2rem] border-[6px] border-white shadow-2xl'>
-                            <div className='parallax-wrap aspect-[3/2] w-full scale-[1.15]' data-parallax='0.08'>
+                            <div className='parallax-wrap aspect-[3/2] w-full' style={{ '--parallax-scale': 1.15 }} data-parallax='0.08'>
                                 <Image
                                     src={team}
                                     alt='Equipo de Dental Las Higueras en el consultorio de Centro La Serena'
@@ -60,15 +60,17 @@ export default function Home () {
                             </div>
                         </div>
 
-                        <div className='reveal absolute -bottom-4 left-1/2 flex w-[calc(100%-1.5rem)] max-w-[300px] -translate-x-1/2 items-center gap-3 rounded-[18px] border border-primary-100/20 bg-gradient-to-br from-primary-600/70 to-primary-700/80 p-4 shadow-2xl backdrop-blur-xl backdrop-saturate-150 sm:max-w-[270px] lg:left-3 lg:-bottom-7 lg:w-auto lg:max-w-none lg:-translate-x-0 lg:gap-4 lg:rounded-[22px] lg:p-5'>
-                            <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 shadow-md lg:h-[52px] lg:w-[52px]'>
-                                <svg viewBox='0 0 24 24' fill='none' className='h-5 w-5 lg:h-6 lg:w-6'>
-                                    <path d='M5 12.5l4.5 4.5L19 7' stroke='currentColor' strokeWidth='2.2' strokeLinecap='round' strokeLinejoin='round' />
-                                </svg>
-                            </div>
-                            <div className='flex flex-col gap-1'>
-                                <span className='text-[0.6rem] font-bold uppercase tracking-wider text-primary-100/75 lg:text-[0.66rem]'>Sin compromiso</span>
-                                <span className='text-sm font-[600] leading-tight text-primary-100 lg:text-base'>Primera evaluación<br />sin costo</span>
+                        <div className='absolute -bottom-4 left-1/2 w-[calc(100%-1.5rem)] max-w-[300px] -translate-x-1/2 lg:left-3 lg:-bottom-7 lg:w-auto lg:max-w-none lg:translate-x-0'>
+                            <div className='reveal flex items-center gap-3 rounded-[18px] border border-primary-100/20 bg-gradient-to-br from-primary-600/70 to-primary-700/80 p-4 shadow-2xl backdrop-blur-xl backdrop-saturate-150 lg:gap-4 lg:rounded-[22px] lg:p-5'>
+                                <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 shadow-md lg:h-[52px] lg:w-[52px]'>
+                                    <svg viewBox='0 0 24 24' fill='none' className='h-5 w-5 lg:h-6 lg:w-6'>
+                                        <path d='M5 12.5l4.5 4.5L19 7' stroke='currentColor' strokeWidth='2.2' strokeLinecap='round' strokeLinejoin='round' />
+                                    </svg>
+                                </div>
+                                <div className='flex flex-col gap-1'>
+                                    <span className='text-[0.6rem] font-bold uppercase tracking-wider text-primary-100/75 lg:text-[0.66rem]'>Sin compromiso</span>
+                                    <span className='text-sm font-[600] leading-tight text-primary-100 lg:text-base'>Primera evaluación<br />sin costo</span>
+                                </div>
                             </div>
                         </div>
                     </div>

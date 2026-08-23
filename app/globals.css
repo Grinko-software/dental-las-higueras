@@ -68,7 +68,22 @@ body {
 
     /* ---------- parallax layers ---------- */
     @media (prefers-reduced-motion: no-preference) {
-        .parallax-wrap { will-change: transform; }
+        /*
+         * useParallax.ts solo escribe la custom property --parallax-y (nunca
+         * la propiedad transform directamente). El scale-[…] de Tailwind
+         * combinado acá es el "colchón" que evita que las esquinas de una
+         * imagen rotada (ver home.js, rotate-[-3deg]) queden sin cubrir.
+         * Bug real encontrado: antes el hook hacía
+         * el.style.transform = 'translateY(...)' directo sobre el mismo
+         * elemento que tenía la clase scale-[1.15] — un transform inline
+         * REEMPLAZA el transform completo, no lo combina con el de la
+         * clase, así que el scale desaparecía en cada frame de scroll.
+         */
+        .parallax-wrap {
+            --parallax-y: 0px;
+            will-change: transform;
+            transform: scale(var(--parallax-scale, 1)) translateY(var(--parallax-y));
+        }
     }
 
     /* ---------- ripple: círculo que se expande desde el punto de click ---------- */

@@ -36,7 +36,11 @@ export default function useParallax (rootSelector?: string): void {
                 const speed = parseFloat(el.dataset.parallax ?? '0.15')
                 const centerOffset = (rect.top + rect.height / 2) - vh / 2
                 const offset = Math.max(-60, Math.min(60, centerOffset * -speed))
-                el.style.transform = `translateY(${offset}px)`
+                // Solo se escribe la custom property --parallax-y, nunca
+                // `transform` directo: un transform inline reemplazaría por
+                // completo el `scale(...)` que ya viene de la clase
+                // Tailwind del elemento (globals.css combina ambos).
+                el.style.setProperty('--parallax-y', `${offset}px`)
             })
             ticking = false
         }

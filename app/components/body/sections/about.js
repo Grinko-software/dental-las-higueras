@@ -43,7 +43,7 @@ export default function About () {
 
                     <div className='reveal-right tilt mx-auto w-full max-w-[560px]' data-tilt-max='3'>
                         <div className='relative aspect-[5/4] overflow-hidden rounded-[26px] border border-primary-300/60 shadow-2xl'>
-                            <div className='parallax-wrap h-full w-full scale-[1.15]' data-parallax='0.1'>
+                            <div className='parallax-wrap h-full w-full' style={{ '--parallax-scale': 1.15 }} data-parallax='0.1'>
                                 <Image
                                     src={clinicaMisionVision}
                                     alt='Profesionales de Dental Las Higueras enseñando técnica de cepillado a un paciente'
